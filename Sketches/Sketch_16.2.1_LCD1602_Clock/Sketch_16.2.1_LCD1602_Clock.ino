@@ -27,17 +27,8 @@ void setup() {
 }
 
 void loop() {
-  // Convert analog value of tempPin into digital value
-  int adcVal = analogRead(tempPin);
-  // Calculate voltage
-  float v = adcVal * 5.0 / 1024;
-  // Calculate resistance value of thermistor
-  float Rt = 10 * v / (5 - v);
-  // Calculate temperature (Kelvin)
-  float tempK = 1 / (log(Rt / 10) / 3950 + 1 / (273.15 + 25));
-  // Calculate temperature (Celsius)
-  tempVal = tempK - 273.15;
-
+  // Get temperature
+  tempVal = getTemp();
   if (second >= 60) {       // when seconds is equal to 60, minutes plus 1
     second = 0;
     minute++;
@@ -117,5 +108,19 @@ void lcdDisplay() {
   lcd.print(':');
   lcd.print(second / 10);
   lcd.print(second % 10);
+}
+
+// function used to get temperature
+float getTemp() {
+  // Convert analog value of tempPin into digital value
+  int adcVal = analogRead(tempPin);
+  // Calculate voltage
+  float v = adcVal * 5.0 / 1024;
+  // Calculate resistance value of thermistor
+  float Rt = 10 * v / (5 - v);
+  // Calculate temperature (Kelvin)
+  float tempK = 1 / (log(Rt / 10) / 3950 + 1 / (273.15 + 25));
+  // Calculate temperature (Celsius)
+  return tempK - 273.15;
 }
 
