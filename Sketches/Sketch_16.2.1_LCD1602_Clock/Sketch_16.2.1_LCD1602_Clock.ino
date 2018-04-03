@@ -12,7 +12,7 @@
 // initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
-int tempPin = 4;                // define the pin of LM35 temperature sensor
+int tempPin = 4;                // define the pin of temperature sensor
 float tempVal;                  // define a variable to store temperature value
 int hour, minute, second;       // define variables stored record time
 
@@ -27,8 +27,17 @@ void setup() {
 }
 
 void loop() {
-  // read digital value of LM35 pin and convert the temperature to Celsius
-  tempVal = analogRead(tempPin) / 1023.0 * 5.0 / 0.01;
+  // Convert analog value of tempPin into digital value
+  int adcVal = analogRead(tempPin);
+  // Calculate voltage
+  float v = adcVal * 5.0 / 1024;
+  // Calculate resistance value of thermistor
+  float Rt = 10 * v / (5 - v);
+  // Calculate temperature (Kelvin)
+  float tempK = 1 / (log(Rt / 10) / 3950 + 1 / (273.15 + 25));
+  // Calculate temperature (Celsius)
+  tempVal = tempK - 273.15;
+
   if (second >= 60) {       // when seconds is equal to 60, minutes plus 1
     second = 0;
     minute++;
