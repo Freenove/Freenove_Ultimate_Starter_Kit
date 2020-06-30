@@ -1,26 +1,28 @@
-## Freenove Ultimate Starter Kit for Arduino
+## Freenove Ultimate Starter Kit
 
-> A kit for learnning Arduino with C programming and electronics knowledge.
+A kit with a control board (compatible with Arduino® IDE) for learning programming and electronics.
+
+> Arduino® is a trademark of Arduino LLC (https://www.arduino.cc/).
 
 ### Download
 
-Click the green "Clone or download" button, then click "Download ZIP" button in the pop-up window.
+Click the green "Clone" button, then click "Download ZIP" button in the pop-up window.  
 Do NOT click the "Open in Desktop" button, it will lead you to install Github software.
 
-> If you meet any difficulties, please contact our support team for help.
+> If you meet any difficulties, please contact our technical team for help.
 
 ### Use
 
-Download the ZIP file as above.
-Unzip it and you will get a folder contains tutorials and related files.
-Please start with "Tutorial.pdf".
+1. Download the ZIP file as above.
+2. Unzip it and you will get a folder contains tutorials and related files.
+3. Please start with "Tutorial.pdf".
 
 ### Support
 
 Freenove provides free and quick customer support. Including but not limited to:
 
 * Quality problems of products
-* Using Problems of products
+* Problems of products when used
 * Questions of learning and creation
 * Opinions and suggestions
 * Ideas and thoughts
@@ -29,17 +31,33 @@ Please send an email to:
 
 [support@freenove.com](mailto:support@freenove.com)
 
-We will reply to you within one working day.
+We will reply within one working day.
 
 ### Purchase
 
 Please visit the following page to purchase our products:
 
-http://store.freenove.com
+http://freenove.com/store
 
 Business customers please contact us through the following email address:
 
 [sale@freenove.com](mailto:sale@freenove.com)
+
+### About
+
+Freenove provides open source electronic products and services.
+
+Freenove is committed to helping customers learn programming and electronic knowledge, quickly implement product prototypes, realize their creativity and launch innovative products. Our services include:
+
+* Kits for learning programming and electronics
+* Kits compatible with Arduino®, Raspberry Pi®, micro:bit®, etc.
+* Kits for robots, smart cars, drones, etc.
+* Components, modules and tools
+* Design and customization
+
+To learn more about us or get our latest information, please visit our website:
+
+http://www.freenove.com
 
 ### Copyright
 
@@ -48,21 +66,12 @@ You can find a copy of the license in this repository.
 
 ![markdown](https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png)
 
-This means you can use them on your own derived works, in part or completely. But NOT for the purpose of commercial use.
+> It means you can use these files on your own derived works, in part or completely. But not for commercial use.
 
-Freenove brand and logo are copyright of Freenove Creative Technology Co., Ltd. Can't be used without formal permission.
+Freenove® brand and logo are trademarks of Freenove Creative Technology Co., Ltd. Must not be used without permission.
 
-### About
+Other registered trademarks and their owners appearing in this repository:
 
-Freenove provides open source electronic products and services.
-
-Freenove is committed to helping customers learn programming and electronic knowledge, quickly realize their creative ideas and product prototypes and launching innovative products. Our services include:
-
-* Kits of robots, smart cars and drones
-* Kits for learning Arduino, Raspberry Pi and micro:bit
-* Electronic components and modules, tools
-* Product customization service
-
-You can learn more about us or get our latest information through our website:
-
-http://www.freenove.com
+Arduino® is a trademark of Arduino LLC (https://www.arduino.cc/).  
+Raspberry Pi® is a trademark of Raspberry Pi Foundation (https://www.raspberrypi.org/).  
+micro:bit® is a trademark of Micro:bit Educational Foundation (https://www.microbit.org/).  
