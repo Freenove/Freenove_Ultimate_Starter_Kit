@@ -6,7 +6,7 @@ A kit with a control board (compatible with Arduino® IDE) for learning programm
 
 ### Download
 
-Click the green "Clone" button, then click "Download ZIP" button in the pop-up window.  
+Click the green "Code" button, then click "Download ZIP" button in the pop-up window.  
 Do NOT click the "Open in Desktop" button, it will lead you to install Github software.
 
 > If you meet any difficulties, please contact our technical team for help.
