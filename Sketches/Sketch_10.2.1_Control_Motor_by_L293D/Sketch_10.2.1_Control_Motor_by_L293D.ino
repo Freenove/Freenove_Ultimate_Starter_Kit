@@ -36,7 +36,7 @@ void loop() {
 
 void driveMotor(boolean dir, int spd) {
   // Control motor rotation direction
-  if (rotationDir) {
+  if (dir) {
     digitalWrite(in1Pin, HIGH);
     digitalWrite(in2Pin, LOW);
   }
@@ -47,4 +47,3 @@ void driveMotor(boolean dir, int spd) {
   // Control motor rotation speed
   analogWrite(enable1Pin, constrain(spd, 0, 255));
 }
-
