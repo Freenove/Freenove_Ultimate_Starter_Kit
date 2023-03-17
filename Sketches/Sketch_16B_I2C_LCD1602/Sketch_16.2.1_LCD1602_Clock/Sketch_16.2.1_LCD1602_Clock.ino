@@ -16,6 +16,9 @@ float tempVal;                  // define a variable to store temperature value
 int hour, minute, second;       // define variables stored record time
 
 void setup() {
+  if (!i2CAddrTest(0x27)) {
+    lcd = LiquidCrystal_I2C(0x3F, 16, 2);
+  }  
   lcd.init();                // initialize the lcd
   lcd.backlight();           // Turn on backlight
   startingAnimation();       // display a dynamic start screen
@@ -117,4 +120,13 @@ float getTemp() {
   float tempK = 1 / (log(Rt / 10) / 3950 + 1 / (273.15 + 25));
   // Calculate temperature (Celsius)
   return tempK - 273.15;
+}
+
+bool i2CAddrTest(uint8_t addr) {
+  Wire.begin();
+  Wire.beginTransmission(addr);
+  if (Wire.endTransmission() == 0) {
+    return true;
+  }
+  return false;
 }
