@@ -11,6 +11,9 @@
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 void setup() {
+  if (!i2CAddrTest(0x27)) {
+    lcd = LiquidCrystal_I2C(0x3F, 16, 2);
+  }
   lcd.init();                // initialize the lcd
   lcd.backlight();           // Turn on backlight
   lcd.print("hello, world!");// Print a message to the LCD
@@ -22,4 +25,13 @@ void loop() {
   // print the number of seconds since reset:
   lcd.print("Counter:");
   lcd.print(millis() / 1000);
+}
+
+bool i2CAddrTest(uint8_t addr) {
+  Wire.begin();
+  Wire.beginTransmission(addr);
+  if (Wire.endTransmission() == 0) {
+    return true;
+  }
+  return false;
 }
