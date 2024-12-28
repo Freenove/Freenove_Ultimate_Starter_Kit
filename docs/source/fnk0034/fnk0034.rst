@@ -1,0 +1,70 @@
+##############################################################################
+Freenove RFID Starter Kit V2.0
+##############################################################################
+
+.. toctree::
+   :titlesonly:
+   :caption: Welcome
+
+   codes/tutorial/Welcome.rst
+
+.. toctree::
+   :titlesonly: 
+   :caption: Preface
+
+   codes/tutorial/Preface.rst
+   
+.. toctree::
+   :titlesonly: 
+   :caption: First Use
+
+   codes/tutorial/First_use.rst
+
+.. toctree::
+   :numbered:
+   :titlesonly:
+   :caption: Projects
+    
+   codes/tutorial/1_LED_Blink
+   codes/tutorial/2_Two_LED_Blink
+   codes/tutorial/3_LED_Bar_Graph
+   codes/tutorial/4_LED_Blink_Smoothly
+   codes/tutorial/5_Control_LED.rst
+   codes/tutorial/6_Serial.rst
+   codes/tutorial/7_ADC.rst
+   codes/tutorial/8_RGB.rst
+   codes/tutorial/9_Buzzer.rst
+   codes/tutorial/10_Motor.rst
+   codes/tutorial/11_Servo.rst
+   codes/tutorial/12_Temperature_Sensor.rst
+   codes/tutorial/13_Joystick.rst
+   codes/tutorial/14_Ultrasonic_Ranging.rst
+   codes/tutorial/15_LED_Matrix.rst
+   codes/tutorial/16_LCD1602.rst
+   codes/tutorial/16A_LCD1602.rst
+   codes/tutorial/16B_LCD1602.rst
+   codes/tutorial/17_Digital_Display.rst
+   codes/tutorial/18_Stepper_Motor.rst
+   codes/tutorial/19_Matrix_Keypad.rst
+   codes/tutorial/20_Vibration_Switch.rst
+   codes/tutorial/21_Infrared_Remote.rst
+   codes/tutorial/22_Temperature&Humidity.rst
+   codes/tutorial/23_RFID.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: Other Components
+
+   codes/tutorial/Other_Components.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: What's Next?
+
+   codes/tutorial/WhatsNext.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: Appendix
+
+   codes/tutorial/Appendix.rst
