@@ -56,5 +56,3 @@ We can build a circuit conveniently by using this module. You only need to provi
 
 .. image:: ../_static/imgs/Other_Components/OC05.png
     :align: center
-
-

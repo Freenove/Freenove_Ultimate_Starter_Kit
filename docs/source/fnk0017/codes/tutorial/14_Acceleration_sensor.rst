@@ -209,13 +209,3 @@ Verify and upload the code, open the Serial Monitor, then you can see the value 
     :align: center
 
 Data sent by this code may be too much for the users not familiar with acceleration. You can choose to upload sketch 14.1.2, which only send three direction acceleration values to the serial port. And it will be relatively easy to observe change of numbers, when you rotate and move this module,
-
-
-
-
-
-
-
-
-
-

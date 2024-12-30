@@ -518,4 +518,3 @@ Then display the dynamic pattern of the numbers and letters. We have defined spa
     :lines: 64-75
 
 Verify and upload the code, then LED Matrix begins to display the static smile pattern. A few seconds later, LED Matrix will display the scrolling number 0-9 and the letter A-F.
-

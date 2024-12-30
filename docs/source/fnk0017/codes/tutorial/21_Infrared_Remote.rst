@@ -207,4 +207,3 @@ Each time when the command is received, the function above will be called in the
     :lines: 27-33
 
 Verify and upload the code, press the button '0', '1', '2', '3' on IR remote, and then you can see LED emit light with different brightness, and the buzzer will start beeping when it receives the signal.
-

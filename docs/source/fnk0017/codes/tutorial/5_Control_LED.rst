@@ -141,4 +141,3 @@ Now, write a code to detect the state of the push button switch. Every time you 
 Verify and upload the code, then each time you press the button, LED changes its state accordingly.
 
 When judging the push button switch state, if it is detected as "pressed down", wait for a certain time to detect again to eliminate the effect of bounce. When the state is stable, released push button switch, and wait for a certain time to eliminate the effect of bounce after it is released.
-

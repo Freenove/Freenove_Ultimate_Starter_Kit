@@ -289,5 +289,3 @@ Verify and upload the code. The LCD screen will display a scrolling string first
 
 .. image:: ../_static/imgs/16B_LCD1602/Chapter16B_08.png
     :align: center
-
-

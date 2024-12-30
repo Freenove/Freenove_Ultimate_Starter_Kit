@@ -151,4 +151,3 @@ In the code, we create three random numbers, and convert them into PWM duty cycl
     You can also use random (max) function, the function set the minimum value into 0 by default, and returns a random value in the range (0, Max-1).
 
 Verify and upload the code, and RGB LED starts flashing with different colors and brightness.
-

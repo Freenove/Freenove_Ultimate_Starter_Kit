@@ -15,9 +15,6 @@ sys.path.insert(0, pathlib.Path(__file__).parents[2].resolve().as_posix())
 os.system("rm -r freenove_17_Kit")
 os.system("git clone --depth 1 https://github.com/Freenove/Freenove_Ultimate_Starter_Kit freenove_17_Kit")
 
-os.system("rm -r freenove_34_Kit")
-os.system("git clone --depth 1 https://github.com/Freenove/Freenove_RFID_Starter_Kit_V2.0 freenove_34_Kit")
-
 def prepend_to_file(file_path, content):
     with open(file_path, "r+") as filce:
         original = file.read()

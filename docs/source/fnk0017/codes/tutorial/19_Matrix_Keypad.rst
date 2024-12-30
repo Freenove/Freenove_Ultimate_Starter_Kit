@@ -203,4 +203,3 @@ Compare with the preset password after 4 characters are input and adopt the corr
     :lines: 51-68
 
 Verify and upload the code, and press the keypad to input password with 4 characters. If the input is correct, the servo will move to a certain degree, and then return to the original position. If the input is error, an input error alarm will be generated.
-

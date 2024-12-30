@@ -32,7 +32,7 @@ function NaviResize() {
 	// console.log("wy-nav-side " + $('.wy-nav-side').width() + ' wy-nav-content: ' + $('.wy-nav-content').outerWidth(true) + " " + $('.wy-nav-side').offset().left + "");
 	var navWidth = $('.wy-nav-side').width() + $('.wy-nav-content').outerWidth(true) + $('.wy-nav-side').offset().left;
 	var navHeight = $(".extrabody-content").height();
-	var navItemWidth = navWidth / 8;
+	var navItemWidth = navWidth / 7;
 	navItemWidth = navItemWidth < 60 ? 60 : navItemWidth;
 	var navItemHeight = navItemWidth / 5;
 	console.log("navWidth " + navWidth + ' navItemWidth: ' + navItemWidth + " " + $('.wy-nav-side').offset().left + "");
