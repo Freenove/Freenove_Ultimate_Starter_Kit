@@ -16,7 +16,7 @@ os.system("rm -r freenove_17_Kit")
 os.system("git clone --depth 1 https://github.com/Freenove/Freenove_Ultimate_Starter_Kit freenove_17_Kit")
 
 def prepend_to_file(file_path, content):
-    with open(file_path, "r+") as filce:
+    with open(file_path, "r+") as file:
         original = file.read()
         file.seek(0)  # 将文件光标移动到开头
         file.write(content)
@@ -66,8 +66,8 @@ html_theme = "sphinx_rtd_theme"
 
 
 html_static_path = ["_static"]
-
-html_logo = "fnk0017/codes/_static/imgs/freenove-logo.png"
+html_favicon = "_static/images/freenove_logo_tag_icon.png"
+html_logo = "_static/images/freenove_logo_home_button.png"
 html_theme_options = {
     "collapse_navigation": False,
     "logo_only": True,
@@ -78,6 +78,11 @@ html_theme_options = {
     # 'style_nav_header_background': '#005500',
 }
 
+# multi-language docs
+language = 'en'
+locale_dirs = ['../locales/']   # path is example but recommended.
+gettext_compact = False  # optional.
+gettext_uuid = True  # optional.
 
 rst_prolog = """
 .. include:: <s5defs.txt>
@@ -98,18 +103,25 @@ prolog = "\n".join(
 print(rst_prolog)
 del frozen_locals
 
-
 html_css_files = [
-    "css/color-roles.css",
+    'https://cdn.jsdelivr.net/gh/Freenove/freenove-docs/docs/source/_static/css/color-roles.css',
+    'https://cdn.jsdelivr.net/gh/Freenove/freenove-docs/docs/source/_static/css/custom.css',
+    'https://cdn.jsdelivr.net/gh/Freenove/freenove-docs/docs/source/_static/css/navigationStyle.css',
+]
+html_js_files = [
+    'https://cdn.jsdelivr.net/gh/Freenove/freenove-docs/docs/source/_static/js/custom.js',
+    # 'js/custom.js'
 ]
 
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "/")
+
 intersphinx_mapping = {
-    "rpi-starter-kit": ("https://freenove-docs2.readthedocs.io/projects/fnk0066/en/latest/", None),
+    # "rpi-starter-kit": ("https://freenove-docs2.readthedocs.io/projects/fnk0066/en/latest/", None),
 }
 intersphinx_disabled_reftypes = ["*"]
 
 
 def setup(app):
     pass
-    app.add_css_file("css/custom.css")
+    # app.add_css_file("css/custom.css")
 
