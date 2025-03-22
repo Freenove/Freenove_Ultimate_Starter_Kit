@@ -172,7 +172,7 @@ Click “Add .ZIP Library...” and then find RFID.zip in libraries folder (this
 
 This sketch will read the unique ID number (UID) of the card, recognize the type of the card and display the information through serial port.
 
-.. literalinclude:: ../../../freenove_34_Kit/Sketches/Sketch_23.1.1_RFID_Read_UID/Sketch_23.1.1_RFID_Read_UID.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_23.1.1_RFID_Read_UID/Sketch_23.1.1_RFID_Read_UID.ino
     :linenos: 
     :language: c
 
@@ -244,7 +244,7 @@ Sketch 23.2.1
 
 In this sketch, first read the data in particular location of the S50 M1 Card, then write data in that position and read it out. Display these data through the serial port.
 
-.. literalinclude:: ../../../freenove_34_Kit/Sketches/Sketch_23.2.1_RFID_Read_And_Write/Sketch_23.2.1_RFID_Read_And_Write.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_23.2.1_RFID_Read_And_Write/Sketch_23.2.1_RFID_Read_And_Write.ino
     :linenos: 
     :language: c
 

@@ -101,7 +101,7 @@ Sketch 14.1.1
 
 First, we use the HC-SR04 communication protocol to operate the module, get the range of time, and calculate the distance.
 
-.. literalinclude:: ../../../freenove_34_Kit/Sketches/Sketch_14.1.1_Ultrasonic_Ranging/Sketch_14.1.1_Ultrasonic_Ranging.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_14.1.1_Ultrasonic_Ranging/Sketch_14.1.1_Ultrasonic_Ranging.ino
     :linenos: 
     :language: c
 
@@ -156,7 +156,7 @@ Before writing code, we need to import the library needed.
 
 Click “Add .ZIP Library...” and then find NewPing.zip in libraries folder (this folder is in the folder unzipped form the ZIP file we provided). This library makes it easy to obtain the measuring distance.
 
-.. literalinclude:: ../../../freenove_34_Kit/Sketches/Sketch_14.1.2_Ultrasonic_Ranging/Sketch_14.1.2_Ultrasonic_Ranging.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_14.1.2_Ultrasonic_Ranging/Sketch_14.1.2_Ultrasonic_Ranging.ino
     :linenos: 
     :language: c
 
