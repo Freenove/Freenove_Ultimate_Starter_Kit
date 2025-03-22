@@ -95,7 +95,7 @@ Sketch 12.1.1
 
 Now, write the code to detect the voltage value of thermistor, calculate the temperature value, and send it to Serial Monitor.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_12.1.1_Detect_the_temperature/Sketch_12.1.1_Detect_the_temperature.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_12.1.1_Detect_the_temperature/Sketch_12.1.1_Detect_the_temperature.ino
     :linenos: 
     :language: c
 

@@ -221,7 +221,7 @@ Sketch 2.1.1
 
 At first, use sketch without function to make two LEDs blink alternatively.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_2.1.1_Two_LEDs_Blink/Sketch_2.1.1_Two_LEDs_Blink.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_2.1.1_Two_LEDs_Blink/Sketch_2.1.1_Two_LEDs_Blink.ino
     :linenos: 
     :language: c
 
@@ -267,13 +267,13 @@ In the last sketch, we can see that the following two sections of the code are s
 
 Now, we will use a function to improve the above code.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_2.1.2_Two_LEDs_Blink/Sketch_2.1.2_Two_LEDs_Blink.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_2.1.2_Two_LEDs_Blink/Sketch_2.1.2_Two_LEDs_Blink.ino
     :linenos: 
     :language: c
 
 In the sketch above, we integrate the 2 LED statements into one function, void setLed(int led1, int led2), and control two LEDs through the parameters led1 and led2.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_2.1.2_Two_LEDs_Blink/Sketch_2.1.2_Two_LEDs_Blink.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_2.1.2_Two_LEDs_Blink/Sketch_2.1.2_Two_LEDs_Blink.ino
     :linenos: 
     :language: c
     :lines: 24-28
@@ -313,7 +313,7 @@ In the previous section of code, we used a function that integrates two similar 
 
 Now, we'll use conditional statement to improve the code above.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_2.1.3_Two_LEDs_Blink/Sketch_2.1.3_Two_LEDs_Blink.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_2.1.3_Two_LEDs_Blink/Sketch_2.1.3_Two_LEDs_Blink.ino
     :linenos: 
     :language: c
 

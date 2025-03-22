@@ -135,7 +135,7 @@ Sketch 4.1.1
 
 Now let us use sketch to make 4 LEDs emit different brightness of light. We will transmit signal to make the 4 ports connected to LEDs output the PWM waves with duty cycle of 2%, 10%, 50%, and 100% to let the LEDs emit different brightness of the light.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_4.1.1_LEDs_Emit_Different_Brightness/Sketch_4.1.1_LEDs_Emit_Different_Brightness.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_4.1.1_LEDs_Emit_Different_Brightness/Sketch_4.1.1_LEDs_Emit_Different_Brightness.ino
     :linenos: 
     :language: c
 
@@ -216,7 +216,7 @@ Sketch 4.2.1
 
 Now complete the sketch to make brightness of LED change from dark to bright, and then from bright to dark. That is to make the duty cycle of the PWM wave change from 0%-100%, and then from 100%-0% cyclically.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_4.2.1_LED_Blink_Smoothly/Sketch_4.2.1_LED_Blink_Smoothly.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_4.2.1_LED_Blink_Smoothly/Sketch_4.2.1_LED_Blink_Smoothly.ino
     :linenos: 
     :language: c
 

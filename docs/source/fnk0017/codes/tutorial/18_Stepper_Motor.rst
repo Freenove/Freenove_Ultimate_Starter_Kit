@@ -95,7 +95,7 @@ Sketch 18.1.1
 
 Now write code to control the stepper motor through ULN2003 stepper motor driver.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_18.1.1_Drive_Stepper_Motor/Sketch_18.1.1_Drive_Stepper_Motor.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_18.1.1_Drive_Stepper_Motor/Sketch_18.1.1_Drive_Stepper_Motor.ino
     :linenos: 
     :language: c
 
@@ -109,7 +109,7 @@ In the code, we define a function to make the motor rotate for a step. And the p
 
 A variable is defined in this function and we use four low bits to show the state of 4 ports. These ports are connected in order, so the variable can be assigned to 0x01 and we can use the shifting method to change the bit of the connected port.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_18.1.1_Drive_Stepper_Motor/Sketch_18.1.1_Drive_Stepper_Motor.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_18.1.1_Drive_Stepper_Motor/Sketch_18.1.1_Drive_Stepper_Motor.ino
     :linenos: 
     :language: c
     :lines: 37-45
@@ -125,7 +125,7 @@ Then change the state of the port according to the above variables.
 
 We define a function to control the step motor to rotate several steps and control the direction and speed through parameters. Call it directly in the loop () function.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_18.1.1_Drive_Stepper_Motor/Sketch_18.1.1_Drive_Stepper_Motor.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_18.1.1_Drive_Stepper_Motor/Sketch_18.1.1_Drive_Stepper_Motor.ino
     :linenos: 
     :language: c
     :lines: 36-50

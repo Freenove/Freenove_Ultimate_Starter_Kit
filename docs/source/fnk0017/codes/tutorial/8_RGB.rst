@@ -79,7 +79,7 @@ Sketch 8.1.1
 
 Now, write code to detect the voltages of these three rotary potentiometers, and convert them into PWM duty cycle to control 3 LEDs inside the RGB LED.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_8.1.1_Control_RGB_LED_through_Potentiometer/Sketch_8.1.1_Control_RGB_LED_through_Potentiometer.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_8.1.1_Control_RGB_LED_through_Potentiometer/Sketch_8.1.1_Control_RGB_LED_through_Potentiometer.ino
     :linenos: 
     :language: c
 
@@ -138,7 +138,7 @@ Sketch 8.2.1
 
 Now, write code to generate three random numbers, and convert them into PWM duty cycle to control the three LEDs of RGB LED.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_8.2.1_Colorful_LED/Sketch_8.2.1_Colorful_LED.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_8.2.1_Colorful_LED/Sketch_8.2.1_Colorful_LED.ino
     :linenos: 
     :language: c
 

@@ -261,7 +261,7 @@ Sketch 15.1.1
 
 Now write code to control the 8 LEDs of LED bar graph through 74HC595.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_15.1.1_74HC595/Sketch_15.1.1_74HC595.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_15.1.1_74HC595/Sketch_15.1.1_74HC595.ino
     :linenos: 
     :language: c
 
@@ -273,7 +273,7 @@ In the code, we configure three pins to control the 74HC595. And define a one-by
 
 In each loop, the x is sent to 74HC595. The sending process is as follows:
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_15.1.1_74HC595/Sketch_15.1.1_74HC595.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_15.1.1_74HC595/Sketch_15.1.1_74HC595.ino
     :linenos: 
     :language: c
     :lines: 25-30
@@ -432,7 +432,7 @@ Sketch 15.2.1
 
 Now write the code to drive LED dot matrix to display static and dynamic images, in fact, the dynamic image is formed by continuous static image.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_15.2.1_LED_Matrix/Sketch_15.2.1_LED_Matrix.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_15.2.1_LED_Matrix/Sketch_15.2.1_LED_Matrix.ino
     :linenos: 
     :language: c
 
@@ -452,7 +452,7 @@ Use another array to define 8 column data of a smiling face.
     
 Use another array to define some numbers and letters, and every eight elements of the array represent a dot matrix pattern data of a number or a letter.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_15.2.1_LED_Matrix/Sketch_15.2.1_LED_Matrix.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_15.2.1_LED_Matrix/Sketch_15.2.1_LED_Matrix.ino
     :linenos: 
     :language: c
     :lines: 19-37
@@ -463,14 +463,14 @@ Use another array to define some numbers and letters, and every eight elements o
 
 Define two functions, one of them uses control board port to select the column.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_15.2.1_LED_Matrix/Sketch_15.2.1_LED_Matrix.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_15.2.1_LED_Matrix/Sketch_15.2.1_LED_Matrix.ino
     :linenos: 
     :language: c
     :lines: 87-94
 
 Another one uses 74HC595 to write data of the row.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_15.2.1_LED_Matrix/Sketch_15.2.1_LED_Matrix.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_15.2.1_LED_Matrix/Sketch_15.2.1_LED_Matrix.ino
     :linenos: 
     :language: c
     :lines: 78-85
@@ -505,14 +505,14 @@ Another one uses 74HC595 to write data of the row.
 
 In the loop () function, firstly, show the static smile pattern. Select one of the 8 columns circularly in turn to display each the result. Repeat 500 times the process, then we can see a static smile pattern.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_15.2.1_LED_Matrix/Sketch_15.2.1_LED_Matrix.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_15.2.1_LED_Matrix/Sketch_15.2.1_LED_Matrix.ino
     :linenos: 
     :language: c
     :lines: 53-62
 
 Then display the dynamic pattern of the numbers and letters. We have defined space, 0-9, A-F, total of 16 characters (136 columns) in an array, among which 8 adjacent rows of data form one frame. Shift one column once. There are for 128 frames of image from the first frame (1-8) to the last frame (128-136 column). Each frame image is displayed 10 times, then display the next frame. Repeat the process above, then we can see the pattern of scrolling numbers and letters.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_15.2.1_LED_Matrix/Sketch_15.2.1_LED_Matrix.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_15.2.1_LED_Matrix/Sketch_15.2.1_LED_Matrix.ino
     :linenos: 
     :language: c
     :lines: 64-75

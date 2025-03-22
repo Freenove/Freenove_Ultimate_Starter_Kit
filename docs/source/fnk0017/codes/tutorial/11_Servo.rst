@@ -94,7 +94,7 @@ Sketch 11.1.1
 
 Now, write the code to control servo, making it sweep in the motion range continuously.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_11.1.1_Servo_Sweep/Sketch_11.1.1_Servo_Sweep.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_11.1.1_Servo_Sweep/Sketch_11.1.1_Servo_Sweep.ino
     :linenos: 
     :language: c
 
@@ -194,7 +194,7 @@ Sketch 11.2.1
 
 Now, write the code to detect the voltage of rotary potentiometer, and control servo to rotate to a different angle according to that. 
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_11.2.1_Control_Servo_by_Potentiometer/Sketch_11.2.1_Control_Servo_by_Potentiometer.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_11.2.1_Control_Servo_by_Potentiometer/Sketch_11.2.1_Control_Servo_by_Potentiometer.ino
     :linenos: 
     :language: c
 

@@ -216,7 +216,7 @@ Sketch 3.1.1
 
 First, write a sketch to achieve the LED light water.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_3.1.1_LED_bar_graph_Display/Sketch_3.1.1_LED_bar_graph_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_3.1.1_LED_bar_graph_Display/Sketch_3.1.1_LED_bar_graph_Display.ino
     :linenos: 
     :language: c
 
@@ -246,21 +246,21 @@ Then we define an array used to store the number of pins connected to LED bar gr
 
 Use loop statement to set the pins to output mode in function setup().
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_3.1.1_LED_bar_graph_Display/Sketch_3.1.1_LED_bar_graph_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_3.1.1_LED_bar_graph_Display/Sketch_3.1.1_LED_bar_graph_Display.ino
     :linenos: 
     :language: c
     :lines: 14-19
 
 Define a function to turn ON a certain LED on the LED bar graph and turn OFF the other LEDs.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_3.1.1_LED_bar_graph_Display/Sketch_3.1.1_LED_bar_graph_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_3.1.1_LED_bar_graph_Display/Sketch_3.1.1_LED_bar_graph_Display.ino
     :linenos: 
     :language: c
     :lines: 28-37
 
 Finally, when the above function is called cyclically, there will be a formation of flowing water lamp effect in LED bar graph.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_3.1.1_LED_bar_graph_Display/Sketch_3.1.1_LED_bar_graph_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_3.1.1_LED_bar_graph_Display/Sketch_3.1.1_LED_bar_graph_Display.ino
     :linenos: 
     :language: c
     :lines: 21-26
@@ -275,7 +275,7 @@ Sketch 3.1.2
 
 Then modify the code to create a reciprocating LED light water.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_3.1.2_LED_bar_graph_Display/Sketch_3.1.2_LED_bar_graph_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_3.1.2_LED_bar_graph_Display/Sketch_3.1.2_LED_bar_graph_Display.ino
     :linenos: 
     :language: c
 

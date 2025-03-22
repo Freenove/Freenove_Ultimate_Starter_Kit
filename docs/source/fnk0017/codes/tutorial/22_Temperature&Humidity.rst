@@ -76,7 +76,7 @@ Click “Add .ZIP Library...” and then find DHT.zip in libraries folder (this 
 
 Now, write code to get the temperature and humidity data measured by DHT11, and sent it to the serial port.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_22.1.1_Temperature_and_Humidity_Sensor/Sketch_22.1.1_Temperature_and_Humidity_Sensor.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_22.1.1_Temperature_and_Humidity_Sensor/Sketch_22.1.1_Temperature_and_Humidity_Sensor.ino
     :linenos: 
     :language: c
 

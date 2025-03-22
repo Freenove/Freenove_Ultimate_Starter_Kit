@@ -111,7 +111,7 @@ Sketch 20.1.1
 
 Now write code to detect whether the vibration switch is conducted and whether it makes a buzzer sound when conducted.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_20.1.1_Detect_Vibration/Sketch_20.1.1_Detect_Vibration.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_20.1.1_Detect_Vibration/Sketch_20.1.1_Detect_Vibration.ino
     :linenos: 
     :language: c
 
@@ -145,7 +145,7 @@ The following is the interrupt function, and it will be executed when the interr
 
 Interrupt function should keep short, so we use a variable "isVibrate" to record whether the interrupt is triggered, and dispose it in the loop() function. And the buzzer will be connected if the interrupt is triggered.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_20.1.1_Detect_Vibration/Sketch_20.1.1_Detect_Vibration.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_20.1.1_Detect_Vibration/Sketch_20.1.1_Detect_Vibration.ino
     :linenos: 
     :language: c
     :lines: 22-28

@@ -413,7 +413,7 @@ In order to make the LED blink, we need to make pin 13 of the control board outp
 
 We highly recommend you type the code manually instead of copying and pasting, so that you can develop your coding skills and get more knowledge.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_1.2.1_Control_LED_by_Control_Board/Sketch_1.2.1_Control_LED_by_Control_Board.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_1.2.1_Control_LED_by_Control_Board/Sketch_1.2.1_Control_LED_by_Control_Board.ino
     :linenos: 
     :language: c
 

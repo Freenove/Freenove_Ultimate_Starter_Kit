@@ -87,7 +87,7 @@ Sketch 23.1.1
 
 Now, write code to get the results measured by the HC-SR501 infrared motion sensor, and display that through LED.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_23.1.1_Infrared_Motion_Sensor/Sketch_23.1.1_Infrared_Motion_Sensor.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_23.1.1_Infrared_Motion_Sensor/Sketch_23.1.1_Infrared_Motion_Sensor.ino
     :linenos: 
     :language: c
 

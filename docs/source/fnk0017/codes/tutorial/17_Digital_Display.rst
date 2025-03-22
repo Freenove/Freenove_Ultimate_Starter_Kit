@@ -75,27 +75,27 @@ Sketch 17.1.1
 
 Now write code to control the 1-digit 7-segment display through 74HC595.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_17.1.1_1_Digit_7_Segment_Display/Sketch_17.1.1_1_Digit_7_Segment_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_17.1.1_1_Digit_7_Segment_Display/Sketch_17.1.1_1_Digit_7_Segment_Display.ino
     :linenos: 
     :language: c
 
 We define an array to save and display the encoding of character 0-F in this code.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_17.1.1_1_Digit_7_Segment_Display/Sketch_17.1.1_1_Digit_7_Segment_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_17.1.1_1_Digit_7_Segment_Display/Sketch_17.1.1_1_Digit_7_Segment_Display.ino
     :linenos: 
     :language: c
     :lines: 14
 
 Initialize the pin connected to 74HC595 in setup() function.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_17.1.1_1_Digit_7_Segment_Display/Sketch_17.1.1_1_Digit_7_Segment_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_17.1.1_1_Digit_7_Segment_Display/Sketch_17.1.1_1_Digit_7_Segment_Display.ino
     :linenos: 
     :language: c
     :lines: 16-21
 
 Then in loop() function, send the encoding of 0-F to 74HC595 circularly.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_17.1.1_1_Digit_7_Segment_Display/Sketch_17.1.1_1_Digit_7_Segment_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_17.1.1_1_Digit_7_Segment_Display/Sketch_17.1.1_1_Digit_7_Segment_Display.ino
     :linenos: 
     :language: c
     :lines: 25-33
@@ -169,27 +169,27 @@ Sketch 17.2.1
 
 Now, write code to control 4-digit 7-segment display to display 4 numbers.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_17.2.1_4_Digit_7-Segment_Display/Sketch_17.2.1_4_Digit_7-Segment_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_17.2.1_4_Digit_7-Segment_Display/Sketch_17.2.1_4_Digit_7-Segment_Display.ino
     :linenos: 
     :language: c
 
 Besides the similarity with the previous section, the difference is that this code is to output content to the four 7-segment display continuously. Write a function to select a common port.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_17.2.1_4_Digit_7-Segment_Display/Sketch_17.2.1_4_Digit_7-Segment_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_17.2.1_4_Digit_7-Segment_Display/Sketch_17.2.1_4_Digit_7-Segment_Display.ino
     :linenos: 
     :language: c
     :lines: 39-46
 
 Write a function to send data to 74HC595.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_17.2.1_4_Digit_7-Segment_Display/Sketch_17.2.1_4_Digit_7-Segment_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_17.2.1_4_Digit_7-Segment_Display/Sketch_17.2.1_4_Digit_7-Segment_Display.ino
     :linenos: 
     :language: c
     :lines: 48-55
 
 First select a common port and then output the content, which will be displayed by the 7-segment display connected to common port, to 74HC595 when operating. Clear the display content after a period of time to avoid ghosting phenomenon.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_17.2.1_4_Digit_7-Segment_Display/Sketch_17.2.1_4_Digit_7-Segment_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_17.2.1_4_Digit_7-Segment_Display/Sketch_17.2.1_4_Digit_7-Segment_Display.ino
     :linenos: 
     :language: c
     :lines: 29-35
@@ -212,7 +212,7 @@ Sketch 17.2.2
 
 Now write code to control 4-digit 7-segment display to display dynamic numbers.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_17.2.2_4_Digit_7-Segment_Display/Sketch_17.2.2_4_Digit_7-Segment_Display.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_17.2.2_4_Digit_7-Segment_Display/Sketch_17.2.2_4_Digit_7-Segment_Display.ino
     :linenos: 
     :language: c
 

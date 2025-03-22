@@ -127,7 +127,7 @@ Sketch 16.1.1
 
 Now write code to make LCD1602 display a string and changing numbers.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602.ino
     :linenos: 
     :language: c
 
@@ -157,7 +157,7 @@ And then print a string:
 
 Print a changing number in the loop () function:
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602.ino
     :linenos: 
     :language: c
     :lines: 21-28
@@ -267,7 +267,7 @@ Click “Add .ZIP Library...” and then find FlexiTimer2.zip in libraries folde
 
 Now write code to make LCD1602 display the time and temperature, and the time can be modified through the serial port.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
     :linenos: 
     :language: c
 
@@ -308,28 +308,28 @@ In the loop () function, the information on the LCD display will be refreshed at
 
 In the loop function, we need to control the second, minute, hour. When the second increases to 60, the minute adds 1, and the second is reset to zero; when the minute increases to 60, the hour adds 1, and the minute is reset to zero; when the hour increases to 24, reset it to zero.  
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
     :linenos: 
     :language: c
     :lines: 32-42
 
 We define a function lcdDisplay () to refresh the information on LCD display. In this function, use two bit to display the hour, minute, second on the LCD. For example, hour/ 10 is the unit, hour% 10 is the tens.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
     :linenos: 
     :language: c
     :lines: 96-111
 
 Serial port interrupt function is used to receive the data sent by computer to adjust the time, and return the data for confirmation.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
     :linenos: 
     :language: c
     :lines: 65-93
 
 We also define a function that displays a scrolling string when the control board has been just started.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16A_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
     :linenos: 
     :language: c
     :lines: 47-57

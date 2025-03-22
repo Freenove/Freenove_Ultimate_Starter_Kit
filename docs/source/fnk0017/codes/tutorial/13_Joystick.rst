@@ -69,7 +69,7 @@ Sketch 13.1.1
 
 Now write the sketch to detect the voltage value of these two rotary potentiometers and the state of the button in vertical direction, then sent the data to Serial Monitor window.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_13.1.1_Joystick/Sketch_13.1.1_Joystick.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_13.1.1_Joystick/Sketch_13.1.1_Joystick.ino
     :linenos: 
     :language: c
 

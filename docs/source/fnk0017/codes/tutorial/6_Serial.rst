@@ -125,7 +125,7 @@ Sketch 6.1.1
 
 Now, write code to send some texts to the Serial Monitor window
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_6.1.1_Send_data_through_Serial/Sketch_6.1.1_Send_data_through_Serial.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_6.1.1_Send_data_through_Serial/Sketch_6.1.1_Send_data_through_Serial.ino
     :linenos: 
     :language: c
 
@@ -195,7 +195,7 @@ Sketch 6.2.1
 
 Now, write code to receive the characters from Serial Monitor window, and send it back.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_6.2.1_Receive_Data_through_Serial_Port/Sketch_6.2.1_Receive_Data_through_Serial_Port.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_6.2.1_Receive_Data_through_Serial_Port/Sketch_6.2.1_Receive_Data_through_Serial_Port.ino
     :linenos: 
     :language: c
 
@@ -227,7 +227,7 @@ Sketch 6.2.2
 
 When serial port receives data, it can trigger an interrupt event, and enters into the interrupt handling function. Now we use an interrupt to receive information from Serial Monitor window, and send it back. To illustrate that the interrupt does not influence the program's running, we will constantly send changing number in loop () function.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_6.2.2_Receive_Data_through_Serial_Port/Sketch_6.2.2_Receive_Data_through_Serial_Port.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_6.2.2_Receive_Data_through_Serial_Port/Sketch_6.2.2_Receive_Data_through_Serial_Port.ino
     :linenos: 
     :language: c
 
@@ -293,7 +293,7 @@ Sketch 6.3.1
 
 Code is basically the same with Sketch 6.2.1. But after receiving the data, control board will convert it into PWM duty cycle of output port.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_6.3.1_Application_of_Serial/Sketch_6.3.1_Application_of_Serial.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_6.3.1_Application_of_Serial/Sketch_6.3.1_Application_of_Serial.ino
     :linenos: 
     :language: c
 

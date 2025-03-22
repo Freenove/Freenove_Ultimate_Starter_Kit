@@ -78,7 +78,7 @@ Sketch
 
 Now, write code to detect the state of push button, and show it through LED.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_5.1.1_Control_LED_Through_Push_Button/Sketch_5.1.1_Control_LED_Through_Push_Button.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_5.1.1_Control_LED_Through_Push_Button/Sketch_5.1.1_Control_LED_Through_Push_Button.ino
     :linenos: 
     :language: c
 
@@ -134,7 +134,7 @@ Sketch 5.2.1
 
 Now, write a code to detect the state of the push button switch. Every time you pressed it, the state of LED will be changed. 
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_5.2.1_Change_LED_State_by_Push_Button/Sketch_5.2.1_Change_LED_State_by_Push_Button.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_5.2.1_Change_LED_State_by_Push_Button/Sketch_5.2.1_Change_LED_State_by_Push_Button.ino
     :linenos: 
     :language: c
 

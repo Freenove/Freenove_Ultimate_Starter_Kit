@@ -105,7 +105,7 @@ Sketch 7.1.1
 
 Now, write code to detect the voltage of rotary potentiometer, and send the data to Serial Monitor window of Arduino IDE through serial port.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_7.1.1_ADC/Sketch_7.1.1_ADC.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_7.1.1_ADC/Sketch_7.1.1_ADC.ino
     :linenos: 
     :language: c
 
@@ -154,7 +154,7 @@ Sketch 7.2.1
 
 Now, write the code to detect the voltage of rotary potentiometer, and control LED to emit light with different brightness according to that.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_7.2.1_Control_LED_by_Potentiometer/Sketch_7.2.1_Control_LED_by_Potentiometer.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_7.2.1_Control_LED_by_Potentiometer/Sketch_7.2.1_Control_LED_by_Potentiometer.ino
     :linenos: 
     :language: c
 
@@ -223,7 +223,7 @@ Sketch 7.3.1
 
 Now, write code to detect the voltage of rotary potentiometer, and control LED to emit light with different brightness according to that.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_7.3.1_Control_LED_through_Photoresistor/Sketch_7.3.1_Control_LED_through_Photoresistor.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_7.3.1_Control_LED_through_Photoresistor/Sketch_7.3.1_Control_LED_through_Photoresistor.ino
     :linenos: 
     :language: c
 

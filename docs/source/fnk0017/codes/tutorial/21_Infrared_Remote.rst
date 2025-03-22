@@ -86,7 +86,7 @@ Click “Add .ZIP Library...” and then find IRremote.zip in libraries folder (
 
 Now, write code to get the command sent from IR remote control, and send it to the serial port.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_21.1.1_Infrared_Remote_Control/Sketch_21.1.1_Infrared_Remote_Control.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_21.1.1_Infrared_Remote_Control/Sketch_21.1.1_Infrared_Remote_Control.ino
     :linenos: 
     :language: c
 
@@ -110,7 +110,7 @@ Start the signal receiving in the setup() function
 
 In the loop() function, decode the received signal, and sent it to computer through the serial port.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_21.1.1_Infrared_Remote_Control/Sketch_21.1.1_Infrared_Remote_Control.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_21.1.1_Infrared_Remote_Control/Sketch_21.1.1_Infrared_Remote_Control.ino
     :linenos: 
     :language: c
     :lines: 22-28
@@ -186,7 +186,7 @@ Sketch 21.2.1
 
 Now, write code to get the commands sent from IR remote, and control the LED light on/off or emit light with different brightness, and control the buzzer to generate a confirmation sound when it receives the command.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_21.2.1_Control_LED_through_Infrared_Remote/Sketch_21.2.1_Control_LED_through_Infrared_Remote.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_21.2.1_Control_LED_through_Infrared_Remote/Sketch_21.2.1_Control_LED_through_Infrared_Remote.ino
     :linenos: 
     :language: c
 
@@ -194,14 +194,14 @@ Based on the last section, we add some new functions: control LED and buzzer.
 
 We define a function that is used to handle the received commands. When this function is executed, make the buzzer beep first, then output PWM signals with different duty cycle to the pin connected to LED according to the receiving commands 
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_21.2.1_Control_LED_through_Infrared_Remote/Sketch_21.2.1_Control_LED_through_Infrared_Remote.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_21.2.1_Control_LED_through_Infrared_Remote/Sketch_21.2.1_Control_LED_through_Infrared_Remote.ino
     :linenos: 
     :language: c
     :lines: 35-55
 
 Each time when the command is received, the function above will be called in the loop() function.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_21.2.1_Control_LED_through_Infrared_Remote/Sketch_21.2.1_Control_LED_through_Infrared_Remote.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_21.2.1_Control_LED_through_Infrared_Remote/Sketch_21.2.1_Control_LED_through_Infrared_Remote.ino
     :linenos: 
     :language: c
     :lines: 27-33

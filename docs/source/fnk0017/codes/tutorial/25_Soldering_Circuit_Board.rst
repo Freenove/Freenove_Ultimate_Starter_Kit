@@ -177,7 +177,7 @@ Sketch 25.2.1
 
 Now, let's write code to make a dropping-rain effect on our board.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_25.2.1_Flowing_Water_Light/Sketch_25.2.1_Flowing_Water_Light.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_25.2.1_Flowing_Water_Light/Sketch_25.2.1_Flowing_Water_Light.ino
     :linenos: 
     :language: c
 
@@ -208,7 +208,7 @@ Reduce the auto-increment speed of the variable offset with the following code.
 
 We use software to output PWM waveform. Define the cycle of PWM to be 64 cycles and determine the pulse width of LED (that is brightness) according to the selected eight numbers of the array in each cycle.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_25.2.1_Flowing_Water_Light/Sketch_25.2.1_Flowing_Water_Light.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_25.2.1_Flowing_Water_Light/Sketch_25.2.1_Flowing_Water_Light.ino
     :linenos: 
     :language: c
     :lines: 30-41

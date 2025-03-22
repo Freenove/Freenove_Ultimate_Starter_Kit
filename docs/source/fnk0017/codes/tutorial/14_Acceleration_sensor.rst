@@ -139,13 +139,13 @@ When these libraries are added, you can locate them in the libraries under Sketc
 
 Now write sketch to communicate with the MPU6050 module and send the captured data to Serial Monitor window.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino
     :linenos: 
     :language: c
 
 We reference the libraries designed for the I2C bus and the MPU6050 to manipulate the MPU6050.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino
     :linenos: 
     :language: c
     :lines: 10-12
@@ -164,21 +164,21 @@ First initialize the I2C bus, and then initialize the MPU6050.
 
 Then do a test to confirm whether MPU6050 is connected to the I2C bus and print the related information in serial port.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino
     :linenos: 
     :language: c
     :lines: 27-33
 
 If you want to make the results more close to the actual situation, you can adjust the offset of MPU6050 before using it. You can refer to the MPU6050 library files for more details about setting offset. If there are no strict requirements, this step can also be ignored.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino
     :linenos: 
     :language: c
     :lines: 34-37
 
 We can also read out the value of the offset which is already set through following code:
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino
     :linenos: 
     :language: c
     :lines: 38-41

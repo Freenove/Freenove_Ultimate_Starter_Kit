@@ -114,7 +114,7 @@ Sketch 9.1.1
 
 Now, write code to detect the state of push button, and drive active buzzer to make a sound when it is pressed.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_9.1.1_Active_Buzzer/Sketch_9.1.1_Active_Buzzer.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_9.1.1_Active_Buzzer/Sketch_9.1.1_Active_Buzzer.ino
     :linenos: 
     :language: c
 
@@ -185,13 +185,13 @@ Now, write code to drive a passive buzzer to make a warning sound. The frequency
 
 Output PWM waves with different frequency to the port, which is connected to the transistor, to drive buzzer to make a sound with different frequency.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_9.2.1_Passive_Buzzer/Sketch_9.2.1_Passive_Buzzer.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_9.2.1_Passive_Buzzer/Sketch_9.2.1_Passive_Buzzer.ino
     :linenos: 
     :language: c
 
 In the code, use one loop to control the sound frequency, varying according to sine curve in the range of 2000±500.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_9.2.1_Passive_Buzzer/Sketch_9.2.1_Passive_Buzzer.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_9.2.1_Passive_Buzzer/Sketch_9.2.1_Passive_Buzzer.ino
     :linenos: 
     :language: c
     :lines: 18-23

@@ -101,13 +101,13 @@ Sketch 24.1.1
 
 First, we use the HC-SR04 communication protocol to operate the module, get the range of time, and calculate the distance.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_24.1.1_Ultrasonic_Ranging/Sketch_24.1.1_Ultrasonic_Ranging.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_24.1.1_Ultrasonic_Ranging/Sketch_24.1.1_Ultrasonic_Ranging.ino
     :linenos: 
     :language: c
 
 First, define the pins and the maximum measurement distance.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_24.1.1_Ultrasonic_Ranging/Sketch_24.1.1_Ultrasonic_Ranging.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_24.1.1_Ultrasonic_Ranging/Sketch_24.1.1_Ultrasonic_Ranging.ino
     :linenos: 
     :language: c
     :lines: 9-11
@@ -120,7 +120,7 @@ If the module does not return high level, we cannot wait for this forever. So we
 
 Then, in the setup (), set the pin to input or output, and set the serial port. In the loop(), we continue to use serial to print the value of subfunction getSonar (), which is used to return the measured distance of the HC_SR04. Make trigPin output a high level lasting for at least 10μs, according to the communication protocol.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_24.1.1_Ultrasonic_Ranging/Sketch_24.1.1_Ultrasonic_Ranging.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_24.1.1_Ultrasonic_Ranging/Sketch_24.1.1_Ultrasonic_Ranging.ino
     :linenos: 
     :language: c
     :lines: 32-34
@@ -156,13 +156,13 @@ Before writing code, we need to import the library needed.
 
 Click “Add .ZIP Library...” and then find NewPing.zip in libraries folder (this folder is in the folder unzipped form the ZIP file we provided). This library makes it easy to obtain the measuring distance.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_24.1.2_Ultrasonic_Ranging/Sketch_24.1.2_Ultrasonic_Ranging.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_24.1.2_Ultrasonic_Ranging/Sketch_24.1.2_Ultrasonic_Ranging.ino
     :linenos: 
     :language: c
 
 First, include the header file of library, and then define the HC SR04 pin and the maximum measurement distance. And then write these parameters when we define the NewPing class objects.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_24.1.2_Ultrasonic_Ranging/Sketch_24.1.2_Ultrasonic_Ranging.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_24.1.2_Ultrasonic_Ranging/Sketch_24.1.2_Ultrasonic_Ranging.ino
     :linenos: 
     :language: c
     :lines: 9-12

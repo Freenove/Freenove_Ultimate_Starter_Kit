@@ -79,7 +79,7 @@ Click “Add .ZIP Library...” and then find Keypad.zip in libraries folder (th
 
 Now write the code to obtain the keypad characters, and send them to the serial port.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_19.1.1_Get_Input_Characters/Sketch_19.1.1_Get_Input_Characters.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_19.1.1_Get_Input_Characters/Sketch_19.1.1_Get_Input_Characters.ino
     :linenos: 
     :language: c
 
@@ -91,7 +91,7 @@ In the code, we use a Keypad class provided by the Keypad library to operate the
 
 The two-dimensional arrays record the keypad characters, and these characters can be returned when you press the keyboard.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_19.1.1_Get_Input_Characters/Sketch_19.1.1_Get_Input_Characters.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_19.1.1_Get_Input_Characters/Sketch_19.1.1_Get_Input_Characters.ino
     :linenos: 
     :language: c
     :lines: 12-17
@@ -103,7 +103,7 @@ These two arrays record the row and column's connection pins of keypad.
 
 Send the input that get from the keyboard to the computer via the serial port in function loop().
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_19.1.1_Get_Input_Characters/Sketch_19.1.1_Get_Input_Characters.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_19.1.1_Get_Input_Characters/Sketch_19.1.1_Get_Input_Characters.ino
     :linenos: 
     :language: c
     :lines: 30-37
@@ -169,7 +169,7 @@ Sketch 19.2.1
 
 Now write the code to obtain the keypad characters, and compare them with the preset password. If the input is correct, the servo moves, otherwise the buzzer makes an input error alarm.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_19.2.1_Combination_Lock/Sketch_19.2.1_Combination_Lock.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_19.2.1_Combination_Lock/Sketch_19.2.1_Combination_Lock.ino
     :linenos: 
     :language: c
 
@@ -197,7 +197,7 @@ Make a prompt sound every time when a key is pressed and save the pressed charac
 
 Compare with the preset password after 4 characters are input and adopt the corresponding operation.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_19.2.1_Combination_Lock/Sketch_19.2.1_Combination_Lock.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_19.2.1_Combination_Lock/Sketch_19.2.1_Combination_Lock.ino
     :linenos: 
     :language: c
     :lines: 51-68

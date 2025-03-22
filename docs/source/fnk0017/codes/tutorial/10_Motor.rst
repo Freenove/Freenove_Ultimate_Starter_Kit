@@ -147,7 +147,7 @@ Sketch 10.1.1
 
 Now, write code to detect the state of push button switch. Each time you press the button, the switching status of relay will change. So we control the motor to rotate or stop in this way.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_10.1.1_Control_Motor_by_Relay/Sketch_10.1.1_Control_Motor_by_Relay.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_10.1.1_Control_Motor_by_Relay/Sketch_10.1.1_Control_Motor_by_Relay.ino
     :linenos: 
     :language: c
 
@@ -351,20 +351,20 @@ Sketch 10.2.1
 
 Now, write the code to control speed and rotation direction of motor through rotary potentiometer. When the potentiometer stays in the middle position, motor speed will be minimum, and when deviates intermediate position, the speed will increase. Also, if the potentiometer deviates from the middle position of potentiometer clockwise or counterclockwise, the rotation direction of the motor is different.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_10.2.1_Control_Motor_by_L293D/Sketch_10.2.1_Control_Motor_by_L293D.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_10.2.1_Control_Motor_by_L293D/Sketch_10.2.1_Control_Motor_by_L293D.ino
     :linenos: 
     :language: c
 
 In the code, we write a function to control the motor, and control the speed and steering through two parameters.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_10.2.1_Control_Motor_by_L293D/Sketch_10.2.1_Control_Motor_by_L293D.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_10.2.1_Control_Motor_by_L293D/Sketch_10.2.1_Control_Motor_by_L293D.ino
     :linenos: 
     :language: c
     :lines: 37-49
 
 In the loop () function, detect the digital value of rotary potentiometer, and convert it into the motor speed and steering through calculation.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_10.2.1_Control_Motor_by_L293D/Sketch_10.2.1_Control_Motor_by_L293D.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_10.2.1_Control_Motor_by_L293D/Sketch_10.2.1_Control_Motor_by_L293D.ino
     :linenos: 
     :language: c
     :lines: 23-35

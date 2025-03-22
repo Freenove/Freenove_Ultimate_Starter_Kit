@@ -81,7 +81,7 @@ Click “Add .ZIP Library...” and then find LiquidCrystal_I2C.zip in libraries
 
 Now let's start to write code to use LCD1602 to display static characters and dynamic variables.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602.ino
     :linenos: 
     :language: c
 
@@ -112,7 +112,7 @@ And then print a string:
 
 Print a changing number in the loop () function:
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602.ino
     :linenos: 
     :language: c
     :lines: 22-28    
@@ -209,7 +209,7 @@ Click “Add .ZIP Library...” and then find FlexiTimer2.zip in libraries folde
 
 Now write code to make LCD1602 display the time and temperature, and the time can be modified through the serial port.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
     :linenos: 
     :language: c
 
@@ -266,21 +266,21 @@ In the loop function, we need to control the second, minute, hour. When the seco
 
 We define a function lcdDisplay () to refresh the information on LCD display. In this function, use two bit to display the hour, minute, second on the LCD. For example, hour/ 10 is the unit, hour% 10 is the tens.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
     :linenos: 
     :language: c
     :lines: 95-110
 
 Serial port interrupt function is used to receive the data sent by computer to adjust the time, and return the data for confirmation.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
     :linenos: 
     :language: c
     :lines: 65-93
 
 We also define a function that displays a scrolling string when the control board has been just started.
 
-.. literalinclude:: ../../../freenove_17_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
+.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
     :linenos: 
     :language: c
     :lines: 49-59
