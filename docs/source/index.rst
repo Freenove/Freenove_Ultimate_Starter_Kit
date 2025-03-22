@@ -68,8 +68,6 @@ This product provides the following online documents.
    fnk0017/codes/tutorial/14_Acceleration_sensor.rst
    fnk0017/codes/tutorial/15_LED_Matrix.rst
    fnk0017/codes/tutorial/16_LCD1602.rst
-   fnk0017/codes/tutorial/16A_LCD1602.rst
-   fnk0017/codes/tutorial/16B_LCD1602.rst
    fnk0017/codes/tutorial/17_Digital_Display.rst
    fnk0017/codes/tutorial/18_Stepper_Motor.rst
    fnk0017/codes/tutorial/19_Matrix_Keypad.rst
