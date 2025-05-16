@@ -23,14 +23,6 @@ void setup() {
   Wire.begin();             // initialize I2C
   accelgyro.initialize();   // initialize MPU6050
   Serial.println("Testing device connections...");
-  // verify connection
-  if (accelgyro.testConnection()) {
-    Serial.println("MPU6050 connection successful");
-  }
-  else {
-    Serial.println("MPU6050 connection failed");
-    while (1);
-  }
   // when you need to calibrate the gravity acceleration, you can set the offset here and eliminate the note
   // accelgyro.setXAccelOffset(-1200);
   // accelgyro.setYAccelOffset(-2500);
