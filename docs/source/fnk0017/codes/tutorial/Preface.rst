@@ -22,16 +22,16 @@ There are multiple versions of Freenove control board. Your purchase may be one 
 .. list-table:: 
     :width: 100%
     :align: center
+    :class: table-line
 
-    *   -   Freenove Control Board (Black)
-        -   Freenove Control Board (Blue)
+    * - Freenove Control Board (Black)
+      - Freenove Control Board (Blue)
     
-    *   -   |Preface00|
-        -   |Preface01|
+    * - |Preface00|
+      - |Preface01|
 
 .. |Preface00| image:: ../_static/imgs/Preface/Preface00.png
 .. |Preface01| image:: ../_static/imgs/Preface/Preface01.png
-
 
 .. note::
     
@@ -68,8 +68,8 @@ Arduino IDE uses C/C++ programming language. Don't worry if you have never used 
 
 First, install Arduino IDE. Visit https://www.arduino.cc/en/software. Scroll down and find Legacy IDE (1.8.X). Then select and download corresponding installer according to your operating system. If you are a windows user, please select the "Windows Installer".
 
-- :red:`! Do not download “Arduino IDE 2.x.x” unless you are familiar with it, or you may encounter problems.`
-- :red:`! “Windows app” is not recommended. It is reported that it sometimes fails to work properly.`
+- :combo:`red font-bolder:! Do not download “Arduino IDE 2.x.x” unless you are familiar with it, or you may encounter problems.`
+- :combo:`red font-bolder:! “Windows app” is not recommended. It is reported that it sometimes fails to work properly.`
 
 .. image:: ../_static/imgs/Preface/Preface03.png
     :align: center
@@ -89,9 +89,8 @@ Run it. The interface of the software is as follows:
 Programs written with Arduino IDE are called sketches. These sketches are written in a text editor and are saved with the file extension.ino. The editor has features for cutting/pasting and for searching/replacing text. The message area gives feedback while saving and exporting and also displays errors. The console displays text output by the Arduino IDE, including complete error messages and other information. The bottom right-hand corner of the window displays the configured board and serial port. The toolbar buttons allow you to verify and upload programs, create, open, and save sketches, and open the serial monitor.
 
 .. list-table:: 
-    :width: 80%
-    :widths: 20 70
     :align: center
+    :class: table-line
 
     *   -   |Preface06|
         -   Verify - Checks your code for errors compiling it. 

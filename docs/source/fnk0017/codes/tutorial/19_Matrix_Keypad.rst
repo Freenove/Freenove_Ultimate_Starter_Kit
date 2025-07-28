@@ -12,19 +12,24 @@ First, try to understand the keypad, and get the input characters.
 Component List
 ===============================================================
 
-+-----------------------------------+---------------------------------------+
-| Control board x1                  |                                       |
-|                                   |  4x4 keypad x1                        |
-|  |Chapter01_00|                   |                                       |
-+-----------------------------------+    |Chapter19_00|                     |
-| USB cable x1                      |                                       |
-|                                   |                                       |
-|  |Chapter01_02|                   |                                       |
-+-----------------------------------+                                       |
-| Jumper M/M x3                     |                                       |
-|                                   |                                       |
-|  |Chapter01_06|                   |                                       |
-+-----------------------------------+---------------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+---------------------------------------+
+    | Control board x1                  |                                       |
+    |                                   |  4x4 keypad x1                        |
+    |  |Chapter01_00|                   |                                       |
+    +-----------------------------------+    |Chapter19_00|                     |
+    | USB cable x1                      |                                       |
+    |                                   |                                       |
+    |  |Chapter01_02|                   |                                       |
+    +-----------------------------------+                                       |
+    | Jumper M/M x3                     |                                       |
+    |                                   |                                       |
+    |  |Chapter01_06|                   |                                       |
+    +-----------------------------------+---------------------------------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
     :width: 70%
@@ -58,11 +63,13 @@ Use pin 11-4 on control board to connect 4x4 keypad.
 .. list-table:: 
     :width: 100%
     :align: center
+    :header-rows: 1
+    :class: table-line
 
-    *   -   Schematic diagram
-        -   Hardware connection
-    *   -   |Chapter19_03|
-        -   |Chapter19_04|
+    * - Schematic diagram
+      - Hardware connection
+    * - |Chapter19_03|
+      - |Chapter19_04|
 
 .. |Chapter19_03| image:: ../_static/imgs/19_Matrix_Keypad/Chapter19_03.png
 .. |Chapter19_04| image:: ../_static/imgs/19_Matrix_Keypad/Chapter19_04.png
@@ -82,10 +89,12 @@ Now write the code to obtain the keypad characters, and send them to the serial 
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_19.1.1_Get_Input_Characters/Sketch_19.1.1_Get_Input_Characters.ino
     :linenos: 
     :language: c
+    :dedent:
 
 In the code, we use a Keypad class provided by the Keypad library to operate the keypad. The following code is to instantiate a keypad object, and the last two parameters represent the number of the row and column of the keypad.
 
 .. code-block:: c
+    :linenos: 
 
     Keypad myKeypad = Keypad(makeKeymap(keys), rowPins, colPins, 4, 4);
 
@@ -95,8 +104,12 @@ The two-dimensional arrays record the keypad characters, and these characters ca
     :linenos: 
     :language: c
     :lines: 12-17
+    :dedent:
 
 These two arrays record the row and column's connection pins of keypad.
+
+.. code-block:: c
+    :linenos: 
 
     byte rowPins[4] = {11, 10, 9, 8}; // connect to the row pinouts of the keypad
     byte colPins[4] = {7, 6, 5, 4};   // connect to the column pinouts of the keypad
@@ -107,6 +120,7 @@ Send the input that get from the keyboard to the computer via the serial port in
     :linenos: 
     :language: c
     :lines: 30-37
+    :dedent:
 
 Verify and upload the code, open the Serial Monitor and press the keypad, and then you will see the characters you press being printed out.
 
@@ -121,23 +135,28 @@ Now, let us try to use keypad to make a combination lock.
 Component List
 ===============================================================
 
-+------------------------------------+---------------------------------+
-| Control board x1                   | 4x4 keypad x1                   |
-|                                    |                                 |
-|  |Chapter01_00|                    |  |Chapter19_00|                 |
-+------------------------------------+---------------------------------+
-| USB cable x1                       | NPN transistor x1               |
-|                                    |                                 |
-|  |Chapter01_02|                    |  |Chapter09_00|                 |
-+------------------------------------+---------------------------------+
-| Resistor 1kΩ x1                    | Active buzzer x1                |
-|                                    |                                 |
-|  |Chapter09_02|                    |  |Chapter09_01|                 |
-+------------------------------------+---------------------------------+
-| Jumper M/M x15                     | Servo x1                        |
-|                                    |                                 |
-|  |Chapter01_06|                    |  |Chapter11_00|                 |
-+------------------------------------+---------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------+---------------------------------+
+    | Control board x1                   | 4x4 keypad x1                   |
+    |                                    |                                 |
+    |  |Chapter01_00|                    |  |Chapter19_00|                 |
+    +------------------------------------+---------------------------------+
+    | USB cable x1                       | NPN transistor x1               |
+    |                                    |                                 |
+    |  |Chapter01_02|                    |  |Chapter09_00|                 |
+    +------------------------------------+---------------------------------+
+    | Resistor 1kΩ x1                    | Active buzzer x1                |
+    |                                    |                                 |
+    |  |Chapter09_02|                    |  |Chapter09_01|                 |
+    +------------------------------------+---------------------------------+
+    | Jumper M/M x15                     | Servo x1                        |
+    |                                    |                                 |
+    |  |Chapter01_06|                    |  |Chapter11_00|                 |
+    +------------------------------------+---------------------------------+
 
 .. |Chapter09_00| image:: ../_static/imgs/9_Buzzer/Chapter09_00.png
 .. |Chapter09_01| image:: ../_static/imgs/9_Buzzer/Chapter09_01.png
@@ -150,13 +169,14 @@ Circuit
 Use pin 11-4 on the control board to connect 4x4 keypad, pin 13 to drive buzzer and pin 12 to drive servo. Servos can be used to drive the mechanical switch and turn on the switch when the password is correct.
 
 .. list-table:: 
-    :width: 100%
     :align: center
+    :class: table-line
+    :header-rows: 1
 
-    *   -   Schematic diagram
-        -   Hardware connection
-    *   -   |Chapter19_06|
-        -   |Chapter19_07|
+    * - Schematic diagram
+      - Hardware connection
+    * - |Chapter19_06|
+      - |Chapter19_07|
 
 .. |Chapter19_06| image:: ../_static/imgs/19_Matrix_Keypad/Chapter19_06.png
 .. |Chapter19_07| image:: ../_static/imgs/19_Matrix_Keypad/Chapter19_07.png
@@ -172,18 +192,21 @@ Now write the code to obtain the keypad characters, and compare them with the pr
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_19.2.1_Combination_Lock/Sketch_19.2.1_Combination_Lock.ino
     :linenos: 
     :language: c
+    :dedent:
 
 Based on the last section, this code adds a comparison function, the corresponding action will be different whenever the password is right or wrong.
 
 First we define a correct password with four characters.
 
-.. code-block:: c
+.. code-block:: C
+    :linenos:
 
     char passWord[] = {'1', '2', '3', '4'}; // save the right password
 
 Make a prompt sound every time when a key is pressed and save the pressed characters.
 
 .. code-block:: c
+    :linenos:
 
     if (keyPressed) {
         // Make a prompt tone each time press the key.
@@ -201,5 +224,6 @@ Compare with the preset password after 4 characters are input and adopt the corr
     :linenos: 
     :language: c
     :lines: 51-68
+    :dedent:
 
 Verify and upload the code, and press the keypad to input password with 4 characters. If the input is correct, the servo will move to a certain degree, and then return to the original position. If the input is error, an input error alarm will be generated.

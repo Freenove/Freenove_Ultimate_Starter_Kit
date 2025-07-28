@@ -12,19 +12,24 @@ Now, we'll use Infrared Motion Sensor to detect human motion.
 Component List
 ===============================================================
 
-+------------------------------------+---------------------------------+
-|                                    | USB cable x1                    |
-|  Control board x1                  |                                 |
-|                                    |  |Chapter01_02|                 |
-|    |Chapter01_00|                  +---------------------------------+
-|                                    | Jumper M/M x3                   |
-|                                    |                                 |
-|                                    |  |Chapter01_06|                 |
-|                                    +---------------------------------+
-|                                    | Infrared motion sensor x1       |
-|                                    |                                 |
-|                                    |  |Chapter23_00|                 |
-+------------------------------------+---------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------+---------------------------------+
+    |                                    | USB cable x1                    |
+    |  Control board x1                  |                                 |
+    |                                    |  |Chapter01_02|                 |
+    |    |Chapter01_00|                  +---------------------------------+
+    |                                    | Jumper M/M x3                   |
+    |                                    |                                 |
+    |                                    |  |Chapter01_06|                 |
+    |                                    +---------------------------------+
+    |                                    | Infrared motion sensor x1       |
+    |                                    |                                 |
+    |                                    |  |Chapter23_00|                 |
+    +------------------------------------+---------------------------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_02| image:: ../_static/imgs/1_LED_Blink/Chapter01_02.png
@@ -50,13 +55,13 @@ Description:
 
 3.	According to the position of Fresnel lenses dome, you can choose non-repeatable trigger modes or repeatable modes. 
 
-L: non-repeatable trigger mode. The module output high level after sensing a body, then when the delay time is over, the module will output low level. During high level time, the sensor no longer actively senses bodies.  
+    L: non-repeatable trigger mode. The module output high level after sensing a body, then when the delay time is over, the module will output low level. During high level time, the sensor no longer actively senses bodies.  
 
-H: repeatable trigger mode. The distinction from the L mode is that it can sense a body until that body leaves during the period of high level output. After this, it starts to time and output low level after delaying T time.
+    H: repeatable trigger mode. The distinction from the L mode is that it can sense a body until that body leaves during the period of high level output. After this, it starts to time and output low level after delaying T time.
 
 4.	Induction block time: the induction will stay in block condition and does not induce external signal at lesser time intervals (less than delay time) after outputting high level or low level.
 
-5.	 Initialization time: the module needs about 1 minute to initialize after being powered ON. During this period, it will alternately output high or low level. 
+5.	Initialization time: the module needs about 1 minute to initialize after being powered ON. During this period, it will alternately output high or low level. 
 
 6.	One characteristic of this sensor is when a body moves close to or moves away from the sensor’s dome edge, the sensor will work at high sensitively. When a body moves close to or moves away from the sensor’s dome in a vertical direction (perpendicular to the dome), the sensor cannot detect well (please take note of this deficiency). Actually this makes sense when you consider that this sensor is usually placed on a celling as part of a security product. Note: The Sensing Range (distance before a body is detected) is adjusted by the potentiometer.
 
@@ -68,13 +73,14 @@ Circuit
 Use pin 12 on the control board to connect out-pin of HC-SR501 infrared motion sensor.
 
 .. list-table:: 
-    :width: 70%
+    :width: 80%
     :align: center
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter23_02|
-    *   -   Hardware connection
-    *   -   |Chapter23_03|
+    * - **Schematic diagram**
+    * - |Chapter23_02|
+    * - **Hardware connection**
+    * - |Chapter23_03|
 
 .. |Chapter23_02| image:: ../_static/imgs/23_Infrared_Motion_Sensor/Chapter23_02.png
 .. |Chapter23_03| image:: ../_static/imgs/23_Infrared_Motion_Sensor/Chapter23_03.png
@@ -90,10 +96,12 @@ Now, write code to get the results measured by the HC-SR501 infrared motion sens
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_23.1.1_Infrared_Motion_Sensor/Sketch_23.1.1_Infrared_Motion_Sensor.ino
     :linenos: 
     :language: c
+    :dedent:
 
 This code is relatively simple. We have obtained the sensor's output signal, and control a LED according to it.
 
 .. code-block:: c
+    :linenos:
 
     digitalWrite(ledPin, digitalRead(sensorPin));  
 

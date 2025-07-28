@@ -14,23 +14,28 @@ First, let's study some knowledge about active buzzer.
 Component List
 ===============================================================
 
-+------------------------------------+---------------------------------+
-| Control board x1                   | Breadboard x1                   |
-|                                    |                                 |                                    
-|  |Chapter01_00|                    |  |Chapter01_01|                 |
-+------------------------------------+---------------------------------+
-| USB cable x1                       | Jumper M/M x6                   |
-|                                    |                                 |
-|  |Chapter01_02|                    |  |Chapter01_06|                 |
-+------------------------------------+---------------------------------+
-| NPN transistorx1                   | Active buzzer x1                |
-|                                    |                                 |
-|  |Chapter09_00|                    |  |Chapter09_01|                 |
-+-------------------------+----------+-----------+---------------------+
-| Push button x1          | Resistor 1kΩ x1      | Resistor 10kΩ x2    |
-|                         |                      |                     |
-|  |Chapter01_05|         |  |Chapter09_02|      |  |Chapter05_00|     |
-+-------------------------+----------------------+---------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------+---------------------------------+
+    | Control board x1                   | Breadboard x1                   |
+    |                                    |                                 |                                    
+    |  |Chapter01_00|                    |  |Chapter01_01|                 |
+    +------------------------------------+---------------------------------+
+    | USB cable x1                       | Jumper M/M x6                   |
+    |                                    |                                 |
+    |  |Chapter01_02|                    |  |Chapter01_06|                 |
+    +------------------------------------+---------------------------------+
+    | NPN transistorx1                   | Active buzzer x1                |
+    |                                    |                                 |
+    |  |Chapter09_00|                    |  |Chapter09_01|                 |
+    +-------------------------+----------+-----------+---------------------+
+    | Push button x1          | Resistor 1kΩ x1      | Resistor 10kΩ x2    |
+    |                         |                      |                     |
+    |  |Chapter01_05|         |  |Chapter09_02|      |  |Chapter05_00|     |
+    +-------------------------+----------------------+---------------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_01| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
@@ -67,7 +72,7 @@ A buzzer is an audio component. They are widely used in electronic devices such 
 
 Active buzzers are easier to use. Generally, they only make a specific sound frequency. Passive buzzers require an external circuit to make sounds, but passive buzzers can be controlled to make sounds of various frequencies. The resonant frequency of the passive buzzer in this Kit is 2kHz, which means the passive buzzer is the loudest when its resonant frequency is 2kHz.
 
-:red:`How to identify active and passive buzzer?`
+:combo:`red font-bolder:How to identify active and passive buzzer?`
 
 1.	As a rule, there is a label on an active buzzer covering the hole where sound is emitted, but there are exceptions to this rule.
 
@@ -94,14 +99,15 @@ Circuit
 Use pin 12 of control board to detect the state of push button switch, and pin 9 to drive active buzzer.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter09_08|
+    * - Schematic diagram
+      - Hardware connection
 
-    *   -   Hardware connection
-    *   -   |Chapter09_09|
+    * - |Chapter09_08|
+      - |Chapter09_09|
 
 .. |Chapter09_08| image:: ../_static/imgs/9_Buzzer/Chapter09_08.png
 .. |Chapter09_09| image:: ../_static/imgs/9_Buzzer/Chapter09_09.png
@@ -133,23 +139,28 @@ In the previous section, we have finished using transistor to drive an active bu
 Component List
 ===============================================================
 
-+------------------------------------+---------------------------------+
-| Control board x1                   |Breadboard x1                    |
-|                                    |                                 |
-|  |Chapter01_00_1|                  |  |Chapter01_01_1|               |
-+------------------------------------+---------------------------------+
-| USB cable x1                       | Resistor 1kΩ x1                 |
-|                                    |                                 |
-|  |Chapter01_02|                    |  |Chapter09_02|                 |
-+------------------------------------+---------------------------------+
-| NPN transistorx1                   | Active buzzer x1                |
-|                                    |                                 |
-|  |Chapter09_00|                    |  |Chapter09_01|                 |
-+------------------------------------+---------------------------------+
-|              Jumper M/M x6                                           |
-|                                                                      |
-|               |Chapter01_06|                                         |
-+----------------------------------------------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------+---------------------------------+
+    | Control board x1                   |Breadboard x1                    |
+    |                                    |                                 |
+    |  |Chapter01_00_1|                  |  |Chapter01_01_1|               |
+    +------------------------------------+---------------------------------+
+    | USB cable x1                       | Resistor 1kΩ x1                 |
+    |                                    |                                 |
+    |  |Chapter01_02|                    |  |Chapter09_02|                 |
+    +------------------------------------+---------------------------------+
+    | NPN transistorx1                   | Active buzzer x1                |
+    |                                    |                                 |
+    |  |Chapter09_00|                    |  |Chapter09_01|                 |
+    +------------------------------------+---------------------------------+
+    | Jumper M/M x6                                                        |
+    |                                                                      |
+    |  |Chapter01_06|                                                      |
+    +----------------------------------------------------------------------+
 
 .. |Chapter01_01_1| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
 .. |Chapter01_00_1| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
@@ -160,14 +171,16 @@ Circuit
 Use pin 9 port of control board to drive a passive buzzer.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
+    :header-rows: 1
 
-    *   -   Schematic diagram
-        -   Hardware connection
+    * - Schematic diagram
+      - Hardware connection
 
-    *   -   |Chapter09_11|
-        -   |Chapter09_12|
+    * - |Chapter09_11|
+      - |Chapter09_12|
 
 .. |Chapter09_11| image:: ../_static/imgs/9_Buzzer/Chapter09_11.png
 .. |Chapter09_12| image:: ../_static/imgs/9_Buzzer/Chapter09_12.png

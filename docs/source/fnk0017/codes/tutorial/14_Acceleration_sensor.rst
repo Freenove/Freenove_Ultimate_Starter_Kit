@@ -12,19 +12,24 @@ We will use serial port to get the data of MPU6050 module.
 Component List
 ===============================================================
 
-+-----------------------------------+---------------------------------------+
-| Control board x1                  |  Breadboard x1                        |
-|                                   |                                       |
-|  |Chapter01_00_1|                 |   |Chapter01_01|                      |
-+-----------------------------------+---------------------------------------+
-| USB cable x1                      | MPU6050 module x1                     |
-|                                   |                                       |
-|  |Chapter01_02|                   |  |Chapter14_00|                       |
-+-----------------------------------+                                       |
-| Jumper M/M x3                     |                                       |
-|                                   |                                       |
-|  |Chapter01_06|                   |                                       |
-+-----------------------------------+---------------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+---------------------------------------+
+    | Control board x1                  |  Breadboard x1                        |
+    |                                   |                                       |
+    |  |Chapter01_00_1|                 |   |Chapter01_01|                      |
+    +-----------------------------------+---------------------------------------+
+    | USB cable x1                      | MPU6050 module x1                     |
+    |                                   |                                       |
+    |  |Chapter01_02|                   |  |Chapter14_00|                       |
+    +-----------------------------------+                                       |
+    | Jumper M/M x3                     |                                       |
+    |                                   |                                       |
+    |  |Chapter01_06|                   |                                       |
+    +-----------------------------------+---------------------------------------+
 
 .. |Chapter01_00_1| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_01| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
@@ -53,9 +58,9 @@ MPU6050 Sensor Module is a complete 6-axis Motion Tracking Device. It combines a
 The port description of the MPU6050 module is as follows:
 
 .. list-table:: 
-    :width: 70%
     :align: center
     :header-rows: 1
+    :class: zebra
 
     *   -   Pin name
         -   Pin number
@@ -157,35 +162,30 @@ MPU6050 library provides MPU6050 class to manipulate the MPU6050, and it is nece
     MPU6050 accelgyro;          // Construct a MPU6050 object using the default address
 
 First initialize the I2C bus, and then initialize the MPU6050.
+
 .. code-block:: c
+    :linenos:
 
     Wire.begin();             // initialize I2C
     accelgyro.initialize();   // initialize MPU6050
-
-Then do a test to confirm whether MPU6050 is connected to the I2C bus and print the related information in serial port.
-
-.. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino
-    :linenos: 
-    :language: c
-    :lines: 27-33
 
 If you want to make the results more close to the actual situation, you can adjust the offset of MPU6050 before using it. You can refer to the MPU6050 library files for more details about setting offset. If there are no strict requirements, this step can also be ignored.
 
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino
     :linenos: 
     :language: c
-    :lines: 34-37
-
+    :lines: 26-29
 We can also read out the value of the offset which is already set through following code:
 
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino
     :linenos: 
     :language: c
-    :lines: 38-41
+    :lines: 30-33
 
 Read the values of 3 accelerations and 3 angular accelerations in the loop () function, 
 
 .. code-block:: c
+    :linenos:
 
     accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
 

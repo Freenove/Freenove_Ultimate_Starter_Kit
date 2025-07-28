@@ -12,37 +12,42 @@ First, use relay to control a Motor.
 Component List
 ===============================================================
 
-+------------------------------------+---------------------------------+
-| Control board x1                   |Breadboard x1                    |
-|                                    |                                 |
-|  |Chapter01_00|                    |  |Chapter01_01|                 |
-+------------------------------------+---------------------------------+
-| USB cable x1                       | Jumper M/M x2                   |
-|                                    |                                 |
-|  |Chapter01_02|                    |  |Chapter01_06|                 |
-+------------------------------------+---------------------------------+
-|  AA Battery holder x1              | Resistor 10kΩ x2                |
-|                                    |                                 |
-|  (Need AA battery x2)              |                                 |
-|                                    |                                 |
-|  |Chapter10_00|                    |  |Chapter05_00|                 |
-+------------------------------------+---------------------------------+
-| Resistor 1kΩ x1                    | Resistor 220Ω x1                |
-|                                    |                                 |
-|  |Chapter09_02|                    |  |Chapter01_04|                 |
-+------------------------------------+---------------------------------+
-| NPN transistor x1                  | Relay x1                        |
-|                                    |                                 |
-|  |Chapter09_00|                    |  |Chapter10_01|                 |
-+------------------------------------+---------------------------------+
-| Motor x1                           | Push button x1                  |
-|                                    |                                 |
-|  |Chapter10_02|                    |  |Chapter01_05|                 |
-+------------------------------------+---------------------------------+
-| LED x1                             | Diode x1                        |
-|                                    |                                 |
-|  |Chapter01_03|                    |  |Chapter10_03|                 |
-+------------------------------------+---------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------+---------------------------------+
+    | Control board x1                   |Breadboard x1                    |
+    |                                    |                                 |
+    |  |Chapter01_00|                    |  |Chapter01_01|                 |
+    +------------------------------------+---------------------------------+
+    | USB cable x1                       | Jumper M/M x2                   |
+    |                                    |                                 |
+    |  |Chapter01_02|                    |  |Chapter01_06|                 |
+    +------------------------------------+---------------------------------+
+    |  AA Battery holder x1              | Resistor 10kΩ x2                |
+    |                                    |                                 |
+    |  (Need AA battery x2)              |                                 |
+    |                                    |                                 |
+    |  |Chapter10_00|                    |  |Chapter05_00|                 |
+    +------------------------------------+---------------------------------+
+    | Resistor 1kΩ x1                    | Resistor 220Ω x1                |
+    |                                    |                                 |
+    |  |Chapter09_02|                    |  |Chapter01_04|                 |
+    +------------------------------------+---------------------------------+
+    | NPN transistor x1                  | Relay x1                        |
+    |                                    |                                 |
+    |  |Chapter09_00|                    |  |Chapter10_01|                 |
+    +------------------------------------+---------------------------------+
+    | Motor x1                           | Push button x1                  |
+    |                                    |                                 |
+    |  |Chapter10_02|                    |  |Chapter01_05|                 |
+    +------------------------------------+---------------------------------+
+    | LED x1                             | Diode x1                        |
+    |                                    |                                 |
+    |  |Chapter01_03|                    |  |Chapter10_03|                 |
+    +------------------------------------+---------------------------------+
 
 .. |Chapter05_00| image:: ../_static/imgs/5_Control_LED/Chapter05_00.png
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
@@ -127,14 +132,14 @@ Circuit
 Use pin 12 of control board to detect the state of push button switch, and pin 9 to control the relay. As the running of motor needs larger power, we will use two AA batteries to supply power for the motor alone.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter10_11|
-
-    *   -   Hardware connection
-    *   -   |Chapter10_12|
+    * - Schematic diagram
+    * - |Chapter10_11|
+    * - Hardware connection
+    * - |Chapter10_12|
 
 .. |Chapter10_11| image:: ../_static/imgs/10_Motor/Chapter10_11.png
 .. |Chapter10_12| image:: ../_static/imgs/10_Motor/Chapter10_12.png
@@ -156,6 +161,7 @@ In this code, we used a new method to detect the button's state. In the loop() f
 First, define two variables to record the state of the button and the relay.
 
 .. code-block:: c
+    :linenos: 
 
     int buttonState = HIGH;     // Record button state, initial the state into high level
     int relayState = LOW;       // Record relay state, initial the state into low level
@@ -163,18 +169,21 @@ First, define two variables to record the state of the button and the relay.
 Define a variable to record button pin's state of last detection.
 
 .. code-block:: c
+    :linenos: 
 
     int lastButtonState = HIGH; // Record the button state of last detection
 
 Define a variable to record the time of the last button pin change.
 
 .. code-block:: c
+    :linenos: 
 
     long lastChangeTime = 0;    // Record the time point for button state change 
 
 In the loop() function, the detected pin state of button will be compared with the last detected state. If it changes, record this time point.
 
 .. code-block:: c
+    :linenos: 
 
     void loop() {
         int nowButtonState = digitalRead(buttonPin); // Read current state of button pin
@@ -189,6 +198,7 @@ In the loop() function, the detected pin state of button will be compared with t
 If the level stays unchanged over a period of time, it is considered that the bounce area has already been skipped.
 
   .. code-block:: c
+    :linenos: 
 
     if (millis() - lastChangeTime > 10) {
        ...
@@ -197,6 +207,7 @@ If the level stays unchanged over a period of time, it is considered that the bo
 After the pin state stays stable, the changed state of button is confirmed, then it will be recorded for the next comparison.
 
 .. code-block:: c
+    :linenos: 
 
     if (buttonState != nowButtonState) {  // Confirm button state has changed
       buttonState = nowButtonState;
@@ -206,6 +217,7 @@ After the pin state stays stable, the changed state of button is confirmed, then
 Judge whether the button is pressed or released according to button pin level, print button information to serial port, and reverse relay when the button is pressed.
 
 .. code-block:: c
+    :linenos: 
 
     if (buttonState == LOW) {     // Low level indicates the button is pressed
         relayState = !relayState;           // Reverse relay state
@@ -232,25 +244,30 @@ Now, we will use dedicated chip L293D to control the motor.
 Component List
 ===============================================================
 
-+------------------------------------+---------------------------------+
-| Control board x1                   | Breadboard x1                   |
-|                                    |                                 |
-|  |Chapter01_00|                    |  |Chapter01_01|                 |
-+------------------------------------+---------------------------------+
-| USB cable x1                       | Rotary potentiometer x1         |
-|                                    |                                 |
-|  |Chapter01_02|                    |  |Chapter07_00|                 |
-+------------------------------------+---------------------------------+
-|  AA Battery holder x1              | Jumper M/M x10                  |
-|                                    |                                 |
-|  (Need AA battery x2)              | Jumper F/M x2                   |
-|                                    |                                 |
-|  |Chapter10_00|                    |  |Chapter01_06|                 |
-+------------------------------------+---------------------------------+
-| Motor x1                           | L293D x1                        |
-|                                    |                                 |
-|  |Chapter10_02|                    |  |Chapter10_13|                 |
-+------------------------------------+---------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------+---------------------------------+
+    | Control board x1                   | Breadboard x1                   |
+    |                                    |                                 |
+    |  |Chapter01_00|                    |  |Chapter01_01|                 |
+    +------------------------------------+---------------------------------+
+    | USB cable x1                       | Rotary potentiometer x1         |
+    |                                    |                                 |
+    |  |Chapter01_02|                    |  |Chapter07_00|                 |
+    +------------------------------------+---------------------------------+
+    |  AA Battery holder x1              | Jumper M/M x10                  |
+    |                                    |                                 |
+    |  (Need AA battery x2)              | Jumper F/M x2                   |
+    |                                    |                                 |
+    |  |Chapter10_00|                    |  |Chapter01_06|                 |
+    +------------------------------------+---------------------------------+
+    | Motor x1                           | L293D x1                        |
+    |                                    |                                 |
+    |  |Chapter10_02|                    |  |Chapter10_13|                 |
+    +------------------------------------+---------------------------------+
 
 .. |Chapter07_00| image:: ../_static/imgs/7_ADC/Chapter07_00.png
 .. |Chapter10_13| image:: ../_static/imgs/10_Motor/Chapter10_13.png
@@ -269,45 +286,41 @@ L293D is an IC chip (Integrated Circuit Chip) with a 4-channel motor drive. You 
 Port description of L293D module is as follows:
 
 .. list-table:: 
-    :width: 100%
     :align: center
     :header-rows: 1
+    :class: zebra
 
-    *   -   Pin name
-        -   Pin number
-        -   Description
+    * - Pin name
+      - Pin number
+      - Description
 
-    *   -   In x
-        -   2, 7, 10, 15
-        -   Channel x digital signal input pin
+    * - In x
+      - 2, 7, 10, 15
+      - Channel x digital signal input pin
 
-    *   -   Out x
-        -   3, 6, 11, 14
-        -   Channel x output pin, input high or low level according to In x pin
-            
-            , get connected to +Vmotor or 0V
+    * - Out x
+      - 3, 6, 11, 14
+      - Channel x output pin, input high or low level according to In x pin, get connected to +Vmotor or 0V
 
-    *   -   Enable1
-        -   1
-        -   Channel 1 and channel 2 enable pin, high level enable
+    * - Enable1
+      - 1
+      - Channel 1 and channel 2 enable pin, high level enable
 
-    *   -   Enable2
-        -   9
-        -   Channel 3 and channel 4 enable pin, high level enable
+    * - Enable2
+      - 9
+      - Channel 3 and channel 4 enable pin, high level enable
 
-    *   -   0V
-        -   4, 5, 12, 13
-        -   Power cathode (GND)
+    * - 0V
+      - 4, 5, 12, 13
+      - Power cathode (GND)
 
-    *   -   +V
-        -   16
-        -   Positive electrode (VCC) of power supply, supply voltage 4.5~36V
+    * - +V
+      - 16
+      - Positive electrode (VCC) of power supply, supply voltage 4.5~36V
 
-    *   -   +Vmotor
-        -   8
-        -   Positive electrode of load power supply, provide power supply for the 
-            
-            Out pin x, the supply voltage is +V~36V
+    * - +Vmotor
+      - 8
+      - Positive electrode of load power supply, provide power supply for the Out pin x, the supply voltage is +V~36V
 
 For more details, please see datasheet.
 
@@ -331,14 +344,14 @@ Circuit
 Use pin A0 of the control board to detect the voltage of rotary potentiometer; pin 9 and pin 10 to control the motor's rotation direction and pin 11 to output PWM wave to control motor speed.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
+    :class: table-line
     :align: center
 
-    *   -   Schematic diagram
-    *   -   |Chapter10_17|
-
-    *   -   Hardware connection
-    *   -   |Chapter10_18|
+    * - Schematic diagram
+    * - |Chapter10_17|
+    * - Hardware connection
+    * - |Chapter10_18|
 
 .. |Chapter10_17| image:: ../_static/imgs/10_Motor/Chapter10_17.png
 .. |Chapter10_18| image:: ../_static/imgs/10_Motor/Chapter10_18.png
@@ -354,6 +367,7 @@ Now, write the code to control speed and rotation direction of motor through rot
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_10.2.1_Control_Motor_by_L293D/Sketch_10.2.1_Control_Motor_by_L293D.ino
     :linenos: 
     :language: c
+    :dedent:
 
 In the code, we write a function to control the motor, and control the speed and steering through two parameters.
 

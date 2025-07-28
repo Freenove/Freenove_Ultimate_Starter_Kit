@@ -12,23 +12,28 @@ We will use the control board to get the status of the push button switch, and s
 Component List
 ===============================================================
 
-+-----------------------------------+----------------------------------------------------------------------------+
-| Control board x1                  |  Breadboard x1                                                             |
-|                                   |                                                                            |
-|  |Chapter01_00|                   |   |Chapter01_01|                                                           |
-+-----------------------------------+-------------------+------------------+------------------+------------------+
-| USB cable x1                      | LED x1            | Resistor         | Resistor         | Push button x1   |
-|                                   |                   |                  |                  |                  |
-|  |Chapter01_02|                   |  |Chapter01_03|   | 220Ω x1          | 10kΩ x2          | |Chapter01_05|   |
-+-----------------------------------+                   |                  |                  |                  |
-| Jumper M/M x2                     |                   |  |Chapter01_04|  | |Chapter05_00|   |                  |
-|                                   |                   |                  |                  |                  |
-|  |Chapter01_06|                   |                   |                  |                  |                  |
-+-----------------------------------+-------------------+------------------+------------------+------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+----------------------------------------------------------------------------+
+    | Control board x1                  |  Breadboard x1                                                             |
+    |                                   |                                                                            |
+    |  |Chapter01_00|                   |   |Chapter01_01|                                                           |
+    +-----------------------------------+-------------------+------------------+------------------+------------------+
+    | USB cable x1                      | LED x1            | Resistor         | Resistor         | Push button x1   |
+    |                                   |                   |                  |                  |                  |
+    |  |Chapter01_02|                   |  |Chapter01_03|   | 220Ω x1          | 10kΩ x2          | |Chapter01_05|   |
+    +-----------------------------------+                   |                  |                  |                  |
+    | Jumper M/M x2                     |                   |  |Chapter01_04|  | |Chapter05_00|   |                  |
+    |                                   |                   |                  |                  |                  |
+    |  |Chapter01_06|                   |                   |                  |                  |                  |
+    +-----------------------------------+-------------------+------------------+------------------+------------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_01| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
-    :width: 55%
+    :width: 78%
 .. |Chapter01_02| image:: ../_static/imgs/1_LED_Blink/Chapter01_02.png
 .. |Chapter01_03| image:: ../_static/imgs/1_LED_Blink/Chapter01_03.png
 .. |Chapter01_04| image:: ../_static/imgs/1_LED_Blink/Chapter01_04.png
@@ -36,7 +41,7 @@ Component List
 .. |Chapter01_05| image:: ../_static/imgs/1_LED_Blink/Chapter01_05.png
 .. |Chapter01_06| image:: ../_static/imgs/1_LED_Blink/Chapter01_06.png
 .. |Chapter05_00| image:: ../_static/imgs/5_Control_LED/Chapter05_00.png
-    :width: 30%
+    :width: 40%
 
 Circuit Knowledge
 ===============================================================
@@ -61,7 +66,9 @@ Circuit
 Use pin 12 of control board to detect the status of push button, and pin 9 to drive LED. 
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
+    :header-rows: 1
+    :class: table-line
     :align: center
 
     *   -   Schematic diagram
@@ -84,14 +91,11 @@ Now, write code to detect the state of push button, and show it through LED.
 
 After the port is initialized, the LED will be turned on or off in accordance with the state of the pin connected to push button switch.
 
-.. list-table:: 
-    :width: 50%
-    :align: center
+.. py:function:: digitalRead(pin)
+    
+    Arduino IDE provides a function digitalRead(pin) to obtain the state of the port pin. The return value is
 
-    *   -   :orange:`digitalRead(pin)`
-    *   -   Arduino IDE provides a function digitalRead(pin) to obtain the state of the port pin. The return value is
-
-            HIGH or LOW, that is, high level or low level.   
+    HIGH or LOW, that is, high level or low level.   
 
 Verify and upload the code, press the button, LED lights up; release the button, LED lights off.
 

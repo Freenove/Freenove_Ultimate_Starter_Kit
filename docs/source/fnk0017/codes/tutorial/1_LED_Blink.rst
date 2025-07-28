@@ -18,23 +18,28 @@ Component List
 
 Only the black control board is used to display the hardware connection in this document.
 
-+-----------------------------------+--------------------------------------------------------+
-| Control board x1                  |  Breadboard x1                                         |
-|                                   |                                                        |
-|  |Chapter01_00|                   |   |Chapter01_01|                                       |
-+-----------------------------------+-------------------+-------------------+----------------+
-| USB cable x1                      | LED x1            | Resistor 220Ω x1  | Push button x1 |
-|                                   |                   |                   |                |
-|  |Chapter01_02|                   |  |Chapter01_03|   |  |Chapter01_04|   | |Chapter01_05| |
-+-----------------------------------+                   |                   |                |
-| Jumper M/M x2                     |                   |                   |                |
-|                                   |                   |                   |                |
-|  |Chapter01_06|                   |                   |                   |                |
-+-----------------------------------+-------------------+-------------------+----------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +--------------------------------------------------------+--------------------------------------------------------+
+    | Control board x1                                       |  Breadboard x1                                         |
+    |                                                        |                                                        |
+    |  |Chapter01_00|                                        |   |Chapter01_01|                                       |
+    +--------------------------------------------------------+-------------------+-------------------+----------------+
+    | USB cable x1                                           | LED x1            | Resistor 220Ω x1  | Push button x1 |
+    |                                                        |                   |                   |                |
+    |  |Chapter01_02|                                        |  |Chapter01_03|   |  |Chapter01_04|   | |Chapter01_05| |
+    +--------------------------------------------------------+                   |                   |                |
+    | Jumper M/M x2                                          |                   |                   |                |
+    |                                                        |                   |                   |                |
+    |  |Chapter01_06|                                        |                   |                   |                |
+    +--------------------------------------------------------+-------------------+-------------------+----------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_01| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
-    :width: 60%
+    :width: 85%
 .. |Chapter01_02| image:: ../_static/imgs/1_LED_Blink/Chapter01_02.png
 .. |Chapter01_03| image:: ../_static/imgs/1_LED_Blink/Chapter01_03.png
 .. |Chapter01_04| image:: ../_static/imgs/1_LED_Blink/Chapter01_04.png
@@ -133,8 +138,8 @@ Jumper is a kind of wire designed to connect the components together with its tw
 Jumpers have male end (pin) and female end (slot), so jumpers can be divided into the following 3 types.
 
 .. list-table:: 
-    :width: 80%
     :align: center
+    :class: table-line
 
     *   -   Jumper M/M	
         -   |Chapter01_15|
@@ -197,8 +202,10 @@ Firstly, connect components with jumpers according to "hardware connection". Sec
 Only the black control board is used to display the hardware connection in this document.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :header-rows: 1
+    :class: table-line
 
     *   -   Schematic diagram
         -   Hardware connection
@@ -238,7 +245,7 @@ However, Digital Signals can instantaneously change in value. This change is exp
 .. image:: ../_static/imgs/1_LED_Blink/Chapter01_24.png
     :align: center
 
-In practical applications, we often use binary as the digital signal, that is a series of 0's and 1’s. Since a binary signal only has two values (0 or 1) it has great stability and reliability. Lastly, both analog and digital signals can be converted into the other.
+In practical applications, we often use binary as the digital signal, that is a series of 0's and 1's. Since a binary signal only has two values (0 or 1) it has great stability and reliability. Lastly, both analog and digital signals can be converted into the other.
 
 Low level and high level
 ---------------------------------------------------------------
@@ -269,12 +276,14 @@ There are two ways to use comments of sketches.
 Contents behind ”//” comment out the code in a single line.
 
 .. code-block:: c
+    :linenos:
 
     // this is a comment area in this line.
 
 The content in front of "//" will not be affected.
 
 .. code-block:: c
+    :linenos:
 
     delay(1000);              // wait for a second
 
@@ -283,12 +292,14 @@ The content in front of "//" will not be affected.
 Code can also be commented out by the contents starting with a “/*” and finishing with a “*/” and you can place it anywhere in your code, on the same line or several lines.
 
 .. code-block:: c
+    :linenos:
 
     /* this is comment area. */
 
 Or
 
 .. code-block:: c
+    :linenos:
 
     /* 
         this is a comment line. 
@@ -319,6 +330,7 @@ Variable
 A variable is a kind of data that can be changed. It consists of a name, a value, and a type. Variables need to be defined before using, such as:
 
 .. code-block:: c
+    :linenos:
 
     int i;
 
@@ -327,6 +339,7 @@ A variable is a kind of data that can be changed. It consists of a name, a value
 After declaration of the variable, you can use it. The following is an assignment to a variable:
 
 .. code-block:: c
+    :linenos:
 
     i = 0;                    // after the execution, the value of i is 0
 
@@ -335,6 +348,7 @@ After declaration of the variable, you can use it. The following is an assignmen
 A certain number of variables can be declared in one statement, and a variable can be assigned multiple times. Also, the value of a variable can be passed to other variables. For example:
 
 .. code-block:: c
+    :linenos:
 
     int i, j;
     i = 0;                    // after the execution, the value of i is 0
@@ -347,6 +361,7 @@ Function
 A function is a collection of statements with a sequence of order, which performs a defined task. Let's define a function void blink() as follows:
 
 .. code-block:: c
+    :linenos:
 
     void blink() {
         digitalWrite(13, HIGH);
@@ -364,6 +379,7 @@ A function is a collection of statements with a sequence of order, which perform
 After the function is defined, it is necessary to be called before it is executed. Let's call the function void blink(), as shown below.
 
 .. code-block:: c
+    :linenos:
 
     blink();
 
@@ -375,6 +391,7 @@ When the code is executed to a statement calling the function, the function will
 Some functions have one or more parameters. When you call such functions, you need to write parameters inside "()":
 
 .. code-block:: c
+    :linenos:
 
     digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
     delay(1000);              // wait for a second
@@ -391,8 +408,9 @@ Now, we will use IO port of control board to provide power for the LED. Pin 13 o
 Only the black control board is used to display the hardware connection in this document.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
 
     *   -   Schematic diagram
         -   Hardware connection
@@ -423,17 +441,11 @@ After control board is :orange:`reset`, the setup() function will be executed fi
 
 setup() function is generally used to write code to initialize the hardware. And loop() function is used to write code to achieve certain functions. loop() function is executed repeatedly. When the execution reaches the end of loop(), it will jump to the beginning of loop() to run again.
 
-.. list-table:: 
-    :width: 60%
-    :align: center
+.. py:function:: Reset
 
-    *   -   :orange:`Reset`
-    
-    *   -   Reset operation will lead the code to be executed from the beginning.
+    Reset operation will lead the code to be executed from the beginning.
         
-            Switching on the power, finishing uploading the code and pressing
-            
-            the reset button will trigger reset operation.
+    Switching on the power, finishing uploading the code and pressing the reset button will trigger reset operation.
 
 .. image:: ../_static/imgs/1_LED_Blink/Chapter01_29.png
     :align: center
@@ -441,6 +453,7 @@ setup() function is generally used to write code to initialize the hardware. And
 In the setup () function, first, we set pin 13 of the control board as output mode, which can make the port output high level or low level.
 
 .. code-block:: c
+    :linenos:
 
     // initialize digital pin 13 as an output.
     pinMode(13, OUTPUT);
@@ -448,18 +461,21 @@ In the setup () function, first, we set pin 13 of the control board as output mo
 Then, in the loop () function, set pin 13 of the control board to output high level to make LED light up.
 
 .. code-block:: c
+    :linenos:
 
     digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
 
 Wait for 1000ms, which is 1s. delay() function is used to make control board wait for a moment before executing the next statement. The parameter indicates the number of milliseconds to wait for.
 
 .. code-block:: c
+    :linenos:
 
     delay(1000);              // wait for a second
 
 Then set the 13 pint to output low level, and LED light off. One second later, the execution of loop () function will be completed. 
 
 .. code-block:: c
+    :linenos:
 
     digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
     delay(1000);              // wait for a second

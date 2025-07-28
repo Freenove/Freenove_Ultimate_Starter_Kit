@@ -9,19 +9,24 @@ Project Servo Sweep
 
 First, let's get the servo to rotate.
 
-+------------------------------------+---------------------------------+
-|                                    | USB cable x1                    |
-|  Control board x1                  |                                 |
-|                                    |  |Chapter01_02|                 |
-|    |Chapter01_00|                  +---------------------------------+
-|                                    | Jumper M/M x3                   |
-|                                    |                                 |
-|                                    |  |Chapter01_06|                 |
-|                                    +---------------------------------+
-|                                    | Servo x1                        |
-|                                    |                                 |
-|                                    |  |Chapter11_00|                 |
-+------------------------------------+---------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------+---------------------------------+
+    |                                    | USB cable x1                    |
+    |  Control board x1                  |                                 |
+    |                                    |  |Chapter01_02|                 |
+    |    |Chapter01_00|                  +---------------------------------+
+    |                                    | Jumper M/M x3                   |
+    |                                    |                                 |
+    |                                    |  |Chapter01_06|                 |
+    |                                    +---------------------------------+
+    |                                    | Servo x1                        |
+    |                                    |                                 |
+    |                                    |  |Chapter11_00|                 |
+    +------------------------------------+---------------------------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_02| image:: ../_static/imgs/1_LED_Blink/Chapter01_02.png
@@ -30,7 +35,6 @@ First, let's get the servo to rotate.
 
 Component Knowledge
 ===============================================================
-
 
 Servo
 ---------------------------------------------------------------
@@ -43,26 +47,27 @@ Servo is a compact package which consists of a DC Motor, a set of reduction gear
 We will use a 50Hz PWM signal with a duty cycle in a certain range to drive the Servo. The lasting time 0.5ms-2.5ms of PWM single cycle high level corresponds to the Servo angle 0 degrees - 180 degree linearly. Part of the corresponding values are as follows:
 
 .. list-table:: 
-    :width: 100%
     :align: center
+    :class: zebra
+    :header-rows: 1
 
-    *   -   High level time
-        -   Servo angle
+    * - High level time
+      - Servo angle
 
-    *   -   0.5ms
-        -   0 degree
+    * - 0.5ms
+      - 0 degree
 
-    *   -   1ms
-        -   45 degree
+    * - 1ms
+      - 45 degree
 
-    *   -   1.5ms
-        -   90 degree
+    * - 1.5ms
+      - 90 degree
 
-    *   -   2ms
-        -   135 degree
+    * - 2ms
+      - 135 degree
 
-    *   -   2.5ms
-        -   180 degree
+    * - 2.5ms
+      - 180 degree
 
 When you change the servo signal, the servo will rotate to the designated position.
 
@@ -74,14 +79,16 @@ Use pin 3 of the control board to drive the servo.
 Pay attention to the color of servo lead wire: VCC (red), GND (brown), and signal line (orange). The wrong connection can cause damage to servo.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
+    :header-rows: 1
 
-    *   -   High level time
-        -   Servo angle
+    * - Schematic diagram
+      - Hardware connection
 
-    *   -   |Chapter11_02|
-        -   |Chapter11_03|
+    * - |Chapter11_02|
+      - |Chapter11_03|
 
 .. |Chapter11_02| image:: ../_static/imgs/11_Servo/Chapter11_02.png
 .. |Chapter11_03| image:: ../_static/imgs/11_Servo/Chapter11_03.png
@@ -97,16 +104,19 @@ Now, write the code to control servo, making it sweep in the motion range contin
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_11.1.1_Servo_Sweep/Sketch_11.1.1_Servo_Sweep.ino
     :linenos: 
     :language: c
+    :dedent:
 
 Servo uses the Servo library, like the following reference to Servo library:
 
 .. code-block:: c
+    :linenos:
 
     #include <Servo.h>
 
 Servo library provides the Servo class that controls it. Different from previous Serial class, the Servo class must be instantiated before you use it: 
 
 .. code-block:: c
+    :linenos:
 
     Servo myservo;              // create servo object to control a servo
 
@@ -116,25 +126,27 @@ The code above defines an object of Servo type, myservo.
 
     Servo class must be instantiated when used, that is, define an object of Servo type, for example:
     
-    Servo myservo;
+        Servo myservo;
     
     Most other boards can define 12 objects of Servo type, namely, they can control up to 12 servos.
     
     The function commonly used in the servo class is as follows: 
     
-    myservo.attach(pin): Initialize the servo, the parameter is the port connected to servo signal line;
-    
-    myservo.write(angle): Control servo to rotate to the specified angle; parameter here is to specify the angle.
+        myservo.attach(pin): Initialize the servo, the parameter is the port connected to servo signal line;
+        
+        myservo.write(angle): Control servo to rotate to the specified angle; parameter here is to specify the angle.
 
 After the Servo object is defined, it can refer to the function, such as initializing the servo:
 
 .. code-block:: c
+    :linenos:
 
     myservo.attach(servoPin); // attaches the servo on servoPin to the servo object
 
 After initializing the servo, you can control the servo to rotate to a specific angle: 
 
 .. code-block:: c
+    :linenos:
 
     myservo.write(pos);              // tell servo to go to position in variable "pos"
 
@@ -153,19 +165,24 @@ In the previous section, we've made the servo sweep continuously. Now, we will u
 Component List
 ===============================================================
 
-+------------------------------------+---------------------------------+
-| Control board x1                   |Breadboard x1                    |
-|                                    |                                 |
-|  |Chapter01_00|                    |  |Chapter01_01|                 |
-+------------------------------------+---------------------------------+
-| USB cable x1                       | Jumper M/M x6                   |
-|                                    |                                 |
-|  |Chapter01_02|                    |  |Chapter01_06|                 |
-+------------------------------------+---------------------------------+
-|  Rotary potentiometer x1           | Servo x1                        |
-|                                    |                                 |
-|  |Chapter07_00|                    |  |Chapter11_00|                 |
-+------------------------------------+---------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------+---------------------------------+
+    | Control board x1                   |Breadboard x1                    |
+    |                                    |                                 |
+    |  |Chapter01_00|                    |  |Chapter01_01|                 |
+    +------------------------------------+---------------------------------+
+    | USB cable x1                       | Jumper M/M x6                   |
+    |                                    |                                 |
+    |  |Chapter01_02|                    |  |Chapter01_06|                 |
+    +------------------------------------+---------------------------------+
+    |  Rotary potentiometer x1           | Servo x1                        |
+    |                                    |                                 |
+    |  |Chapter07_00|                    |  |Chapter11_00|                 |
+    +------------------------------------+---------------------------------+
 
 .. |Chapter07_00| image:: ../_static/imgs/7_ADC/Chapter07_00.png
 .. |Chapter01_01| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
@@ -176,21 +193,24 @@ Circuit
 Use pin A0 of the control board to detect the voltage of rotary potentiometer, and pin 3 to drive the servo.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
 
-    *   -   Schematic diagram
-        -   Schematic diagram
+    * - Schematic diagram
+      - Hardware connection
 
-    *   -   |Chapter11_05|
-        -   |Chapter11_06|
+    * - |Chapter11_05|
+      - |Chapter11_06|
 
 .. |Chapter11_05| image:: ../_static/imgs/11_Servo/Chapter11_05.png
 .. |Chapter11_06| image:: ../_static/imgs/11_Servo/Chapter11_06.png
 
 Sketch
+===============================================================
 
 Sketch 11.2.1
+-----------------------------------------------------------------
 
 Now, write the code to detect the voltage of rotary potentiometer, and control servo to rotate to a different angle according to that. 
 

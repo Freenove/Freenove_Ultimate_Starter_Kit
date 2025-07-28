@@ -12,25 +12,30 @@ Now let us try to use vibration switch to detect vibration.
 Component List
 ===============================================================
 
-+------------------------------------+---------------------------------+
-| Control board x1                   | Breadboard x1                   |
-|                                    |                                 |
-|  |Chapter01_00|                    |  |Chapter01_01|                 |
-+------------------------------------+---------------------------------+
-| USB cable x1                       | NPN transistor x1               |
-|                                    |                                 |
-|  |Chapter01_02|                    |  |Chapter09_00|                 |
-+------------------------------------+---------------------------------+
-| Resistor 1kΩ x1                    | Active buzzer x1                |
-|                                    |                                 |
-|  |Chapter09_02|                    |  |Chapter09_01|                 |
-+------------------------------------+---------------------------------+
-| Jumper M/M x4                      | Vibration switch x1             |
-|                                    |                                 |
-| Jumper F/M x2                      |                                 |
-|                                    |                                 |
-|  |Chapter01_06|                    |  |Chapter20_00|                 |
-+------------------------------------+---------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------+---------------------------------+
+    | Control board x1                   | Breadboard x1                   |
+    |                                    |                                 |
+    |  |Chapter01_00|                    |  |Chapter01_01|                 |
+    +------------------------------------+---------------------------------+
+    | USB cable x1                       | NPN transistor x1               |
+    |                                    |                                 |
+    |  |Chapter01_02|                    |  |Chapter09_00|                 |
+    +------------------------------------+---------------------------------+
+    | Resistor 1kΩ x1                    | Active buzzer x1                |
+    |                                    |                                 |
+    |  |Chapter09_02|                    |  |Chapter09_01|                 |
+    +------------------------------------+---------------------------------+
+    | Jumper M/M x4                      | Vibration switch x1             |
+    |                                    |                                 |
+    | Jumper F/M x2                      |                                 |
+    |                                    |                                 |
+    |  |Chapter01_06|                    |  |Chapter20_00|                 |
+    +------------------------------------+---------------------------------+
 
 .. |Chapter01_02| image:: ../_static/imgs/1_LED_Blink/Chapter01_02.png
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
@@ -42,8 +47,10 @@ Component List
 .. |Chapter01_06| image:: ../_static/imgs/1_LED_Blink/Chapter01_06.png
 
 Component Knowledge
+===============================================================
 
 Vibration Switch
+---------------------------------------------------------------
 
 Vibration switches is a kind of sensor that can detect vibration. When the vibration amplitude is greater than the critical value, two pins of the vibration switch will be switched on.
 
@@ -65,9 +72,10 @@ Some of the control board digital pins can be configured to interrupt mode, whic
 Pin 2 and 3 of the control board can be configured to interrupt mode. Conditions that trigger interrupt can be configured to:
 
 .. list-table:: 
-    :width: 80%
     :widths: 1 1
     :align: center
+    :header-rows: 1
+    :class: zebra
 
     *   -   Condition
         -   Function
@@ -92,13 +100,14 @@ Circuit
 Use pin 3 on the control board to connect vibration switch, and pin 13 to drive buzzer.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
 
-    *   -   Schematic diagram
+    *   -   **Schematic diagram**
+        -   **Hardware connection**
     *   -   |Chapter20_03|
-    *   -   Hardware connection
-    *   -   |Chapter20_04|
+        -   |Chapter20_04|
 
 .. |Chapter20_03| image:: ../_static/imgs/20_Vibration_Switch/Chapter20_03.png
 .. |Chapter20_04| image:: ../_static/imgs/20_Vibration_Switch/Chapter20_04.png
@@ -114,10 +123,12 @@ Now write code to detect whether the vibration switch is conducted and whether i
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_20.1.1_Detect_Vibration/Sketch_20.1.1_Detect_Vibration.ino
     :linenos: 
     :language: c
+    :dedent:
 
 This code configures the pin that is connected to vibration switch to be triggered by falling edge, that is, FALLING mode.
 
 .. code-block:: c
+    :linenos:
 
     attachInterrupt(digitalPinToInterrupt(switchPin), vibrate, FALLING);
 
@@ -129,15 +140,19 @@ This code configures the pin that is connected to vibration switch to be trigger
     
     ISR: the ISR to be called when an interrupt occurs; this function must take no parameters and return nothing. This function is sometimes referred to as an interrupt service routine.
 
+    mode: defines when the interrupt should be triggered.
+
 And we configure the pins that connected with vibration switch into pull up input mode. This way can ensure a high level of vibration switch when not connected, and low level when connected. So it can cause interrupt.
 
 .. code-block:: c
+    :linenos:
 
     pinMode(switchPin, INPUT_PULLUP); // Set the vibration switch pin to pull up input mode
 
 The following is the interrupt function, and it will be executed when the interrupt is triggered.
 
 .. code-block:: c
+    :linenos:
 
     void vibrate() {
         isVibrate = true; // Marked as the trigger
@@ -149,5 +164,6 @@ Interrupt function should keep short, so we use a variable "isVibrate" to record
     :linenos: 
     :language: c
     :lines: 22-28
+    :dedent:
 
 Verify and upload the code and tap on the vibration switch, and then the buzzer will make a sound.

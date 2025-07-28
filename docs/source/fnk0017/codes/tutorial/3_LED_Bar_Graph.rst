@@ -12,19 +12,24 @@ Let us use control board to control a bar graph LED consisting of 10 LEDs.
 Component List
 ===============================================================
 
-+-----------------------------------+---------------------------------------+
-| Control board x1                  |  Breadboard x1                        |
-|                                   |                                       |
-|  |Chapter01_00|                   |   |Chapter01_01|                      |
-+-----------------------------------+-------------------+-------------------+
-| USB cable x1                      | LED bar graph x1  | Resistor 220Ω x10 |
-|                                   |                   |                   |
-|  |Chapter01_02|                   |  |Chapter03_00|   |  |Chapter01_04|   |
-+-----------------------------------+                   |                   |
-| Jumper M/M x11                    |                   |                   |
-|                                   |                   |                   |
-|  |Chapter01_06|                   |                   |                   |
-+-----------------------------------+-------------------+-------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+---------------------------------------+
+    | Control board x1                  |  Breadboard x1                        |
+    |                                   |                                       |
+    |  |Chapter01_00|                   |   |Chapter01_01|                      |
+    +-----------------------------------+-------------------+-------------------+
+    | USB cable x1                      | LED bar graph x1  | Resistor 220Ω x10 |
+    |                                   |                   |                   |
+    |  |Chapter01_02|                   |  |Chapter03_00|   |  |Chapter01_04|   |
+    +-----------------------------------+                   |                   |
+    | Jumper M/M x11                    |                   |                   |
+    |                                   |                   |                   |
+    |  |Chapter01_06|                   |                   |                   |
+    +-----------------------------------+-------------------+-------------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_01| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
@@ -58,24 +63,28 @@ Array
 Array is used to record a set of variables. An array is defined as below:
 
 .. code-block:: c
+    :linenos:
 
     int a[10];
 
 "int" is the type of the array and "10" represents the amount of elements of the array. This array can store 10 int types of elements as below.
 
 .. code-block:: c
+    :linenos:
 
     int a[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 Or there is another form that the number of elements is the size of the array:
 
 .. code-block:: c
+    :linenos:
 
     int a[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 We can reference elements of an array as below:
 
 .. code-block:: c
+    :linenos:
 
     int i, j;
     i = a[0];
@@ -87,14 +96,16 @@ Among them, "[]" is the array index, with a[0] as the first elements in the arra
 For example, now we define an array b[] below:
 
 .. code-block:: c
+    :linenos:
 
     int b[] = {5, 6, 7, 8};
 
 The value of each element in array b[] is as follows:
 
 .. list-table:: 
-    :width: 20%
     :align: center
+    :class: zebra text-center
+    :header-rows: 1
 
     *   -   b[0]
         -   b[1]
@@ -112,6 +123,7 @@ Loop
 The loop statement is used to perform repetitive work such as the initialization to all the elements of an array.
 
 .. code-block:: c
+    :linenos:
 
     while(expression)
     functionX();
@@ -119,6 +131,7 @@ The loop statement is used to perform repetitive work such as the initialization
 When there is more than one statement to be executed, the form is as follows:
 
 .. code-block:: c
+    :linenos:
 
     while(expression){
         functionX();
@@ -128,6 +141,7 @@ When there is more than one statement to be executed, the form is as follows:
 The first step of the execution is judging the expression inside "()". If the result is false, the statements inside "{}" will not be executed; if result is true, the statements will be executed.
 
 .. code-block:: c
+    :linenos:
 
     int i = 0;
     while (i < 2)
@@ -143,6 +157,7 @@ Third time: i<2, i=2 is not tenable, execution of loop statements is completed. 
 "do while" and "while" is similar. The difference is that the loop statements of "do while" is executed before judging expression. The result of the judgment will decide whether or not to go on the next execution:
 
 .. code-block:: c
+    :linenos:
 
     do {
     functionX();
@@ -151,6 +166,7 @@ Third time: i<2, i=2 is not tenable, execution of loop statements is completed. 
 "for" is another loop statement, and its form is as follows:
 
 .. code-block:: c
+    :linenos:
 
     for (expression1; expression2; expression 3)
     functionX();
@@ -158,6 +174,7 @@ Third time: i<2, i=2 is not tenable, execution of loop statements is completed. 
 When there is more than one statement to be executed, the form is as follows:
 
 .. code-block:: c
+    :linenos:
 
     for (expression 1; expression 2; expression 3) {
         functionX();
@@ -169,6 +186,7 @@ Expression 1 is generally used to initialize variables; expression 2 is a judgem
 For example:
 
 .. code-block:: c
+    :linenos:
 
     int i = 0, j = 0;
     for (i = 0; i < 2; i++)
@@ -181,12 +199,9 @@ Second time: i=1, i<2 is tenable, execute j++, and execute i++, then i=2, j=2;
 
 Third time: i<2 is tenable, i=2 is not tenable. The execution of loop statements is completed. Statement i=5 will be executed next.
 
-.. list-table:: 
-    :width: 50%
-    :align: center
-
-    *   -   :orange:`Operator ++, --`
-    *   -   "i++" is equivalent to "i=i+1". And "i--" equivalent to "i=i-1".
+.. py:function:: Operator ++, --
+    
+    "i++" is equivalent to "i=i+1". And "i--" equivalent to "i=i-1".
 
 Circuit
 ===============================================================
@@ -194,14 +209,16 @@ Circuit
 Let us use pin 4, 5, 6, 7, 8, 9, 10, 11, 12 of the control board to drive LED bar graph.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
+    :header-rows: 1
 
-    *   -   Schematic diagram
-        -   Hardware connection
+    * - Schematic diagram
+      - Hardware connection
 
-    *   -   |Chapter03_02|
-        -   |Chapter03_03|
+    * - |Chapter03_02|
+      - |Chapter03_03|
 
 .. |Chapter03_02| image:: ../_static/imgs/3_LED_Bar_Graph/Chapter03_02.png
 .. |Chapter03_03| image:: ../_static/imgs/3_LED_Bar_Graph/Chapter03_03.png
@@ -219,27 +236,25 @@ First, write a sketch to achieve the LED light water.
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_3.1.1_LED_bar_graph_Display/Sketch_3.1.1_LED_bar_graph_Display.ino
     :linenos: 
     :language: c
+    :dedent:
 
 Firstly, let us define a read-only variable to record the number of LEDs as the number of times in the loop.
 
 .. code-block:: c
+    :linenos:
 
     const int ledCount = 10;    // the number of LEDs in the bar graph
 
-.. list-table:: 
-    :width: 50%
-    :align: center
-
-    *   -   :orange:`Read-only variable`
-    *   -   "const" keyword is used to define read-only variables, 
-         
-            which is called in the same way as other variables.
-        
-            But read-only variables can only be assigned once.
+.. py:function:: Read-only variable
+    
+    "const" keyword is used to define read-only variables, which is called in the same way as other variables.
+    
+    But read-only variables can only be assigned once.
 
 Then we define an array used to store the number of pins connected to LED bar graph. So it is convenient to manipulate arrays to modify the pin number.
 
 .. code-block:: c
+    :linenos:
 
     // an array of pin numbers to which LEDs are attached
     int ledPins[] = { 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
@@ -278,6 +293,7 @@ Then modify the code to create a reciprocating LED light water.
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_3.1.2_LED_bar_graph_Display/Sketch_3.1.2_LED_bar_graph_Display.ino
     :linenos: 
     :language: c
+    :dedent:
 
 We have modified the code inside the function loop() to make the LED bar graph light up in one direction, and then in a reverse direction repeatedly.
 

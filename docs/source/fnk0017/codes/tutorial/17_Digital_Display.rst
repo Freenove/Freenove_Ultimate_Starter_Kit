@@ -12,19 +12,24 @@ Frist, try to use the digit display that can display 1-digit number.
 Component List
 ===============================================================
 
-+-----------------------------------+-------------------------------------------------------------+
-| Control board x1                  |  Breadboard x1                                              |
-|                                   |                                                             |
-|  |Chapter01_00|                   |   |Chapter01_01|                                            |
-+-----------------------------------+------------------------+-------------------+----------------+
-| USB cable x1                      | 74HC595 x1             | 1-digit 7-segment |Resistor        |
-|                                   |                        |                   |                |
-|  |Chapter01_02|                   |  |Chapter15_00|        |   display x1      |220Ω x8         |
-+-----------------------------------+                        |                   |                |
-| Jumper M/M x18                    |                        |  |Chapter17_00|   | |Chapter01_04| |
-|                                   |                        |                   |                |
-|  |Chapter01_06|                   |                        |                   |                |
-+-----------------------------------+------------------------+-------------------+----------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+-------------------------------------------------------------+
+    | Control board x1                  |  Breadboard x1                                              |
+    |                                   |                                                             |
+    |  |Chapter01_00|                   |   |Chapter01_01|                                            |
+    +-----------------------------------+------------------------+-------------------+----------------+
+    | USB cable x1                      | 74HC595 x1             | 1-digit 7-segment |Resistor        |
+    |                                   |                        |                   |                |
+    |  |Chapter01_02|                   |  |Chapter15_00|        |   display x1      |220Ω x8         |
+    +-----------------------------------+                        |                   |                |
+    | Jumper M/M x18                    |                        |  |Chapter17_00|   | |Chapter01_04| |
+    |                                   |                        |                   |                |
+    |  |Chapter01_06|                   |                        |                   |                |
+    +-----------------------------------+------------------------+-------------------+----------------+
 
 .. |Chapter17_00| image:: ../_static/imgs/17_Digital_Display/Chapter17_00.png
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
@@ -55,13 +60,53 @@ If we use a byte to show the state of the LEDs that connected to pin 5, 10, 9, 1
 
 The numbers and letters that can be display are shown below:
 
-.. list-table:: 
-    :width: 70%
+.. table::
     :align: center
+    :class: zebra text-center
+    
+    +---------------+---------------+--------------------+
+    | Number/Letter | Binary number | Hexadecimal number |
+    +===============+===============+====================+
+    | 0             | 11000000      | 0xc0               |
+    +---------------+---------------+--------------------+
+    | 1             | 11111001      | 0xf9               |
+    +---------------+---------------+--------------------+
+    | 2             | 10100100      | 0xa4               |
+    +---------------+---------------+--------------------+
+    | 3             | 10110000      | 0xb0               |
+    +---------------+---------------+--------------------+
+    | 4             | 10011001      | 0x99               |
+    +---------------+---------------+--------------------+
+    | 5             | 10010010      | 0x92               |
+    +---------------+---------------+--------------------+
+    | 6             | 10000010      | 0x82               |
+    +---------------+---------------+--------------------+
+    | 7             | 11111000      | 0xf8               |
+    +---------------+---------------+--------------------+
+    | 8             | 10000000      | 0x80               |
+    +---------------+---------------+--------------------+
+    | 9             | 10010000      | 0x90               |
+    +---------------+---------------+--------------------+
+    | A             | 10001000      | 0x88               |
+    +---------------+---------------+--------------------+
+    | b             | 10000011      | 0x83               |
+    +---------------+---------------+--------------------+
+    | C             | 11000110      | 0xc6               |
+    +---------------+---------------+--------------------+
+    | d             | 10100001      | 0xa1               |
+    +---------------+---------------+--------------------+
+    | E             | 10000110      | 0x86               |
+    +---------------+---------------+--------------------+
+    | F             | 10001110      | 0x8e               |
+    +---------------+---------------+--------------------+
 
-    *   -   Schematic diagram
+.. list-table:: 
+    :align: center
+    :class: table-line
+
+    *   -   **Schematic diagram**
     *   -   |Chapter17_03|
-    *   -   Hardware connection
+    *   -   **Hardware connection**
     *   -   |Chapter17_04|
 
 .. |Chapter17_03| image:: ../_static/imgs/17_Digital_Display/Chapter17_03.png
@@ -108,19 +153,24 @@ Verify and upload the code, then you will see the 1-digit 7-segment display show
 Project 4-digit 7-segment Display
 ***************************************************************
 
-+-----------------------------------+-------------------------------------------------------------+
-| Control board x1                  |  Breadboard x1                                              |
-|                                   |                                                             |
-|  |Chapter01_00|                   |   |Chapter01_01|                                            |
-+-----------------------------------+------------------------+-------------------+----------------+
-| USB cable x1                      | 74HC595 x1             | 4-digit 7-segment |Resistor        |
-|                                   |                        |                   |                |
-|  |Chapter01_02|                   |  |Chapter15_00|        |   display x1      |220Ω x8         |
-+-----------------------------------+                        |                   |                |
-| Jumper M/M x21                    |                        |  |Chapter17_06|   | |Chapter01_04| |
-|                                   |                        |                   |                |
-|  |Chapter01_06|                   |                        |                   |                |
-+-----------------------------------+------------------------+-------------------+----------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+-------------------------------------------------------------+
+    | Control board x1                  |  Breadboard x1                                              |
+    |                                   |                                                             |
+    |  |Chapter01_00|                   |   |Chapter01_01|                                            |
+    +-----------------------------------+------------------------+-------------------+----------------+
+    | USB cable x1                      | 74HC595 x1             | 4-digit 7-segment |Resistor        |
+    |                                   |                        |                   |                |
+    |  |Chapter01_02|                   |  |Chapter15_00|        |   display x1      |220Ω x8         |
+    +-----------------------------------+                        |                   |                |
+    | Jumper M/M x21                    |                        |  |Chapter17_06|   | |Chapter01_04| |
+    |                                   |                        |                   |                |
+    |  |Chapter01_06|                   |                        |                   |                |
+    +-----------------------------------+------------------------+-------------------+----------------+
 
 .. |Chapter17_06| image:: ../_static/imgs/17_Digital_Display/Chapter17_06.png
 
@@ -150,12 +200,12 @@ Circuit
 Use pin 11, 12, 13 on control board to control the 74HC595, and connect it to the 4-digit 7-segment display. Use pin 7, 6, 5, 4 to control the 4 common ports.
 
 .. list-table:: 
-    :width: 70%
     :align: center
+    :class: table-line
 
-    *   -   Schematic diagram
+    *   -   **Schematic diagram**
     *   -   |Chapter17_09|
-    *   -   Hardware connection
+    *   -   **Hardware connection**
     *   -   |Chapter17_10|
 
 .. |Chapter17_09| image:: ../_static/imgs/17_Digital_Display/Chapter17_09.png
@@ -172,6 +222,7 @@ Now, write code to control 4-digit 7-segment display to display 4 numbers.
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_17.2.1_4_Digit_7-Segment_Display/Sketch_17.2.1_4_Digit_7-Segment_Display.ino
     :linenos: 
     :language: c
+    :dedent:
 
 Besides the similarity with the previous section, the difference is that this code is to output content to the four 7-segment display continuously. Write a function to select a common port.
 
@@ -179,6 +230,7 @@ Besides the similarity with the previous section, the difference is that this co
     :linenos: 
     :language: c
     :lines: 39-46
+    :dedent:
 
 Write a function to send data to 74HC595.
 
@@ -186,6 +238,7 @@ Write a function to send data to 74HC595.
     :linenos: 
     :language: c
     :lines: 48-55
+    :dedent:
 
 First select a common port and then output the content, which will be displayed by the 7-segment display connected to common port, to 74HC595 when operating. Clear the display content after a period of time to avoid ghosting phenomenon.
 
@@ -193,12 +246,16 @@ First select a common port and then output the content, which will be displayed 
     :linenos: 
     :language: c
     :lines: 29-35
+    :dedent:
 
 Use cycle command in loop() function to output content to the four 7-segment display.
 
-  for (int i = 0; i < 4; i++) {
-    ...
-  }
+.. code-block:: C
+    :linenos:
+    
+    for (int i = 0; i < 4; i++) {
+        ...
+    }
 
 Repeat this operation continuously.
 
@@ -215,10 +272,12 @@ Now write code to control 4-digit 7-segment display to display dynamic numbers.
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_17.2.2_4_Digit_7-Segment_Display/Sketch_17.2.2_4_Digit_7-Segment_Display.ino
     :linenos: 
     :language: c
+    :dedent:
 
 Frist set a timer with a cycle of 1s
 
 .. code-block:: c
+    :linenos:
 
     FlexiTimer2::set(1000, timerInt);  // configure the timer and interrupt function
     FlexiTimer2::start();              // start timer
@@ -226,6 +285,7 @@ Frist set a timer with a cycle of 1s
 In the timer interrupt function, make the variable second plus 1
 
 .. code-block:: c
+    :linenos:
 
     void timerInt() {
         second++;       // second plus 1
@@ -234,6 +294,7 @@ In the timer interrupt function, make the variable second plus 1
 In function loop(), The first Digit is used for displaying single digits of "dec", the second Digit is for tens, the third for hundreds and fourth for thousands respectively.
 
 .. code-block:: c
+    :linenos:
 
     byte bit[4];
     bit[0] = second % 10;
@@ -244,6 +305,7 @@ In function loop(), The first Digit is used for displaying single digits of "dec
 Then display the value of each bit.
 
 .. code-block:: c
+    :linenos:
 
     writeData(num[bit[3 - i]]);
 

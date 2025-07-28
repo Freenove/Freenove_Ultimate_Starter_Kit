@@ -12,23 +12,27 @@ ADC is used to convert analog signals into digital signals. Control chip on the 
 Component List
 ===============================================================
 
-+-----------------------------------+---------------------------------------+
-| Control board x1                  |  Breadboard x1                        |
-|                                   |                                       |
-|  |Chapter01_00_1|                 |   |Chapter01_01|                      |
-+-----------------------------------+---------------------------------------+
-| USB cable x1                      | Rotary potentiometer x1               |
-|                                   |                                       |
-|  |Chapter01_02|                   |  |Chapter07_00|                       |
-+-----------------------------------+                                       |
-| Jumper M/M x3                     |                                       |
-|                                   |                                       |
-|  |Chapter01_06|                   |                                       |
-+-----------------------------------+---------------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+---------------------------------------+
+    | Control board x1                  |  Breadboard x1                        |
+    |                                   |                                       |
+    |  |Chapter01_00_1|                 |   |Chapter01_01|                      |
+    +-----------------------------------+---------------------------------------+
+    | USB cable x1                      | Rotary potentiometer x1               |
+    |                                   |                                       |
+    |  |Chapter01_02|                   |  |Chapter07_00|                       |
+    +-----------------------------------+                                       |
+    | Jumper M/M x3                     |                                       |
+    |                                   |                                       |
+    |  |Chapter01_06|                   |                                       |
+    +-----------------------------------+---------------------------------------+
 
 .. |Chapter01_00_1| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_01| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
-    :width: 95%
 .. |Chapter01_04| image:: ../_static/imgs/1_LED_Blink/Chapter01_04.png
 .. |Chapter01_06| image:: ../_static/imgs/1_LED_Blink/Chapter01_06.png
 .. |Chapter07_00| image:: ../_static/imgs/7_ADC/Chapter07_00.png
@@ -85,7 +89,9 @@ Circuit
 Use pin A0 on the control board to detect the voltage of rotary potentiometer.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
+    :class: table-line
+    :header-rows: 1
     :align: center
 
     *   -   Schematic diagram
@@ -126,25 +132,51 @@ In the previous section, we have finished reading ADC value and converting it in
 Component List
 ===============================================================
 
-+-----------------------------------+-------------------------------------------------------------+
-| Control board x1                  |  Breadboard x1                                              |
-|                                   |                                                             |
-|  |Chapter01_00|                   |   |Chapter01_01_1|                                          |
-+-----------------------------------+------------------------+-------------------+----------------+
-| USB cable x1                      |Rotary potentiometer x1 | LED x1            |Resistor 220Ω x1|
-|                                   |                        |                   |                |
-|  |Chapter01_02|                   |  |Chapter07_00|        |  |Chapter01_03|   | |Chapter01_04| |
-+-----------------------------------+                        |                   |                |
-| Jumper M/M x2                     |                        |                   |                |
-|                                   |                        |                   |                |
-|  |Chapter01_06|                   |                        |                   |                |
-+-----------------------------------+------------------------+-------------------+----------------+
+.. table::
+    :width: 80%
+    :widths: 60 20 20 20
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+-------------------------------------------------------------+
+    | Control board x1                  |  Breadboard x1                                              |
+    |                                   |                                                             |
+    |  |Chapter01_00_1|                 |   |Chapter01_01|                                            |
+    +-----------------------------------+------------------------+-------------------+----------------+
+    | USB cable x1                      |Rotary potentiometer x1 | LED x1            |Resistor 220Ω x1|
+    |                                   |                        |                   |                |
+    |  |Chapter01_02|                   |  |Chapter07_00|        |  |Chapter01_03|   | |Chapter01_04| |
+    +-----------------------------------+                        |                   |                |
+    | Jumper M/M x2                     |                        |                   |                |
+    |                                   |                        |                   |                |
+    |  |Chapter01_06|                   |                        |                   |                |
+    +-----------------------------------+------------------------+-------------------+----------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_01_1| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
     :width: 60%
 .. |Chapter01_05| image:: ../_static/imgs/1_LED_Blink/Chapter01_05.png
 .. |Chapter01_03| image:: ../_static/imgs/1_LED_Blink/Chapter01_03.png
+
+Circuit
+=========================
+
+Use pin A0 on control board to detect the voltage of rotary potentiometer, and use pin 9 to control one LED.
+
+.. list-table:: 
+    :width: 80%
+    :class: table-line
+    :header-rows: 1
+    :align: center
+
+    *   -   Schematic diagram
+        -   Hardware connection
+
+    *   -   |Chapter07_13|
+        -   |Chapter07_14|
+
+.. |Chapter07_13| image:: ../_static/imgs/7_ADC/Chapter07_13.png
+.. |Chapter07_14| image:: ../_static/imgs/7_ADC/Chapter07_14.png
 
 Sketch
 ===============================================================
@@ -173,19 +205,24 @@ In the previous section, we have finished reading ADC value and converted it int
 Component List
 ===============================================================
 
-+-------------------+---------------------------------------------------------------------------+
-| Control board x1  |  Breadboard x1                                                            |
-|                   |                                                                           |
-|  |Chapter01_00|   |   |Chapter01_01_2|                                                        |
-+-------------------+--------------------+-----------------+------------------+-----------------+
-| USB cable x1      |Photoresistor x1    | LED x1          | Resistor         | Resistor        |
-|                   |                    |                 |                  |                 |
-|  |Chapter01_02|   |  |Chapter07_09|    |  |Chapter01_03| | 10kΩ x1          |  220Ω x1        |
-+-------------------+                    |                 |                  |                 |
-| Jumper M/M x2     |                    |                 |  |Chapter05_00|  | |Chapter01_04|  |
-|                   |                    |                 |                  |                 |
-|  |Chapter01_06|   |                    |                 |                  |                 |
-+-------------------+--------------------+-----------------+------------------+-----------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-------------------+---------------------------------------------------------------------------+
+    | Control board x1  |  Breadboard x1                                                            |
+    |                   |                                                                           |
+    |  |Chapter01_00|   |   |Chapter01_01_2|                                                        |
+    +-------------------+--------------------+-----------------+------------------+-----------------+
+    | USB cable x1      |Photoresistor x1    | LED x1          | Resistor         | Resistor        |
+    |                   |                    |                 |                  |                 |
+    |  |Chapter01_02|   |  |Chapter07_09|    |  |Chapter01_03| | 10kΩ x1          |  220Ω x1        |
+    +-------------------+                    |                 |                  |                 |
+    | Jumper M/M x2     |                    |                 |  |Chapter05_00|  | |Chapter01_04|  |
+    |                   |                    |                 |                  |                 |
+    |  |Chapter01_06|   |                    |                 |                  |                 |
+    +-------------------+--------------------+-----------------+------------------+-----------------+
 
 .. |Chapter05_00| image:: ../_static/imgs/5_Control_LED/Chapter05_00.png
 .. |Chapter07_09| image:: ../_static/imgs/7_ADC/Chapter07_09.png

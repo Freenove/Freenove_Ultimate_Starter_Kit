@@ -12,19 +12,24 @@ Now, try to make two LEDs blink on control board.
 Component List
 ===============================================================
 
-+-----------------------------------+---------------------------------------+
-| Control board x1                  |  Breadboard x1                        |
-|                                   |                                       |
-|  |Chapter01_00|                   |   |Chapter01_01|                      |
-+-----------------------------------+-------------------+-------------------+
-| USB cable x1                      | LED x2            | Resistor 220Ω x1  |
-|                                   |                   |                   |
-|  |Chapter01_02|                   |  |Chapter01_03|   |  |Chapter01_04|   |
-+-----------------------------------+                   |                   |
-| Jumper M/M x3                     |                   |                   |
-|                                   |                   |                   |
-|  |Chapter01_06|                   |                   |                   |
-+-----------------------------------+-------------------+-------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+---------------------------------------+
+    | Control board x1                  |  Breadboard x1                        |
+    |                                   |                                       |
+    |  |Chapter01_00|                   |   |Chapter01_01|                      |
+    +-----------------------------------+-------------------+-------------------+
+    | USB cable x1                      | LED x2            | Resistor 220Ω x1  |
+    |                                   |                   |                   |
+    |  |Chapter01_02|                   |  |Chapter01_03|   |  |Chapter01_04|   |
+    +-----------------------------------+                   |                   |
+    | Jumper M/M x3                     |                   |                   |
+    |                                   |                   |                   |
+    |  |Chapter01_06|                   |                   |                   |
+    +-----------------------------------+-------------------+-------------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_01| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
@@ -44,14 +49,15 @@ Parameters of function
 
 In the last chapter, we have used a function with a parameter, such as:
 
-
 .. code-block:: c
+    :linenos:
 
     delay(1000);              // wait for a second
 
 Next, we will define a function with a parameter as below:
 
 .. code-block:: c
+    :linenos:
     
     void functionA(int i) {
         i = i + 1;
@@ -60,6 +66,7 @@ Next, we will define a function with a parameter as below:
 "i" is the parameter of this function. "int" is the type of i. When calling this function, it is necessary to enter the parameter of int type:
 
 .. code-block:: c
+    :linenos:
 
     functionA(1);
 
@@ -71,6 +78,7 @@ The input parameter will be assigned to "i" and involved in the calculation of t
 A function can define more than one parameter and the type of the parameters can be different:
 
 .. code-block:: c
+    :linenos:
 
     void functionB(int i, char j) {
         char k = 'a';
@@ -86,6 +94,7 @@ Data of Boolean type can only be assigned to "true" or "false".
 "true" generally represents a certain relationship which is tenable and correct, and "false" is the opposite.
 
 .. code-block:: c
+    :linenos:
 
     boolean isTrue;
     isTrue = true;            // after the execution, "isTrue" is assigned to true.
@@ -99,56 +108,51 @@ Logical operator
 The logic operators have "&&" (and), "||" (or), "!" (non), and the calculation object of them are boolean type. The result of logic operation is as follows:
 
 .. list-table:: 
-    :width: 20%
     :widths: 1 1 1
-    :align: center
 
-    *   -   :orange:`&&`
-        -   :orange:`true`
-        -   :orange:`false`
+    * - :combo:`font-bolder orange:&&`
+      - :combo:`font-bolder orange:true`
+      - :combo:`font-bolder orange:false`
 
-    *   -   :orange:`true`
-        -   **true**
-        -   **false**
+    * - :combo:`font-bolder orange:true`
+      - **true**
+      - **false**
 
-    *   -   :orange:`false`
-        -   **false**
-        -   **false**
+    * - :combo:`bg-orange:false`
+      - **false**
+      - **false**
 
 .. list-table:: 
-    :width: 20%
     :widths: 1 1 1
-    :align: center
 
-    *   -   :orange:`||`
-        -   :orange:`true`
-        -   :orange:`false`
+    * - :combo:`font-bolder orange:||`
+      - :combo:`font-bolder orange:true`
+      - :combo:`font-bolder orange:false`
 
-    *   -   :orange:`true`
-        -   **true**
-        -   **true**
+    * - :combo:`font-bolder orange:true`
+      - **true**
+      - **true**
 
-    *   -   :orange:`false`
-        -   **true**
-        -   **false**
+    * - :combo:`font-bolder orange:false`
+      - **true**
+      - **false**
 
 .. list-table:: 
-    :width: 20%
     :widths: 1 1
-    :align: center
 
-    *   -   :orange:`!`
-        -   
+    * - :combo:`font-bolder orange:!`
+      - 
 
-    *   -   :orange:`true`
-        -   **false**
+    * - :combo:`font-bolder orange:true`
+      - **false**
 
-    *   -   :orange:`false`
-        -   **true**
+    * - :combo:`font-bolder orange:false`
+      - **true**
 
 For example:
 
 .. code-block:: c
+    :linenos:
 
     boolean isTrue;
     isTrue = true && false;   // after the execution, "isTrue"is assigned to false.
@@ -163,6 +167,7 @@ Relational operator is used to judge whether the relationship of the two amount 
 For example, the results of "1<2" is true and the result of "1>2" is false:
 
 .. code-block:: c
+    :linenos:
 
     boolean isTrue;
     isTrue = 1 < 2;           // after the execution, "isTrue"is true.
@@ -199,14 +204,16 @@ Circuit
 Use pin 4 and pin 5 of the control board to drive these two LEDs respectively.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
+    :header-rows: 1
 
-    *   -   Schematic diagram
-        -   Hardware connection
+    * - Schematic diagram
+      - Hardware connection
     
-    *   -   |Chapter02_05|
-        -   |Chapter02_06|
+    * - |Chapter02_05|
+      - |Chapter02_06|
   
 .. |Chapter02_05| image:: ../_static/imgs/2_Two_LED_Blink/Chapter02_05.png
 .. |Chapter02_06| image:: ../_static/imgs/2_Two_LED_Blink/Chapter02_06.png
@@ -227,21 +234,13 @@ At first, use sketch without function to make two LEDs blink alternatively.
 
 This section of code is similar to the previous section. The difference is that the amount of LEDs is two, and the two LEDs blink alternatively.
 
-.. list-table:: 
-    :width: 100%
-    :align: center
-
-    *   -   :orange:`Variable scope`
+.. py:function:: Variable scope
     
-    *   -   In the 2nd and 3rd rows of the code above, we define two variables to store the pin number. These two 
-         
-            variables defined outside the function are called "Global variable", which can be called by all other 
-            
-            functions. Variables defined inside a function is called "local variable", which can be called only 
-            
-            by the current function. When local variables and global variables have same names, the global variable
-            
-            is inaccessible within the function.
+    In the 2nd and 3rd rows of the code above, we define two variables to store the pin number. These two 
+    variables defined outside the function are called "Global variable", which can be called by all other 
+    functions. Variables defined inside a function is called "local variable", which can be called only 
+    by the current function. When local variables and global variables have same names, the global variable
+    is inaccessible within the function.
 
 Verify and upload the code, then you will see the two LEDs blink alternatively.
 
@@ -254,12 +253,14 @@ Sketch 2.1.2
 In the last sketch, we can see that the following two sections of the code are similar, so we will use one function to replace them to simplify the code.
 
 .. code-block:: c
+    :linenos:
 
     digitalWrite(led1Pin, HIGH);   // turn the LED1 on
     digitalWrite(led2Pin, LOW);    // turn the LED2 off
     delay(1000);     
 
 .. code-block:: c
+    :linenos:
 
     digitalWrite(led1Pin, LOW);    // turn the LED1 off
     digitalWrite(led2Pin, HIGH);   // turn the LED2 on
@@ -270,6 +271,7 @@ Now, we will use a function to improve the above code.
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_2.1.2_Two_LEDs_Blink/Sketch_2.1.2_Two_LEDs_Blink.ino
     :linenos: 
     :language: c
+    :dedent:
 
 In the sketch above, we integrate the 2 LED statements into one function, void setLed(int led1, int led2), and control two LEDs through the parameters led1 and led2.
 
@@ -277,34 +279,33 @@ In the sketch above, we integrate the 2 LED statements into one function, void s
     :linenos: 
     :language: c
     :lines: 24-28
+    :dedent:
 
 When the function above is called, we will control the two LEDs by using different parameters as below.
 
 .. code-block:: c
+    :linenos:
 
     setLed(HIGH, LOW);      // set LED1 on, and LED2 off.
     setLed(LOW, HIGH);      // set LED1 off, and LED2 on.
 
 Verify and upload the code, then you will see the two LEDs blink alternatively.
 
-.. list-table:: 
-    :width: 100%
-    :align: center
-
-    *   -   :orange:`HIGH and LOW`
+.. py:function:: HIGH and LOW
     
-    *   -   **The macro is an identifier that represents a number, a statement, or a piece of code. HIGH and LOW are**
+    The macro is an identifier that represents a number, a statement, or a piece of code. HIGH and LOW are**
+    
+    two macros. HIGH and LOW are defined in Arduino IDE as below:
+    
+        #define HIGH 1 
         
-            two macros. HIGH and LOW are defined in Arduino IDE as below:
-             #define HIGH 1 
-
-             #define LOW 0
-            
-            In the code, a macro is used as the content defined by itself. For example,
-            
-            setLed (HIGH, LOW) is equivalent to setLed (1, 0).
+        #define LOW 0
     
-            Using macros can simplify the code and enhance its readability, such as INPUT, OUTPUT.
+    In the code, a macro is used as the content defined by itself. 
+    
+    For example, setLed (HIGH, LOW) is equivalent to setLed (1, 0).
+
+    Using macros can simplify the code and enhance its readability, such as INPUT, OUTPUT.
 
 Sketch 2.1.3
 ---------------------------------------------------------------
@@ -316,6 +317,7 @@ Now, we'll use conditional statement to improve the code above.
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_2.1.3_Two_LEDs_Blink/Sketch_2.1.3_Two_LEDs_Blink.ino
     :linenos: 
     :language: c
+    :dedent:
 
 Here, we rewrite the function so that we only need to set the state of LED1, and the state of LED2 can be set automatically.
 

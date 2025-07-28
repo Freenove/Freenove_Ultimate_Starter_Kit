@@ -12,19 +12,24 @@ Now, let us use control board to make 4 LED emit different brightness of light.
 Component List
 ===============================================================
 
-+-----------------------------------+---------------------------------------+
-| Control board x1                  |  Breadboard x1                        |
-|                                   |                                       |
-|  |Chapter01_00|                   |   |Chapter01_01|                      |
-+-----------------------------------+-------------------+-------------------+
-| USB cable x1                      | LED x4            | Resistor 220Ω x4  |
-|                                   |                   |                   |
-|  |Chapter01_02|                   |  |Chapter01_03|   |  |Chapter01_04|   |
-+-----------------------------------+                   |                   |
-| Jumper M/M x5                     |                   |                   |
-|                                   |                   |                   |
-|  |Chapter01_06|                   |                   |                   |
-+-----------------------------------+-------------------+-------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+---------------------------------------+
+    | Control board x1                  |  Breadboard x1                        |
+    |                                   |                                       |
+    |  |Chapter01_00|                   |   |Chapter01_01|                      |
+    +-----------------------------------+-------------------+-------------------+
+    | USB cable x1                      | LED x4            | Resistor 220Ω x4  |
+    |                                   |                   |                   |
+    |  |Chapter01_02|                   |  |Chapter01_03|   |  |Chapter01_04|   |
+    +-----------------------------------+                   |                   |
+    | Jumper M/M x5                     |                   |                   |
+    |                                   |                   |                   |
+    |  |Chapter01_06|                   |                   |                   |
+    +-----------------------------------+-------------------+-------------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_01| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
@@ -64,6 +69,7 @@ Return value of function
 We have learned and used the function without return value, now we will learn how to use the function with return value. A function with return value is shown as follow:
 
 .. code-block:: c
+    :linenos:
 
     int sum(int i, int j) {
         int k = i + j;
@@ -79,6 +85,7 @@ When the return statement is executed, the function will return immediately rega
 A function with return value is called as follows:
 
 .. code-block:: c
+    :linenos:
 
     int a = 1, b = 2, c = 0;
     c = sum(1, 2);            // after the execution the value of c is 3
@@ -86,12 +93,14 @@ A function with return value is called as follows:
 A function with a return value can also be used as a parameter of functions, for example:
 
 .. code-block:: c
+    :linenos:
 
     delay(sum(100, 200));
 
 It is equivalent to the following code:
 
 .. code-block:: c
+    :linenos:
 
     delay(300);
 
@@ -101,6 +110,7 @@ return
 We have learned the role of the return statement in a function with a return value. It can also be used in functions without a return value, and there is no data behind the return keyword:
 
 .. code-block:: c
+    :linenos:
 
     return;
 
@@ -115,14 +125,16 @@ Circuit
 Use pin 5, 6, 9, 10 on the control board to drive 4 LEDs.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
+    :header-rows: 1
+    :class: table-line
     :align: center
 
-    *   -   Schematic diagram
-        -   Hardware connectionS
+    * - Schematic diagram
+      - Hardware connection
 
-    *   -   |Chapter04_02|
-        -   |Chapter04_03|
+    * - |Chapter04_02|
+      - |Chapter04_03|
 
 .. |Chapter04_02| image:: ../_static/imgs/4_LED_Blink_Smoothly/Chapter04_02.png
 .. |Chapter04_03| image:: ../_static/imgs/4_LED_Blink_Smoothly/Chapter04_03.png
@@ -138,42 +150,30 @@ Now let us use sketch to make 4 LEDs emit different brightness of light. We will
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_4.1.1_LEDs_Emit_Different_Brightness/Sketch_4.1.1_LEDs_Emit_Different_Brightness.ino
     :linenos: 
     :language: c
+    :dedent:
 
 After the initialization of the 4 ports, we set the ports to output PWM waves with different duty cycle. Take ledPin1 as an example, firstly map 2% to the range of 0-255, and then output the PWM wave with duty cycle of 2%, 
 
 .. code-block:: c
+    :linenos:
 
     analogWrite(ledPin1, map(2, 0, 100, 0, 255));
 
-.. list-table:: 
-    :width: 100%
-    :align: center
-
-    *   -   :orange:`analogWrite(pin, value)`
+.. py:function:: analogWrite(pin, value)
     
-    *   -   Arduino IDE provides the function, analogWrite(pin, value), which can make ports directly output PWM
-
-            waves. Only the digital pin marked with "~" symbol on the control board can use this function to output
-            
-            PWM waves. In the function called analogWrite(pin, value), the parameter "pin" specifies the port used
+    Arduino IDE provides the function, analogWrite(pin, value), which can make ports directly output PWM
+    waves. Only the digital pin marked with "~" symbol on the control board can use this function to output
+    PWM waves. In the function called analogWrite(pin, value), the parameter "pin" specifies the port used
+    to output PWM wave. The range of value is 0-255, which represents the duty cycle of 0%-100%.
     
-            to output PWM wave. The range of value is 0-255, which represents the duty cycle of 0%-100%.
-            
-            In order to use this function, we need to set the port to output mode.
+    In order to use this function, we need to set the port to output mode.
 
-.. list-table:: 
-    :width: 100%
-    :align: center
-
-    *   -   :orange:`map(value, fromLow, fromHigh, toLow, toHigh)`
+.. py:function:: map(value, fromLow, fromHigh, toLow, toHigh)
     
-    *   -   This function is used to remap a value, which will return a new value whose percentage in the range of
-    
-            toLow-toHigh is equal to the percentage of "value" in the range of fromLow-fromHigh. For example, 1 is
-            
-            the maximum in the range of 0-1 and the maximum value in the scope of 0-2 is 2, that is, the result value
-            
-            of map (1, 0, 1, 0, 2) is 2.
+    This function is used to remap a value, which will return a new value whose percentage in the range of
+    toLow-toHigh is equal to the percentage of "value" in the range of fromLow-fromHigh. For example, 1 is
+    the maximum in the range of 0-1 and the maximum value in the scope of 0-2 is 2, that is, the result value
+    of map (1, 0, 1, 0, 2) is 2.
 
 Verify and upload the code, and you will see the 4 LEDs emit light with different brightness.
 
@@ -196,11 +196,13 @@ Circuit
 Remove some LEDs and resistors connected to pin 6, 9, 10 on the control board in the circuit of the previous section. 
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
+    :header-rows: 1
+    :class: table-line
     :align: center
 
     *   -   Schematic diagram
-        -   Hardware connectionS
+        -   Hardware connection
 
     *   -   |Chapter04_05|
         -   |Chapter04_06|
@@ -219,6 +221,7 @@ Now complete the sketch to make brightness of LED change from dark to bright, an
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_4.2.1_LED_Blink_Smoothly/Sketch_4.2.1_LED_Blink_Smoothly.ino
     :linenos: 
     :language: c
+    :dedent:
 
 Through two “for” loops, the duty cycle of the PWM wave changes from 0% to 100%, and then from 100% to 0% cyclically. delay(ms) function is used to control the change rate in the "for" loop, and you can try to modify the parameters to modify the change rate of brightness.
 

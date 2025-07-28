@@ -12,23 +12,28 @@ Now, try to drive a stepper motor.
 Component List
 ===============================================================
 
-+-----------------------------------+---------------------------------------+
-| Control board x1                  |  Breadboard x1                        |
-|                                   |                                       |
-|  |Chapter01_00|                   |   |Chapter18_00|                      |
-+-----------------------------------+---------------------------------------+
-| USB cable x1                      | I2C LCD1602 Module x1                 |
-|                                   |                                       |
-|  |Chapter01_02|                   |  |Chapter18_01|                       |
-+-----------------------------------+                                       |
-| Jumper M/M x3                     |                                       |
-|                                   |                                       |
-|  |Chapter01_06|                   |                                       |
-+-----------------------------------+---------------------------------------+
+.. table::
+    :width: 80%
+    :widths: 1 1
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+---------------------------------------+
+    | Control board x1                  |  Breadboard x1                        |
+    |                                   |                                       |
+    |  |Chapter01_00|                   |   |Chapter18_00|                      |
+    +-----------------------------------+---------------------------------------+
+    | USB cable x1                      | I2C LCD1602 Module x1                 |
+    |                                   |                                       |
+    |  |Chapter01_02|                   |  |Chapter18_01|                       |
+    +-----------------------------------+                                       |
+    | Jumper F/M x6                     |                                       |
+    |                                   |                                       |
+    |  |Chapter01_06|                   |                                       |
+    +-----------------------------------+---------------------------------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter18_00| image:: ../_static/imgs/18_Stepper_Motor/Chapter18_00.png
-    :width: 93%
 .. |Chapter01_04| image:: ../_static/imgs/1_LED_Blink/Chapter01_04.png
 .. |Chapter01_06| image:: ../_static/imgs/1_LED_Blink/Chapter01_06.png
 .. |Chapter18_01| image:: ../_static/imgs/18_Stepper_Motor/Chapter18_01.png
@@ -72,17 +77,20 @@ A ULN2003 Stepper Motor Driver is used to convert weak signals into more powerfu
     :align: center
 
 Circuit
+========================================
 
 Use pin 11, 10, 9, 8 on the control board to control the ULN2003 stepper motor driver, and connect it to the stepper motor.
 
 .. list-table:: 
     :width: 70%
     :align: center
+    :header-rows: 1
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter18_06|
-    *   -   Hardware connection
-    *   -   |Chapter18_07|
+    * - **Schematic diagram**
+    * - |Chapter18_06|
+    * - **Hardware connection**
+    * - |Chapter18_07|
 
 .. |Chapter18_06| image:: ../_static/imgs/18_Stepper_Motor/Chapter18_06.png
 .. |Chapter18_07| image:: ../_static/imgs/18_Stepper_Motor/Chapter18_07.png
@@ -98,13 +106,15 @@ Now write code to control the stepper motor through ULN2003 stepper motor driver
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_18.1.1_Drive_Stepper_Motor/Sketch_18.1.1_Drive_Stepper_Motor.ino
     :linenos: 
     :language: c
+    :dedent:
 
 In the code, we define a function to make the motor rotate for a step. And the parameter determines the rotation direction of the stepper motor.
 
 .. code-block:: c
+    :linenos:
 
     void moveOneStep(bool dir) {
-    ...
+        ...
     }
 
 A variable is defined in this function and we use four low bits to show the state of 4 ports. These ports are connected in order, so the variable can be assigned to 0x01 and we can use the shifting method to change the bit of the connected port.
@@ -113,10 +123,12 @@ A variable is defined in this function and we use four low bits to show the stat
     :linenos: 
     :language: c
     :lines: 37-45
+    :dedent:
 
 Then change the state of the port according to the above variables.
 
 .. code-block:: c
+    :linenos:
 
     // Output signal to each port
     for (int i = 0; i < 4; i++) {
@@ -129,6 +141,7 @@ We define a function to control the step motor to rotate several steps and contr
     :linenos: 
     :language: c
     :lines: 36-50
+    :dedent:
 
 Verify and upload the code, and you will see the step motor rotate a full turn, and then repeat this process in a reverse direction.
 

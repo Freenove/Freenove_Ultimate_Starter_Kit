@@ -7,8 +7,9 @@ In the previous chapter, we have used the LED matrix to display images and chara
 There are multiple versions of LCD1602. Your purchase may be one of the following:
 
 .. list-table:: 
-    :width: 100%
     :align: center
+    :class: table-line
+    :header-rows: 1
 
     *   -   I2C LCD1602
         -   I2C LCD1602
@@ -27,19 +28,24 @@ Firstly, use LCD1602 to display some strings.
 Component List
 ================================================================
 
-+-----------------------------------+---------------------------------------+
-| Control board x1                  |  Breadboard x1                        |
-|                                   |                                       |
-|  |Chapter01_00_1|                 |   |Chapter01_01|                      |
-+-----------------------------------+---------------------------------------+
-| USB cable x1                      | I2C LCD1602 Module x1                 |
-|                                   |                                       |
-|  |Chapter01_02|                   |  |Chapter16B_00|                      |
-+-----------------------------------+                                       |
-| Jumper M/M x3                     |                                       |
-|                                   |                                       |
-|  |Chapter01_06|                   |                                       |
-+-----------------------------------+---------------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+---------------------------------------+
+    | Control board x1                  |  Breadboard x1                        |
+    |                                   |                                       |
+    |  |Chapter01_00_1|                 |   |Chapter01_01|                      |
+    +-----------------------------------+---------------------------------------+
+    | USB cable x1                      | I2C LCD1602 Module x1                 |
+    |                                   |                                       |
+    |  |Chapter01_02|                   |  |Chapter16B_00|                      |
+    +-----------------------------------+                                       |
+    | Jumper M/M x3                     |                                       |
+    |                                   |                                       |
+    |  |Chapter01_06|                   |                                       |
+    +-----------------------------------+---------------------------------------+
 
 .. |Chapter01_00_1| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_01| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
@@ -72,12 +78,13 @@ Circuit
 The connection of control board and I2C LCD1602 is shown below.
 
 .. list-table:: 
-    :width: 70%
+    :width: 80%
     :align: center
+    :class: table-line
 
-    *   -   Schematic diagram
+    *   -   **Schematic diagram**
     *   -   |Chapter16B_02|
-    *   -   Hardware connection
+    *   -   **Circuit connection**
     *   -   |Chapter16B_03|
 
 .. |Chapter16B_02| image:: ../_static/imgs/16B_LCD1602/Chapter16B_02.png
@@ -98,6 +105,7 @@ Now let's start to write code to use LCD1602 to display static characters and dy
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602.ino
     :linenos: 
     :language: c
+    :dedent:
 
 Following are the LiquidCrystal_I2C library used for controlling LCD:
 
@@ -133,7 +141,8 @@ Print a changing number in the loop () function:
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602/Sketch_16.1.1_Display_the_string_on_LCD1602.ino
     :linenos: 
     :language: c
-    :lines: 22-28    
+    :lines: 22-28   
+    :dedent: 
 
 Before printing characters, we need to set the coordinate of the printed character, that is, in which line and which column:
 
@@ -168,23 +177,28 @@ Project I2C LCD1602 Clock
 
 In the previous chapter, we have used I2C LCD1602 to display some strings, and now let us use I2C LCD1602 to display the temperature sensor value.
 
-+-----------------------------------+---------------------------------------+
-| Control board x1                  |  Breadboard x1                        |
-|                                   |                                       |
-|  |Chapter01_00|                   |   |Chapter01_01_0|                    |
-+-----------------------------------+-------------------+-------------------+
-| USB cable x1                      | Thermistor x1     | Resistor 10kΩ x1  |
-|                                   |                   |                   |
-|  |Chapter01_02|                   |  |Chapter12_00|   |  |Chapter05_00|   |
-+-----------------------------------+                   |                   |
-| Jumper M/M x18                    |                   |                   |
-|                                   |                   |                   |
-|  |Chapter01_06|                   |                   |                   |
-+-----------------------------------+-------------------+-------------------+
-| I2C LCD1602 Module x1                                                     |
-|                                                                           |
-|  |Chapter16B_00|                                                          |
-+---------------------------------------------------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+---------------------------------------+
+    | Control board x1                  |  Breadboard x1                        |
+    |                                   |                                       |
+    |  |Chapter01_00|                   |   |Chapter01_01_0|                    |
+    +-----------------------------------+-------------------+-------------------+
+    | USB cable x1                      | Thermistor x1     | Resistor 10kΩ x1  |
+    |                                   |                   |                   |
+    |  |Chapter01_02|                   |  |Chapter12_00|   |  |Chapter05_00|   |
+    +-----------------------------------+                   |                   |
+    | Jumper M/M x18                    |                   |                   |
+    |                                   |                   |                   |
+    |  |Chapter01_06|                   |                   |                   |
+    +-----------------------------------+-------------------+-------------------+
+    | I2C LCD1602 Module x1                                                     |
+    |                                                                           |
+    |  |Chapter16B_00|                                                          |
+    +---------------------------------------------------------------------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_01_0| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
@@ -209,12 +223,13 @@ Circuit
 The connection is shown below. Pin A0 is used to detect the voltage of thermistor.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
+    :class: table-line
     :align: center
 
-    *   -   Schematic diagram
+    *   -   **Schematic diagram**
     *   -   |Chapter16B_06|
-    *   -   Hardware connection
+    *   -   **Hardware connection**
     *   -   |Chapter16B_07|
 
 .. |Chapter16B_06| image:: ../_static/imgs/16B_LCD1602/Chapter16B_06.png
@@ -235,6 +250,7 @@ Now write code to make LCD1602 display the time and temperature, and the time ca
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_16B_I2C_LCD1602/Sketch_16.2.1_LCD1602_Clock/Sketch_16.2.1_LCD1602_Clock.ino
     :linenos: 
     :language: c
+    :dedent:
 
 In the code, we define 3 variables to represent time: second, minute, hour.
 

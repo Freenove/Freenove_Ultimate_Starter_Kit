@@ -23,8 +23,10 @@ Component List
 ===============================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
+    :header-rows: 1
 
     *   -   Pin header x2
         -   LED x1
@@ -50,8 +52,10 @@ Circuit
 We will solder the following circuit on the Perfboard.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
+    :header-rows: 1
 
     *   -   Schematic diagram
         -   Hardware connection
@@ -76,13 +80,15 @@ Insert the components in the Perfboard following the Hardware Connection image a
 Here is a diagram after soldering from both sides of the Perfboard:
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
+    :header-rows: 1
 
-    *   -   Front
-        -   Back
-    *   -   |Chapter25_05|
-        -   |Chapter25_06|
+    * - Front
+      - Back
+    * - |Chapter25_05|
+      - |Chapter25_06|
 
 .. |Chapter25_05| image:: ../_static/imgs/25_Soldering_Circuit_Board/Chapter25_05.png
 .. |Chapter25_06| image:: ../_static/imgs/25_Soldering_Circuit_Board/Chapter25_06.png
@@ -105,8 +111,10 @@ Component List
 ===============================================================
 
 .. list-table:: 
-    :width: 50%
+    :width: 80%
     :align: center
+    :class: table-line
+    :header-rows: 1
 
     *   -   Pin header x5
         -   Resistor 220Ω x8
@@ -127,8 +135,10 @@ Circuit
 Solder the following circuit on the Perfboard.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
+    :header-rows: 1
 
     *   -   Schematic diagram
         -   Hardware connection
@@ -150,8 +160,10 @@ Insert the components in the Perfboard, and solder the circuit on the back per e
 Here is a diagram after soldering from both sides of the Perfboard:
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :header-rows: 1
+    :class: table-line
 
     *   -   Front
         -   Back
@@ -180,28 +192,33 @@ Now, let's write code to make a dropping-rain effect on our board.
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_25.2.1_Flowing_Water_Light/Sketch_25.2.1_Flowing_Water_Light.ino
     :linenos: 
     :language: c
+    :dedent:
 
 First we define an array to modulate different PWM pulse widths for LEDs, in doing so different LEDs can emit varied brightness. Starting from the array index 0, take an array of 8 adjacent numbers as the LED duty cycle and output it one at a time. Increasing the starting index number in turn, then it will create a flowing effect.
 
 .. code-block:: c
+    :linenos:
 
     const byte pulse[] = {0, 0, 0, 0, 0, 0, 0, 0, 64, 48 ,32, 16, 8, 4, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0};
 
 Define a variable to select 8 adjacent numbers in an array in turn.
 
 .. code-block:: c
+    :linenos:
 
     static byte offset;
 
 Define a variable to control the speed of the raindrops.
 
 .. code-block:: c
+    :linenos:
 
     static unsigned int counter;
 
 Reduce the auto-increment speed of the variable offset with the following code.
 
 .. code-block:: c
+    :linenos:
 
     if (counter++ % 8 == 0)               // Reduce the self-increasing speed of offset
     offset < 15 ? offset++ : offset = 0;// offset increases
@@ -212,6 +229,7 @@ We use software to output PWM waveform. Define the cycle of PWM to be 64 cycles 
     :linenos: 
     :language: c
     :lines: 30-41
+    :dedent:
 
 Due to the change of the variable offset, the LED will output the brightness that the eight adjacent numbers represents in the array, and form the dropping-rain effect.
 

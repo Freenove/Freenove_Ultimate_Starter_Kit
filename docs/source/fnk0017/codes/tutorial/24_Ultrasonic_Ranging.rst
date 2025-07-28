@@ -12,19 +12,24 @@ In this project, we use ultrasonic ranging module to measure distance, and print
 Component List
 ===============================================================
 
-+------------------------------------+---------------------------------+
-|                                    | USB cable x1                    |
-|  Control board x1                  |                                 |
-|                                    |  |Chapter01_02|                 |
-|    |Chapter01_00|                  +---------------------------------+
-|                                    | Jumper M/M x3                   |
-|                                    |                                 |
-|                                    |  |Chapter01_06|                 |
-|                                    +---------------------------------+
-|                                    | Infrared motion sensor x1       |
-|                                    |                                 |
-|                                    |  |Chapter24_00|                 |
-+------------------------------------+---------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------+---------------------------------+
+    |                                    | USB cable x1                    |
+    |  Control board x1                  |                                 |
+    |                                    |  |Chapter01_02|                 |
+    |    |Chapter01_00|                  +---------------------------------+
+    |                                    | Jumper M/M x3                   |
+    |                                    |                                 |
+    |                                    |  |Chapter01_06|                 |
+    |                                    +---------------------------------+
+    |                                    | Infrared motion sensor x1       |
+    |                                    |                                 |
+    |                                    |  |Chapter24_00|                 |
+    +------------------------------------+---------------------------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_02| image:: ../_static/imgs/1_LED_Blink/Chapter01_02.png
@@ -53,6 +58,7 @@ Pin description:
     :width: 100%
     :align: center
     :header-rows: 1
+    :class: zebra
 
     *   -   Pin name
         -   Pin number
@@ -84,10 +90,11 @@ The connection of the control board and HC-SR04 is shown below.
 .. list-table:: 
     :width: 80%
     :align: center
+    :class: table-line
 
-    *   -   Schematic diagram
+    *   -   **Schematic diagram**
     *   -   |Chapter24_03|
-    *   -   Hardware connection
+    *   -   **Hardware connection**
     *   -   |Chapter24_04|
 
 .. |Chapter24_03| image:: ../_static/imgs/24_Ultrasonic_Ranging/Chapter24_03.png
@@ -115,6 +122,7 @@ First, define the pins and the maximum measurement distance.
 If the module does not return high level, we cannot wait for this forever. So we need to calculate the the time period for the  maximum distance, that is, time Out. timOut= 2*MAX_DISTANCE/100/340*1000000. The result of the constant part in this formula is approximately equal to 58.8. 
 
 .. code-block:: c
+    :linenos: 
 
     float timeOut = MAX_DISTANCE * 60; 
 
@@ -128,12 +136,14 @@ Then, in the setup (), set the pin to input or output, and set the serial port. 
 And then the echoPin of HC_SR04 will output a pulse. Time of the pulse is the total time of ultrasonic from transmitting to receiving. We use the pulseIn () function to return the time, and set the timeout.
 
 .. code-block:: c
+    :linenos: 
 
     pingTime = pulseIn(echoPin, HIGH, timeOut); // Wait HC-SR04 returning to the high level and measure out this waitting time
     
 Calculate the distance according to the time and return the value.
 
 .. code-block:: c
+    :linenos: 
 
     distance = (float)pingTime * soundVelocity / 2 / 10000; // calculate the distance according to the time
     return distance; // return the distance value

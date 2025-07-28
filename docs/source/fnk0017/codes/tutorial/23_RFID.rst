@@ -12,10 +12,10 @@ In this project, we will read the unique ID number (UID) of the RFID card, recog
 Component List
 ===============================================================
 
-.. list-table:: 
-    :width: 100%
+.. list-table::
     :align: center
     :header-rows: 1
+    :class: zebra
 
     *   -   Control board x1
         -   RFID Module (RC522) x1
@@ -24,7 +24,7 @@ Component List
         -   |Chapter23_00|
 
     *   -   Mifare1 S50 Standard card x1
-        -   Mifare1 S50 Non-standard card x1   
+        -   Mifare1 S50 Non-standard card x1
 
     *   -   |Chapter23_01|
         -   |Chapter23_02|
@@ -81,37 +81,41 @@ Mifare1 S50 is often called Mifare Standard with the capacity of 1K bytes. And e
 The Mifare1 S50 capacity (1K byte) is divided into 16 sectors (Sector0-Sector15). Each sector contains 4 data block (Block0-Block3. 64 blocks of 16 sectors will be numbered according absolute address, from 0 to 63). And each block contains 16 bytes (Byte0-Byte15), 64*16=1024. As is shown in the following table:
 
 
-+---------------+----------+--------------------------------------+---------------+-------------------+
-|  Sector No    | Block No | Storage area                         | Block type    | Absolute block No |
-+---------------+----------+--------------------------------------+---------------+-------------------+
-|               | block 0  | vendor code                          | vendor block  | 0                 |
-|               +----------+--------------------------------------+---------------+-------------------+
-|               | block 1  |                                      | data block    | 1                 |
-|  sector 0     +----------+--------------------------------------+---------------+-------------------+
-|               | block 2  |                                      | data block    | 2                 |
-|               +----------+--------------------------------------+---------------+-------------------+
-|               | block 3  | Password A-access control-password B | control block | 3                 |
-+---------------+----------+--------------------------------------+---------------+-------------------+
-|               | block 0  |                                      | data block    | 4                 |
-|               +----------+--------------------------------------+---------------+-------------------+
-|               | block 1  |                                      | data block    | 5                 |
-|  sector 1     +----------+--------------------------------------+---------------+-------------------+
-|               | block 2  |                                      | data block    | 6                 |
-|               +----------+--------------------------------------+---------------+-------------------+
-|               | block 3  | Password A-access control-password B | control block | 7                 |
-+---------------+----------+--------------------------------------+---------------+-------------------+
-|               |          |                                      |               |                   |
-| \......       | \......  | \......                              | \......       | \......           |
-|               |          |                                      |               |                   |
-+---------------+----------+--------------------------------------+---------------+-------------------+
-|               | block 0  |                                      | data block    | 60                |
-|               +----------+--------------------------------------+---------------+-------------------+
-|               | block 1  |                                      | data block    | 61                |
-|  sector 0     +----------+--------------------------------------+---------------+-------------------+
-|               | block 2  |                                      | data block    | 62                |
-|               +----------+--------------------------------------+---------------+-------------------+
-|               | block 3  | Password A-access control-password B | control block | 63                |
-+---------------+----------+--------------------------------------+---------------+-------------------+
+.. table::
+    :align: center
+    :class: zebra
+    
+    +---------------+----------+--------------------------------------+---------------+-------------------+
+    |  Sector No    | Block No | Storage area                         | Block type    | Absolute block No |
+    +===============+==========+======================================+===============+===================+
+    |               | block 0  | vendor code                          | vendor block  | 0                 |
+    |               +----------+--------------------------------------+---------------+-------------------+
+    |               | block 1  |                                      | data block    | 1                 |
+    |  sector 0     +----------+--------------------------------------+---------------+-------------------+
+    |               | block 2  |                                      | data block    | 2                 |
+    |               +----------+--------------------------------------+---------------+-------------------+
+    |               | block 3  | Password A-access control-password B | control block | 3                 |
+    +---------------+----------+--------------------------------------+---------------+-------------------+
+    |               | block 0  |                                      | data block    | 4                 |
+    |               +----------+--------------------------------------+---------------+-------------------+
+    |               | block 1  |                                      | data block    | 5                 |
+    |  sector 1     +----------+--------------------------------------+---------------+-------------------+
+    |               | block 2  |                                      | data block    | 6                 |
+    |               +----------+--------------------------------------+---------------+-------------------+
+    |               | block 3  | Password A-access control-password B | control block | 7                 |
+    +---------------+----------+--------------------------------------+---------------+-------------------+
+    |               |          |                                      |               |                   |
+    | \......       | \......  | \......                              | \......       | \......           |
+    |               |          |                                      |               |                   |
+    +---------------+----------+--------------------------------------+---------------+-------------------+
+    |               | block 0  |                                      | data block    | 60                |
+    |               +----------+--------------------------------------+---------------+-------------------+
+    |               | block 1  |                                      | data block    | 61                |
+    |  sector 0     +----------+--------------------------------------+---------------+-------------------+
+    |               | block 2  |                                      | data block    | 62                |
+    |               +----------+--------------------------------------+---------------+-------------------+
+    |               | block 3  | Password A-access control-password B | control block | 63                |
+    +---------------+----------+--------------------------------------+---------------+-------------------+
 
 
 Each sector has a set of independent password and access control which are put in the last block of each sector, and the block is also known as sector trailer, that is Block 3 in each sector. Sector 0, block 0 (namely absolute address 0) of S50 is used to store the vendor code, which has been solidified and can’t be changed, and the card serial number is stored here. In addition to the manufacturer and the control block, the rest of the cards are data blocks, which can be used to store data. Data block can be used for two kinds of applications:
@@ -123,17 +127,17 @@ Each sector has a set of independent password and access control which are put i
 The sector trailer block in each sector is the control block, including a 6-byte password A, 4-byte access control and 6-byte password B. For example, the control block of a brand new card is as follows:
 
 .. list-table:: 
-    :width: 100%
     :align: center
     :header-rows: 1
+    :class: zebra
 
-    *   -   A0 A1 A2 A3 A4 A5
-        -   FF 07 80 69
-        -   B0 B1 B2 B3 B4 B5
+    * - A0 A1 A2 A3 A4 A5
+      - FF 07 80 69
+      - B0 B1 B2 B3 B4 B5
 
-    *   -   password A
-        -   access control
-        -   password B
+    * - password A
+      - access control
+      - password B
   
 The default password of a brand new card is generally A0A1A2A3A4A5 for password A, B0B1B2B3B4B5 for password B, or both the password A and password B are 6 FF. Access control is used to set the access conditions for each block (including the control block itself) in a sector.
 
@@ -151,11 +155,12 @@ The connection of control board and RFID module is shown below.
 .. list-table:: 
     :width: 80%
     :align: center
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter23_04|
-    *   -   Hardware connection
-    *   -   |Chapter23_05|
+    * - **Schematic diagram**
+    * - |Chapter23_04|
+    * - **Hardware connection**
+    * - |Chapter23_05|
 
 .. |Chapter23_04| image:: ../_static/imgs/23_RFID/Chapter23_04.png
 .. |Chapter23_05| image:: ../_static/imgs/23_RFID/Chapter23_05.png
@@ -179,12 +184,14 @@ This sketch will read the unique ID number (UID) of the card, recognize the type
 After including the RFID library, we need to construct a RFID class object before using the function in RFID library. Its constructor needs to be written to two pins, respectively to the SDA pin and the RST pin.
 
 .. code-block:: c
+    :linenos:
 
     RFID rfid(10, 9);
 
 In setup, initialize the serial port, SPI and RFID.
 
 .. code-block:: c
+    :linenos:
 
     Serial.begin(9600);
     SPI.begin();
@@ -193,18 +200,21 @@ In setup, initialize the serial port, SPI and RFID.
 In loop(), use findCard() waiting for the card approaching. Once it detects card contact, this function will return MI_OK and save the card type data in parameter str. Then enter the if statement.
 
 .. code-block:: c
+    :linenos:
 
     if (rfid.findCard(PICC_REQIDL, str) == MI_OK) {
 
 After entering if statement, call the sub function ShowCardType(). Then determine the type of the card according to the content of STR and print the type out through the serial port.
 
 .. code-block:: c
+    :linenos:
 
     ShowCardType(str);
 
 Then use the.anticoll() to read UID of the card and use serial port to print it out.
 
 .. code-block:: c
+    :linenos:
 
     if (rfid.anticoll(str) == MI_OK) {
       Serial.print("The card's number is  : ");
@@ -251,12 +261,14 @@ In this sketch, first read the data in particular location of the S50 M1 Card, t
 In the sub function of writeCard () and readCard (), we must first verify the password A, and then use the corresponding sub function to read and write. Here we do reading and writing operations to data block 0 (absolute NO.4) of the first sector.
 
 .. code-block:: c
+    :linenos:
 
     if (rfid.auth(PICC_AUTHENT1A, blockAddr, sectorKeyA[blockAddr / 4], rfid.serNum) == MI_OK) //authenticate
 
 In loop (), compare the contents of the data block NO.4 after written to the original contents.
 
 .. code-block:: c
+    :linenos:
 
     //first, read the data of data block 4
     readCard(4);

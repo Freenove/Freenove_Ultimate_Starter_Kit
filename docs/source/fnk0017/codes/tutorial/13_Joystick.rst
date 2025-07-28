@@ -12,15 +12,20 @@ We will use the serial port to get Joystick data.
 Component List
 ===============================================================
 
-+------------------------------------+---------------------------------+
-| Control board x1                   |Joystick x1                      |
-|                                    |                                 |
-|  |Chapter01_00|                    |  |Chapter13_00|                 |
-+------------------------------------+---------------------------------+
-| USB cable x1                       | Jumper M/M x6                   |
-|                                    |                                 |
-|  |Chapter01_02|                    |  |Chapter01_06|                 |
-+------------------------------------+---------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------+---------------------------------+
+    | Control board x1                   |Joystick x1                      |
+    |                                    |                                 |
+    |  |Chapter01_00|                    |  |Chapter13_00|                 |
+    +------------------------------------+---------------------------------+
+    | USB cable x1                       | Jumper F/M x5                   |
+    |                                    |                                 |
+    |  |Chapter01_02|                    |  |Chapter01_06|                 |
+    +------------------------------------+---------------------------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_02| image:: ../_static/imgs/1_LED_Blink/Chapter01_02.png
@@ -49,14 +54,15 @@ Circuit
 Use pin A0 and pin A1 on control board to detect the voltage value of two rotary potentiometers inside Joystick, and use pin 8 port to detect the vertical button.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
+    :class: table-line
+    :header-rows: 1
 
-    *   -   Schematic diagram
-        -   Hardware connection
-
-    *   -   |Chapter13_03|
-        -   |Chapter13_04|
+    * - Schematic diagram
+      - Hardware connection
+    * - |Chapter13_03|
+      - |Chapter13_04|
 
 .. |Chapter13_03| image:: ../_static/imgs/13_Joystick/Chapter13_03.png
 .. |Chapter13_04| image:: ../_static/imgs/13_Joystick/Chapter13_04.png

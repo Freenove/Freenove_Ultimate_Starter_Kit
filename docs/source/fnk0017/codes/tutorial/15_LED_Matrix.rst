@@ -14,19 +14,24 @@ Firstly, let us learn how to use the 74HC595 chip, which is very helpful for us 
 Component List
 ===============================================================
 
-+-----------------------------------+-------------------------------------------------------------+
-| Control board x1                  |  Breadboard x1                                              |
-|                                   |                                                             |
-|  |Chapter01_00|                   |   |Chapter01_01|                                            |
-+-----------------------------------+------------------------+-------------------+----------------+
-| USB cable x1                      | 74HC595 x1             | LED bar graph x1  |Resistor        |
-|                                   |                        |                   |                |
-|  |Chapter01_02|                   |  |Chapter15_00|        |  |Chapter03_00|   |220Ω x8         |
-+-----------------------------------+                        |                   |                |
-| Jumper M/M x17                    |                        |                   | |Chapter01_04| |
-|                                   |                        |                   |                |
-|  |Chapter01_06|                   |                        |                   |                |
-+-----------------------------------+------------------------+-------------------+----------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+-------------------------------------------------------------+
+    | Control board x1                  |  Breadboard x1                                              |
+    |                                   |                                                             |
+    |  |Chapter01_00|                   |   |Chapter01_01|                                            |
+    +-----------------------------------+------------------------+-------------------+----------------+
+    | USB cable x1                      | 74HC595 x1             | LED bar graph x1  |Resistor        |
+    |                                   |                        |                   |                |
+    |  |Chapter01_02|                   |  |Chapter15_00|        |  |Chapter03_00|   |220Ω x8         |
+    +-----------------------------------+                        |                   |                |
+    | Jumper M/M x17                    |                        |                   | |Chapter01_04| |
+    |                                   |                        |                   |                |
+    |  |Chapter01_06|                   |                        |                   |                |
+    +-----------------------------------+------------------------+-------------------+----------------+
 
 .. |Chapter03_00| image:: ../_static/imgs/3_LED_Bar_Graph/Chapter03_00.png
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
@@ -48,8 +53,9 @@ The conversion between binary and decimal system has been mentioned before. When
 One Hexadecimal bit can present one number between 0-15. In order to facilitate writing, the numbers greater than 9 are written into the letter A-F (case-insensitive) such as 0x2A. The corresponding relationship is as follows:
 
 .. list-table:: 
-    :width: 100%
     :align: center
+    :header-rows: 1
+    :class: zebra
 
     *   -   Number
         -   0
@@ -90,8 +96,9 @@ One Hexadecimal bit can present one number between 0-15. In order to facilitate 
 Conversion between hexadecimal and decimal system is similar to the conversion between hexadecimal and binary such as the sixteen digit 0x12:
 
 .. list-table:: 
-    :width: 100%
     :align: center
+    :header-rows: 1
+    :class: zebra
 
     *   -   Sequence
         -   1
@@ -119,6 +126,8 @@ When you write code, sometimes it is convenient to use hexadecimal, especially i
 .. list-table:: 
     :width: 100%
     :align: center
+    :header-rows: 1
+    :class: zebra
 
     *   -   4 bit binary
         -   0000
@@ -143,6 +152,8 @@ When you write code, sometimes it is convenient to use hexadecimal, especially i
 .. list-table:: 
     :width: 100%
     :align: center
+    :header-rows: 1
+    :class: zebra
 
     *   -   4 bit binary
         -   1000
@@ -183,6 +194,7 @@ The ports of 74HC595 are described as follows:
     :width: 100%
     :align: center
     :header-rows: 1
+    :class: zebra
 
     *   -   Pin name
         -   Pin number
@@ -242,13 +254,13 @@ Circuit
 Use pin 11, 12, 13 on the control board to control the 74HC595, and connect it to the 8 LEDs of LED bar graph.
 
 .. list-table:: 
-    :width: 70%
     :align: center
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter15_03|
-    *   -   Hardware connection
-    *   -   |Chapter15_04|
+    * - Schematic diagram
+    * - |Chapter15_03|
+    * - Hardware connection
+    * - |Chapter15_04|
 
 .. |Chapter15_03| image:: ../_static/imgs/15_LED_Matrix/Chapter15_03.png
 .. |Chapter15_04| image:: ../_static/imgs/15_LED_Matrix/Chapter15_04.png
@@ -268,6 +280,7 @@ Now write code to control the 8 LEDs of LED bar graph through 74HC595.
 In the code, we configure three pins to control the 74HC595. And define a one-byte variable to control the state of 8 LEDs through the 8 bits of the variable. The LED lights on when the corresponding bit is 1. If the variable is assigned to 0x01, that is 00000001 in binary, there will be only one LED on. 
 
 .. code-block:: c
+    :linenos:
 
     byte x = 0x01;
 
@@ -277,12 +290,14 @@ In each loop, the x is sent to 74HC595. The sending process is as follows:
     :linenos: 
     :language: c
     :lines: 25-30
+    :dedent:
 
 The x will be shift 1 bit to left in each cycle, which makes the bright LED of the 8 LEDs move one bit.
 
 .. code-block:: c
+    :linenos: 
 
-     x <<= 1;
+    x <<= 1;
 
 .. py:function:: << operator
 
@@ -314,8 +329,8 @@ The x will be shift 1 bit to left in each cycle, which makes the bright LED of t
 
 X <<= 1 is equivalent to x = x << 1 and x >>= 1 is equivalent to x = x >> 1
 
-    .. image:: ../_static/imgs/15_LED_Matrix/Chapter15_09.png
-        :align: center
+.. image:: ../_static/imgs/15_LED_Matrix/Chapter15_09.png
+    :align: center
     
 Project LED Matrix
 ***************************************************************
@@ -325,19 +340,24 @@ In the previous section, we have used 74HC595 to control 8 LEDs of the LED bar g
 Component List
 ===============================================================
 
-+-----------------------------------+-------------------------------------------------------------+
-| Control board x1                  |  Breadboard x1                                              |
-|                                   |                                                             |
-|  |Chapter01_00|                   |   |Chapter01_01|                                            |
-+-----------------------------------+------------------------+-------------------+----------------+
-| USB cable x1                      | LED matrix x1          | 74HC595 x1        |Resistor        |
-|                                   |                        |                   |                |
-|  |Chapter01_02|                   |  |Chapter15_10|        |  |Chapter15_00|   |220Ω x8         |
-+-----------------------------------+                        |                   |                |
-| Jumper M/M x2                     |                        |                   | |Chapter01_04| |
-|                                   |                        |                   |                |
-|  |Chapter01_06|                   |                        |                   |                |
-+-----------------------------------+------------------------+-------------------+----------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+-------------------------------------------------------------+
+    | Control board x1                  |  Breadboard x1                                              |
+    |                                   |                                                             |
+    |  |Chapter01_00|                   |   |Chapter01_01|                                            |
+    +-----------------------------------+------------------------+-------------------+----------------+
+    | USB cable x1                      | LED matrix x1          | 74HC595 x1        |Resistor        |
+    |                                   |                        |                   |                |
+    |  |Chapter01_02|                   |  |Chapter15_10|        |  |Chapter15_00|   |220Ω x8         |
+    +-----------------------------------+                        |                   |                |
+    | Jumper M/M x2                     |                        |                   | |Chapter01_04| |
+    |                                   |                        |                   |                |
+    |  |Chapter01_06|                   |                        |                   |                |
+    +-----------------------------------+------------------------+-------------------+----------------+
 
 .. |Chapter15_10| image:: ../_static/imgs/15_LED_Matrix/Chapter15_10.png
 
@@ -365,9 +385,9 @@ Here is how a Common Anode LED Matrix works. First, choose 16 ports on RPI board
     :align: center
 
 .. list-table:: 
-    :width: 100%
     :align: center
     :header-rows: 1
+    :class: zebra
 
     *   -   Column
         -   Binary
@@ -413,13 +433,13 @@ Circuit
 Use pin 11, 12, 13 on control board to control the 74HC595. And connect 74HC595 to the 8 anode pins of LED Matrix, in the meanwhile, connect 8 digitals port on control board to the 8 cathode pins of LED Matrix.
 
 .. list-table:: 
-    :width: 70%
     :align: center
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter15_14|
-    *   -   Hardware connection
-    *   -   |Chapter15_15|
+    * - **Schematic diagram**
+    * - |Chapter15_14|
+    * - **Hardware connection**
+    * - |Chapter15_15|
 
 .. |Chapter15_14| image:: ../_static/imgs/15_LED_Matrix/Chapter15_14.png
 .. |Chapter15_15| image:: ../_static/imgs/15_LED_Matrix/Chapter15_15.png
@@ -435,16 +455,19 @@ Now write the code to drive LED dot matrix to display static and dynamic images,
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_15.2.1_LED_Matrix/Sketch_15.2.1_LED_Matrix.ino
     :linenos: 
     :language: c
+    :dedent:
 
 In the code, use an array to define the column pins of LED Matrix.
 
 .. code-block:: c
+    :linenos: 
 
     int LEDPin[] = {2, 3, 4, 5, 6, 7, 8, 9};    // Column pins (cathode) of LED Matrix
 
 Use another array to define 8 column data of a smiling face.
 
 .. code-block:: c
+    :linenos: 
 
     const int smilingFace[] = {
         0x1C, 0x22, 0x51, 0x45, 0x45, 0x51, 0x22, 0x1C
@@ -456,6 +479,7 @@ Use another array to define some numbers and letters, and every eight elements o
     :linenos: 
     :language: c
     :lines: 19-37
+    :dedent:
 
 .. py:function:: PROGMEM keyword
 
@@ -509,6 +533,7 @@ In the loop () function, firstly, show the static smile pattern. Select one of t
     :linenos: 
     :language: c
     :lines: 53-62
+    :dedent:
 
 Then display the dynamic pattern of the numbers and letters. We have defined space, 0-9, A-F, total of 16 characters (136 columns) in an array, among which 8 adjacent rows of data form one frame. Shift one column once. There are for 128 frames of image from the first frame (1-8) to the last frame (128-136 column). Each frame image is displayed 10 times, then display the next frame. Repeat the process above, then we can see the pattern of scrolling numbers and letters.
 
@@ -516,5 +541,6 @@ Then display the dynamic pattern of the numbers and letters. We have defined spa
     :linenos: 
     :language: c
     :lines: 64-75
+    :dedent:
 
 Verify and upload the code, then LED Matrix begins to display the static smile pattern. A few seconds later, LED Matrix will display the scrolling number 0-9 and the letter A-F.

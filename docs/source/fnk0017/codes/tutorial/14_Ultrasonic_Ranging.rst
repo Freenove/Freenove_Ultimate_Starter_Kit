@@ -12,19 +12,24 @@ In this project, we use ultrasonic ranging module to measure distance, and print
 Component List
 ===============================================================
 
-+------------------------------------+---------------------------------+
-|                                    | USB cable x1                    |
-|  Control board x1                  |                                 |
-|                                    |  |Chapter01_02|                 |
-|    |Chapter01_00|                  +---------------------------------+
-|                                    | Jumper M/M x3                   |
-|                                    |                                 |
-|                                    |  |Chapter01_06|                 |
-|                                    +---------------------------------+
-|                                    | Infrared motion sensor x1       |
-|                                    |                                 |
-|                                    |  |Chapter24_00|                 |
-+------------------------------------+---------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------+---------------------------------+
+    |                                    | USB cable x1                    |
+    |  Control board x1                  |                                 |
+    |                                    |  |Chapter01_02|                 |
+    |    |Chapter01_00|                  +---------------------------------+
+    |                                    | Jumper M/M x3                   |
+    |                                    |                                 |
+    |                                    |  |Chapter01_06|                 |
+    |                                    +---------------------------------+
+    |                                    | Infrared motion sensor x1       |
+    |                                    |                                 |
+    |                                    |  |Chapter24_00|                 |
+    +------------------------------------+---------------------------------+
 
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_02| image:: ../_static/imgs/1_LED_Blink/Chapter01_02.png
@@ -50,29 +55,30 @@ The Ultrasonic Ranging Module uses the principle that ultrasonic waves will refl
 Pin description:
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
     :align: center
     :header-rows: 1
+    :class: zebra
 
-    *   -   Pin name
-        -   Pin number
-        -   Description
+    * - Pin name
+      - Pin number
+      - Description
 
-    *   -   Vcc
-        -   1
-        -   Positive electrode of power supply, the voltage is 5V
+    * - Vcc
+      - 1
+      - Positive electrode of power supply, the voltage is 5V
 
-    *   -   Trig
-        -   2
-        -   Triger pin
+    * - Trig
+      - 2
+      - Triger pin
 
-    *   -   Echo
-        -   3
-        -   Echo pin
+    * - Echo
+      - 3
+      - Echo pin
 
-    *   -   Gnd
-        -   4
-        -   Negative electrode of power supply
+    * - Gnd
+      - 4
+      - Negative electrode of power supply
 
 Instructions for use: output a high-level pulse in Trig pin lasting for least 10uS, the module begins to transmit ultrasonic waves. At the same time, the Echo pin is pulled up. When the module receives the returned ultrasonic waves from encountering an obstacle, the Echo pin will be pulled down. The duration of high level in the Echo pin is the total time of the ultrasonic wave from transmitting to receiving, s=vt/2. This is done constantly.
 
@@ -84,11 +90,12 @@ The connection of the control board and HC-SR04 is shown below.
 .. list-table:: 
     :width: 80%
     :align: center
+    :class: table-line
 
-    *   -   Schematic diagram
-    *   -   |Chapter24_03|
-    *   -   Hardware connection
-    *   -   |Chapter24_04|
+    * - Schematic diagram
+    * - |Chapter24_03|
+    * - Hardware connection
+    * - |Chapter24_04|
 
 .. |Chapter24_03| image:: ../_static/imgs/14_Ultrasonic_Ranging/Chapter24_03.png
 .. |Chapter24_04| image:: ../_static/imgs/14_Ultrasonic_Ranging/Chapter24_04.png
@@ -104,6 +111,7 @@ First, we use the HC-SR04 communication protocol to operate the module, get the 
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_14.1.1_Ultrasonic_Ranging/Sketch_14.1.1_Ultrasonic_Ranging.ino
     :linenos: 
     :language: c
+    :dedent:
 
 First, define the pins and the maximum measurement distance.
 
@@ -115,6 +123,7 @@ First, define the pins and the maximum measurement distance.
 If the module does not return high level, we cannot wait for this forever. So we need to calculate the the time period for the  maximum distance, that is, time Out. timOut= 2*MAX_DISTANCE/100/340*1000000. The result of the constant part in this formula is approximately equal to 58.8. 
 
 .. code-block:: c
+    :linenos:
 
     float timeOut = MAX_DISTANCE * 60; 
 
@@ -124,16 +133,19 @@ Then, in the setup (), set the pin to input or output, and set the serial port. 
     :linenos: 
     :language: c
     :lines: 32-34
+    :dedent:
 
 And then the echoPin of HC_SR04 will output a pulse. Time of the pulse is the total time of ultrasonic from transmitting to receiving. We use the pulseIn () function to return the time, and set the timeout.
 
 .. code-block:: c
+    :linenos:
 
     pingTime = pulseIn(echoPin, HIGH, timeOut); // Wait HC-SR04 returning to the high level and measure out this waitting time
     
 Calculate the distance according to the time and return the value.
 
 .. code-block:: c
+    :linenos:
 
     distance = (float)pingTime * soundVelocity / 2 / 10000; // calculate the distance according to the time
     return distance; // return the distance value
@@ -159,6 +171,7 @@ Click “Add .ZIP Library...” and then find NewPing.zip in libraries folder (t
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_14.1.2_Ultrasonic_Ranging/Sketch_14.1.2_Ultrasonic_Ranging.ino
     :linenos: 
     :language: c
+    :dedent:
 
 First, include the header file of library, and then define the HC SR04 pin and the maximum measurement distance. And then write these parameters when we define the NewPing class objects.
 
@@ -166,6 +179,7 @@ First, include the header file of library, and then define the HC SR04 pin and t
     :linenos: 
     :language: c
     :lines: 9-12
+    :dedent:
 
 And then, in the loop (), use sonar.ping_cm () to obtain the  ultrasonic module detection distance with unit of centimeter. And print the distance out. When the distance exceeds range of 2cm~200cm, the printed data is zero.
 

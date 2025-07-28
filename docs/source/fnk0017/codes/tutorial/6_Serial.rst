@@ -13,7 +13,8 @@ Component List
 ===============================================================
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
+    :class: table-line
     :align: center
 
     *   -   Control board x1
@@ -37,8 +38,9 @@ As mentioned earlier, computers use a binary signal. A binary signal is called 1
 As to binary number 10010110, "0" usually presents the lowest value in code.
 
 .. list-table:: 
-    :width: 60%
     :align: center
+    :class: zebra
+    :header-rows: 1
 
     *   -   Sequence
         -   7
@@ -133,24 +135,18 @@ setup() function initializes the serial port.
 
 And then continuously sends variable counter values in the loop () function.
 
-.. list-table:: 
-    :width: 50%
-    :align: center
-
-    *   -   :orange:`Serial class`
-    *   -   Class is a C++ language concept. Arduino IDE supports C++ language, which is a language extension. We 
-       
-            don't explain specifically the concept here, but only describe how to use it. If you are interested in
-            
-            it, you can learn by yourself. Serial is a class name, which contains variables and functions. You can
-
-            use the "." operational character to visit class variables and functions, such as:
-
-            **Serial.begin(speed):** Initialize serial port, the parameter is the serial port baud rate;
+.. py:function:: Serial class
     
-            **Serial.print(val):** Send string, the parameter here is what you want to send;
+    Class is a C++ language concept. Arduino IDE supports C++ language, which is a language extension. We 
+    don't explain specifically the concept here, but only describe how to use it. If you are interested in
+    it, you can learn by yourself. Serial is a class name, which contains variables and functions. You can
+    use the "." operational character to visit class variables and functions, such as:
 
-            **Serial.println(val):** Send newline behind string.
+        **Serial.begin(speed):** Initialize serial port, the parameter is the serial port baud rate;
+
+        **Serial.print(val):** Send string, the parameter here is what you want to send;
+
+        **Serial.println(val):** Send newline behind string.
 
 Verify and upload the code, open the Serial Monitor, and then you'll see data sent from control board.
 
@@ -201,21 +197,16 @@ Now, write code to receive the characters from Serial Monitor window, and send i
 
 In the setup() function, we initialize the serial port. Then, the loop() function will continuously detect whether there are data  to read. if so, it will read the character and send it back.
 
-.. list-table:: 
-    :width: 20%
-    :align: center
+.. py:function:: Serial Class
+    * - Serial.available(): return bytes of data that need to be read by serial port;
 
-    *   -   :orange:`Serial Class`
-    *   -   Serial.available(): return bytes of data that need to be read by serial port;
-
-            Serial.read(): return 1 byte of data that need to be read  by serial port.
+        Serial.read(): return 1 byte of data that need to be read  by serial port.
 
 Verify and upload the code, open the Serial Monitor, write character in the sending area, click Send button, then you'll see information returned from control board.
 
 .. image:: ../_static/imgs/6_Serial/Chapter06_08.png
     :align: center
 
-        
 .. py:function:: char type
 
     char type variable can represent a character, but it cannot store characters directly. It stores numbers to replace characters. char type occupies 1-byte store area, and use a value 0-127 to correspond to 128 characters. The corresponding relation between number and character is ruled by ASCII table. For more details of ASCII table, please refer to the appendix of this book.
@@ -246,19 +237,24 @@ We will use the serial port on control board to control one LED.
 Component List
 ===============================================================
 
-+-----------------------------------+---------------------------------------+
-| Control board x1                  |  Breadboard x1                        |
-|                                   |                                       |
-|  |Chapter01_00_1|                 |   |Chapter01_01|                      |
-+-----------------------------------+-------------------+-------------------+
-| USB cable x1                      | LED x1            | Resistor 220Ω x1  |
-|                                   |                   |                   |
-|  |Chapter01_02|                   |  |Chapter01_03|   |  |Chapter01_04|   |
-+-----------------------------------+                   |                   |
-| Jumper M/M x2                     |                   |                   |
-|                                   |                   |                   |
-|  |Chapter01_06|                   |                   |                   |
-+-----------------------------------+-------------------+-------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+---------------------------------------+
+    | Control board x1                  |  Breadboard x1                        |
+    |                                   |                                       |
+    |  |Chapter01_00_1|                 |   |Chapter01_01|                      |
+    +-----------------------------------+-------------------+-------------------+
+    | USB cable x1                      | LED x1            | Resistor 220Ω x1  |
+    |                                   |                   |                   |
+    |  |Chapter01_02|                   |  |Chapter01_03|   |  |Chapter01_04|   |
+    +-----------------------------------+                   |                   |
+    | Jumper M/M x2                     |                   |                   |
+    |                                   |                   |                   |
+    |  |Chapter01_06|                   |                   |                   |
+    +-----------------------------------+-------------------+-------------------+
 
 .. |Chapter01_00_1| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
 .. |Chapter01_01| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png

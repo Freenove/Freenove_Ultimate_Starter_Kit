@@ -12,19 +12,24 @@ RGB LED has three different-color LEDs inside, and we will use 3 potentiometers 
 Component List
 ===============================================================
 
-+-----------------------------------+-------------------------------------------------------------+
-| Control board x1                  |  Breadboard x1                                              |
-|                                   |                                                             |
-|  |Chapter01_00|                   |   |Chapter01_01|                                            |
-+-----------------------------------+------------------------+-------------------+----------------+
-| USB cable x1                      |Rotary                  | RGB LED x1        |Resistor        |
-|                                   |                        |                   |                |
-|  |Chapter01_02|                   |potentiometer x3        |  |Chapter08_00|   |220Ω x3         |
-+-----------------------------------+                        |                   |                |
-| Jumper M/M x2                     | |Chapter07_00|         |                   | |Chapter01_04| |
-|                                   |                        |                   |                |
-|  |Chapter01_06|                   |                        |                   |                |
-+-----------------------------------+------------------------+-------------------+----------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+-------------------------------------------------------------+
+    | Control board x1                  |  Breadboard x1                                              |
+    |                                   |                                                             |
+    |  |Chapter01_00|                   |   |Chapter01_01|                                            |
+    +-----------------------------------+------------------------+-------------------+----------------+
+    | USB cable x1                      |Rotary                  | RGB LED x1        |Resistor        |
+    |                                   |                        |                   |                |
+    |  |Chapter01_02|                   |potentiometer x3        |  |Chapter08_00|   |220Ω x3         |
+    +-----------------------------------+                        |                   |                |
+    | Jumper M/M x2                     | |Chapter07_00|         |                   | |Chapter01_04| |
+    |                                   |                        |                   |                |
+    |  |Chapter01_06|                   |                        |                   |                |
+    +-----------------------------------+------------------------+-------------------+----------------+
 
 .. |Chapter08_00| image:: ../_static/imgs/8_RGB/Chapter08_00.png
 .. |Chapter01_00| image:: ../_static/imgs/1_LED_Blink/Chapter01_00.png
@@ -59,14 +64,14 @@ Circuit
 Use pin A0, A1, A2 ports of the control board to detect the voltage of rotary potentiometer, and control RGB LED by pin 9, 10, 11.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
+    :class: table-line
     :align: center
 
-    *   -   Schematic diagram
-    *   -   |Chapter08_03|
-
-    *   -   Hardware connection
-    *   -   |Chapter08_04|
+    * - Schematic diagram
+    * - |Chapter08_03|
+    * - Hardware connection
+    * - |Chapter08_04|
 
 .. |Chapter08_03| image:: ../_static/imgs/8_RGB/Chapter08_03.png
 .. |Chapter08_04| image:: ../_static/imgs/8_RGB/Chapter08_04.png
@@ -95,19 +100,24 @@ In the previous section, we have finished controlling the RGB LED to emit light 
 Component List
 ===============================================================
 
-+-----------------------------------+---------------------------------------+
-| Control board x1                  |  Breadboard x1                        |
-|                                   |                                       |
-|  |Chapter01_00|                   |   |Chapter01_01_1|                    |
-+-----------------------------------+-------------------+-------------------+
-| USB cable x1                      | RGB LED x1        | Resistor 220Ω x10 |
-|                                   |                   |                   |
-|  |Chapter01_02|                   |  |Chapter08_00|   |  |Chapter01_04|   |
-+-----------------------------------+                   |                   |
-| Jumper M/M x11                    |                   |                   |
-|                                   |                   |                   |
-|  |Chapter01_06|                   |                   |                   |
-+-----------------------------------+-------------------+-------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------+---------------------------------------+
+    | Control board x1                  |  Breadboard x1                        |
+    |                                   |                                       |
+    |  |Chapter01_00|                   |   |Chapter01_01_1|                    |
+    +-----------------------------------+-------------------+-------------------+
+    | USB cable x1                      | RGB LED x1        | Resistor 220Ω x10 |
+    |                                   |                   |                   |
+    |  |Chapter01_02|                   |  |Chapter08_00|   |  |Chapter01_04|   |
+    +-----------------------------------+                   |                   |
+    | Jumper M/M x11                    |                   |                   |
+    |                                   |                   |                   |
+    |  |Chapter01_06|                   |                   |                   |
+    +-----------------------------------+-------------------+-------------------+
 
 .. |Chapter01_01_1| image:: ../_static/imgs/1_LED_Blink/Chapter01_01.png
     :width: 85%
@@ -118,14 +128,15 @@ Circuit
 Use pin 9, 10, 11 of the control board to control RGB LED.
 
 .. list-table:: 
-    :width: 100%
+    :width: 80%
+    :class: table-line
     :align: center
 
-    *   -   Schematic diagram
-    *   -   |Chapter08_05|
+    * - **Schematic diagram**
+    * - |Chapter08_05|
 
-    *   -   Hardware connection
-    *   -   |Chapter08_06|
+    * - **Hardware connection**
+    * - |Chapter08_06|
 
 .. |Chapter08_05| image:: ../_static/imgs/8_RGB/Chapter08_05.png
 .. |Chapter08_06| image:: ../_static/imgs/8_RGB/Chapter08_06.png
