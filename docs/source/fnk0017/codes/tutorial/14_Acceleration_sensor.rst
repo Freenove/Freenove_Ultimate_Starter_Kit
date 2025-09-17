@@ -175,6 +175,7 @@ If you want to make the results more close to the actual situation, you can adju
     :linenos: 
     :language: c
     :lines: 26-29
+    
 We can also read out the value of the offset which is already set through following code:
 
 .. literalinclude:: ../../../freenove_Kit/Sketches/Sketch_14.1.1_Acceleration_Detection/Sketch_14.1.1_Acceleration_Detection.ino

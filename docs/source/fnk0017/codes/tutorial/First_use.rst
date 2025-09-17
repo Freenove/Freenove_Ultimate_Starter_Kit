@@ -39,6 +39,7 @@ Select the port.
 If there is no COM port for control board, you may need to install a driver to your conputer.
 
 - For blue board, reinstall the latest version of Arduino IDE. During installation, agree to install the driver.
+
 - For black board, see “InstallDriver.pdf” in “Drivers” folder (in the folder contains this Tutorial.pdf).
 
 :combo:`bg-red font-bolder:Having problems?` Contact us for help! Send mail to: support@freenove.com
